@@ -1,0 +1,72 @@
+\documentclass[10pt,a4paper]{report}
+
+% Packages
+\usepackage[a4paper,margin=0.9in]{geometry} % reduce margins
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{graphicx} % for images
+\usepackage{caption}  % better caption control
+\usepackage{lipsum}   % for dummy text (remove later)
+
+% Remove figure numbering
+\captionsetup[figure]{labelformat=empty}
+
+% Customize section/chapter fonts
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter}{0.4em}{} 
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.4em}{} 
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.4em}{} 
+
+% Define custom command for images with optional caption
+\usepackage{xparse}
+\NewDocumentCommand{\insertimage}{O{0.8\textwidth} m o}{%
+    \begin{center}
+        \includegraphics[width=#1]{#2}%
+        \IfValueT{#3}{\\\captionof{figure}{#3}}%
+    \end{center}
+}
+
+% Front Page Info
+\title{\Huge Assignment-1 \\[0.5cm] \LARGE Software Tools and Techniques for CSE}
+\author{\Large Shardul Junagade}
+\date{\large \today}
+
+\begin{document}
+
+% Front Page
+\maketitle
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% ---------- Example Content ----------
+\chapter{Lab 1: Git and Version Control}
+\section{Aim}
+\lipsum[1]
+
+\section{Introduction}
+\lipsum[1]
+
+% Example images
+\insertimage[0.8\textwidth]{../images/lab1/1.png}[Sample figure with optional caption]
+
+\section{Procedure}
+\subsection{Step 1}
+\lipsum[2]
+\lipsum[2]
+
+\insertimage[0.8\textwidth]{../images/lab1/1.png} % no caption
+
+\subsection{Step 2}
+\lipsum[3]
+
+\section{Results}
+\lipsum[4]
+
+\chapter{Lab 2: Pydriller Tool}
+\section{Aim}
+\lipsum[5]
+
+\end{document}
