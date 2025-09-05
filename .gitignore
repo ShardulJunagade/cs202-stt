@@ -1,3 +1,8 @@
+lab4/results/scikit-learn_diff_analysis.csv
+lab4/results/diff_analysis.csv
+
+
+# LATEX TEMPLATE.GITIGNORE
 # Ignore LaTeX auxiliary and temporary files
 *.aux
 *.log

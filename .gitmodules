@@ -1,0 +1,12 @@
+[submodule "lab4/repos/flask"]
+	path = lab4/repos/flask
+	url = https://github.com/pallets/flask.git
+[submodule "lab4/repos/requests"]
+	path = lab4/repos/requests
+	url = https://github.com/psf/requests.git
+[submodule "lab4/repos/scikit-learn"]
+	path = lab4/repos/scikit-learn
+	url = https://github.com/scikit-learn/scikit-learn.git
+[submodule "lab4/repos/miniTorch"]
+	path = lab4/repos/miniTorch
+	url = https://github.com/ShardulJunagade/miniTorch.git
