@@ -1,0 +1,205 @@
+\documentclass[10pt,a4paper]{report}
+
+% Packages
+\usepackage[a4paper,margin=0.9in]{geometry} % reduce margins
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{graphicx} % for images
+\usepackage{caption}  % better caption control
+\usepackage{lipsum}   % for dummy text (remove later)
+\usepackage{enumitem}
+\usepackage{amssymb} % for \checkmark symbol
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{CS202 Lab Assignment 1 Report}
+\fancyhead[R]{Shardul Junagade}
+\fancyfoot[C]{\thepage}
+\usepackage{xcolor}
+\newcommand{\command}[1]{\texttt{\textcolor{blue}{#1}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+% Remove figure numbering
+\captionsetup[figure]{labelformat=empty}
+
+% Customize section/chapter fonts
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter}{0.4em}{} 
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.4em}{} 
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.4em}{} 
+
+% Define custom command for images with optional caption
+\usepackage{xparse}
+\NewDocumentCommand{\insertimage}{O{0.8\textwidth} m o}{%
+    \begin{center}
+        \includegraphics[width=#1]{#2}%
+        \IfValueT{#3}{\\\captionof{figure}{#3}}%
+    \end{center}
+}
+
+% Front Page Info
+\title{\Huge Assignment-1 \\[0.5cm] \LARGE Software Tools and Techniques for CSE}
+\author{\Large Shardul Junagade}
+\date{\large \today}
+
+\begin{document}
+
+% Front Page
+\maketitle
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+
+% ---------- Lab 1 ----------
+\chapter{Lab 1: Introduction to Version Controlling, Git Workflows, and Actions}
+
+
+\section{Introduction, Setup, and Tools}
+
+\subsection{Introduction}
+The objective of this lab was to gain hands-on experience with Version Control Systems (VCS), specifically Git, and to explore the integration of GitHub with automated workflows such as GitHub Actions. My aim was to understand fundamental concepts like repositories, commits, branches, and remotes, and to perform essential Git operations. Additionally, I set up a continuous integration workflow using GitHub Actions and Pylint to ensure code quality.
+
+\subsection{Setup and Tools}
+I logged in to my GitHub account in the web browser -- \href{https://github.com/ShardulJunagade}{ShardulJunagade} -- for version control. I installed Git and Visual Studio Code by downloading the installers from their official websites and following the installation instructions. After installation, I verified the installation by checking the versions of Git and Visual Studio Code.
+
+\begingroup
+The following is a list of the tools and technologies used in this lab:
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item Operating System: Windows 11
+    \item Terminal: PowerShell 7
+    \item Git version: 2.42.0
+    \item Code Editor: Visual Studio Code
+    \item Python version: 3.13.7
+    \item GitHub for remote repository hosting
+    \item GitHub Actions for CI/CD pipelines
+\end{itemize}
+\endgroup
+
+\insertimage[0.8\textwidth]{../images/lab1/1.png}[Figure 1: Verifying Git installation and version.]
+
+\newpage
+\section{Methodology and Execution}
+
+\subsection{Initializing a Local Repository}
+I created a new folder for the lab, named \texttt{Any\_Name} using the command \command{mkdir Any\_Name} and initialized the folder as a git repository using the command \command{git init}.
+\insertimage[0.8\textwidth]{../images/lab1/2.png}[Figure 2: Initializing a new Git repository.]
+
+
+\subsection{Local Git Configuration}
+Since my global Git configuration was already set up from previous work, I decided to configure my name and email specifically for this repository using the local configuration commands \command{git config user.name} and \command{git config user.email}. This ensures that all commits in this repository are attributed with the correct identity, regardless of the global settings.
+\insertimage[0.8\textwidth]{../images/lab1/3.png}[Figure 3: Configuring local Git user details.]
+
+\subsection{Adding and Committing Files}
+I created a new file named \texttt{README.md} and used the command \command{git status} to inspect the repository. The output indicated one untracked file. I then staged the file with \command{git add README.md} and confirmed the change with another \command{git status}, which now showed the file as staged.
+\insertimage[0.8\textwidth]{../images/lab1/4.png}[Figure 4: Staging the README.md file for commit.]
+
+Next, I committed the staged file using the command \command{git commit -m "Initial commit: Added README.md"}. To verify, I executed \command{git log}, which displayed the commit details along with the message and metadata.
+\insertimage[0.8\textwidth]{../images/lab1/5.png}[Figure 5: Committing the file and viewing the commit history.]
+
+
+\subsection{Working with Remote Repository}
+I created a remote repository on GitHub named \texttt{Any\_Name}.
+
+Repository Link: \url{https://github.com/ShardulJunagade/Any_Name}
+\insertimage[0.8\textwidth]{../images/lab1/6.png}[Figure 6: Creating a new repository on GitHub.]
+
+After that, I linked the remote repository to my local repository using the command \command{git remote add origin <URL>}. Once the connection was established, I pushed my local commits to GitHub with \command{git push -u origin main}.
+\insertimage[0.8\textwidth]{../images/lab1/7.png}[Figure 7: Adding the remote and pushing local commits to GitHub.]
+
+To confirm that everything worked correctly, I opened the repository on GitHub in my browser and verified that all the changes were successfully reflected online. We can see that the README.md file is present.
+\insertimage[0.8\textwidth]{../images/lab1/8.png}[Figure 8: Verifying updates on GitHub.]
+
+For the next step, I cloned the repository using the command \command{git clone <URL>}, and we can see that the README.md file is present in the freshly cloned repo.
+\insertimage[0.8\textwidth]{../images/lab1/9.png}[Figure 9: Cloning a repository from GitHub.]
+
+Then, I moved to GitHub in my web browser and added a new file named \texttt{main.py} that contains a simple Python program. I committed the changes directly on GitHub to the remote repository. This file was now visible in the remote repository on GitHub but not in my local repository.
+\insertimage[0.8\textwidth]{../images/lab1/10.png}[Figure 10: Adding a greeting message in \texttt{main.py} via GitHub.]
+
+Now, I had to pull these changes/commits from the remote repository to my local repository. To do this I executed the command \command{git pull origin main} to fetch and merge the changes. This pulled the new file into my local repository, keeping both versions in sync.
+\insertimage[0.8\textwidth]{../images/lab1/11.png}[Figure 11: Pulling the latest changes from GitHub.]
+
+
+
+\subsection{GitHub Actions -- Pylint Workflow}
+The next task was to automate code quality checks using Pylint.
+
+For this task, I wrote a Python file called \texttt{app.py} that contained a simple calculator program, which you can see below:
+\insertimage[0.68\textwidth]{../images/lab1/12.png}[Figure 12: Initial version of \texttt{app.py} (calculator code).]
+
+After saving the file, I staged, committed, and pushed it to GitHub.
+\insertimage[0.8\textwidth]{../images/lab1/13.png}[Figure 13: Pushing the calculator code to GitHub.]
+
+On GitHub, there was a section of suggested workflows for GitHub Actions. Here, I selected the Pylint workflow and clicked on \texttt{Configure}.
+\insertimage[0.5\textwidth]{../images/lab1/14.png}[Figure 14: Suggested workflows for GitHub Actions.]
+
+Then, I created the \texttt{.github/workflows/Pylint.yml} file to enable linting on every push, as shown below:
+\insertimage[0.8\textwidth]{../images/lab1/15.png}[Figure 15: Creating the \texttt{Pylint.yml} workflow file.]
+
+As soon as I committed the workflow file, GitHub Actions automatically triggered the workflow. The first run failed because Pylint reported several errors in my code, which can be seen below:
+\insertimage[0.8\textwidth]{../images/lab1/16.png}[Figure 16: GitHub Actions running Pylint workflow.]
+\insertimage[0.8\textwidth]{../images/lab1/17.png}[Figure 17: Initial Pylint errors detected.]
+
+After reviewing the error messages, I fixed the issues by adding proper docstrings and correcting other bugs. I committed and pushed the corrected code to the repository.
+% \insertimage[0.8\textwidth]{../images/lab1/18.png}[Figure 18: Updating the calculator code to address Pylint errors.]
+\insertimage[0.8\textwidth]{../images/lab1/20.png}[Figure 19: Pushing the corrected code.]
+
+\newpage
+This time, the workflow passed successfully, and GitHub showed a green tick, which confirmed that my code met the required standards.
+\insertimage[0.8\textwidth]{../images/lab1/21.png}[Figure 20: Successful Pylint workflow run.]
+
+All three workflow runs completed successfully, as indicated by the green tick on each build in the GitHub Actions tab.
+\insertimage[0.8\textwidth]{../images/lab1/22.png}[Figure 21: Workflow completion with a green tick.]
+
+
+
+\section{Results and Analysis}
+
+Through this lab, I successfully created and managed a Git repository, synchronized changes with GitHub, and demonstrated cloning and pulling operations. The GitHub Actions workflow validated my Python code using Pylint, ensuring it followed coding standards and confirming the results with a green tick on GitHub.
+
+\insertimage[0.8\textwidth]{../images/lab1/23.png}[Figure 22: Successful Pylint validation and workflow status.]
+
+The final commit history below shows the whole process -- from the first commit to fixing errors and reaching the successful workflow run.
+\insertimage[0.8\textwidth]{../images/lab1/24.png}[Figure 23: Final commit history showing all changes.]
+
+
+\begin{center}
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Task} & \textbf{Outcome} \\
+\hline
+Initialize repository & Repository created successfully (Figure 2-3) \\
+Push to GitHub & Changes pushed and visible online (Figures 4–8) \\
+Clone and Pull & Repository cloned and synced correctly (Figures 9–11) \\
+GitHub Actions (Pylint) & Failed first due to docstring issues, later passed with green tick (Figures 12–21) \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+
+\section{Discussion and Conclusion}
+
+This lab gave me hands-on practice with Git, starting from creating an empty repository to adding files, staging, committing, pushing to GitHub, cloning repositories, and pulling updates. One of the main challenges I faced was the branch mismatch issue (main vs. master), which caused errors during my first push.
+
+I also found interpreting the Pylint workflow's yaml file slightly tricky at first and even though the Python code was running fine, the workflow still failed due to docstring and formatting issues which were caught by Pylint. Going through the error messages and fixing them was a valuable learning experience. The most satisfying moment was finally seeing the green tick on GitHub after the corrected code passed Pylint.
+
+Overall, this lab gave me a nice overview of how Git and GitHub work together and showed me how CI/CD pipelines can give instant feedback on code quality, something that is very useful in real-world projects where many developers work together.
+
+
+
+
+\section{References (1 Mark for Format + Style)}
+\begin{itemize}[itemsep=0.01em, topsep=0pt]
+    \item \href{https://git-scm.com/doc}{Git Documentation}
+    \item \href{https://docs.github.com/en}{GitHub Guides}
+    \item \href{https://education.github.com/git-cheat-sheet-education.pdf}{Git Cheat Sheet}
+    \item \href{https://docs.pylint.org/}{Pylint Documentation}
+    \item Lab Document (Shared on Google Classroom)
+\end{itemize}
+
+\end{document}
