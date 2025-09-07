@@ -13,3 +13,6 @@
 [submodule "lab1/Any_Name"]
 	path = lab1/Any_Name
 	url = https://github.com/ShardulJunagade/Any_Name.git
+[submodule "lab2/manim"]
+	path = lab2/manim
+	url = https://github.com/3b1b/manim.git
