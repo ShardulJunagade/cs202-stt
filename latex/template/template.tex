@@ -8,12 +8,24 @@
 \usepackage{graphicx} % for images
 \usepackage{caption}  % better caption control
 \usepackage{lipsum}   % for dummy text (remove later)
+\usepackage{enumitem}
+\usepackage{amssymb} % for \checkmark symbol
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{CS202 Lab Assignment 1 Report}
+\fancyhead[R]{Shardul Junagade}
+\fancyfoot[C]{\thepage}
+\usepackage{xcolor}
+\newcommand{\command}[1]{\texttt{\textcolor{blue}{#1}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
 
 % Remove figure numbering
 \captionsetup[figure]{labelformat=empty}
 
 % Customize section/chapter fonts
-\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter}{0.4em}{} 
+\titleformat{\chapter}[hang]{\huge\bfseries}{}{0.4em}{} 
 \titleformat{\section}{\Large\bfseries}{\thesection}{0.4em}{} 
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.4em}{} 
 
@@ -28,7 +40,7 @@
 
 % Front Page Info
 \title{\Huge Assignment-1 \\[0.5cm] \LARGE Software Tools and Techniques for CSE}
-\author{\Large Shardul Junagade}
+\author{\Large Shardul Junagade (23110297) \\[0.2cm] \Large Repository: \href{https://github.com/ShardulJunagade/cs202-stt}{cs202-stt}}
 \date{\large \today}
 
 \begin{document}
