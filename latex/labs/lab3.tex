@@ -1,0 +1,229 @@
+\documentclass[10pt,a4paper]{report}
+
+% Packages
+\usepackage[a4paper,margin=0.9in]{geometry} % reduce margins
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{graphicx} % for images
+\usepackage{caption}  % better caption control
+\usepackage{lipsum}   % for dummy text (remove later)
+\usepackage{enumitem}
+\usepackage{amssymb} % for \checkmark symbol
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{CS202 Lab Assignment 1 Report}
+\fancyhead[R]{Shardul Junagade}
+\fancyfoot[C]{\thepage}
+\usepackage{xcolor}
+\newcommand{\command}[1]{\texttt{\textcolor{blue}{#1}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+% Remove figure numbering
+\captionsetup[figure]{labelformat=empty}
+
+% Customize section/chapter fonts
+\titleformat{\chapter}[block]{\huge\bfseries}{}{0pt}{}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.4em}{} 
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.4em}{} 
+
+% Define custom command for images with optional caption
+\usepackage{xparse}
+\NewDocumentCommand{\insertimage}{O{0.8\textwidth} m o}{%
+    \begin{center}
+        \includegraphics[width=#1]{#2}%
+        \IfValueT{#3}{\\\captionof{figure}{#3}}%
+    \end{center}
+}
+
+% Front Page Info
+\title{\Huge Assignment-1 \\[0.5cm] \LARGE Software Tools and Techniques for CSE}
+\author{\Large Shardul Junagade (23110297) \\[0.2cm] \Large Repository: \href{https://github.com/ShardulJunagade/cs202-stt}{cs202-stt}}
+\date{\large \today}
+
+\begin{document}
+
+% Front Page
+\maketitle
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+
+% ---------- Lab 3 ----------
+\chapter{Lab 3: Multi-Metric Bug Context Analysis and Agreement Detection in Bug-Fix Commits}
+
+\textbf{Repository Link:} \href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab3}{cs202-stt/lab3}
+
+\section{Introduction, Setup, and Tools}
+
+\subsection{Introduction}
+In Lab 2, I had prepared a per-file dataset of bug-fix commits with extracted diffs and model-generated summaries. The purpose of this lab was to analyse the relation between structural code quality and magnitude of changes in bug-fix commits. Specifically, I aimed to investigate:
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item Structural metrics around each fix (Maintainability Index, Cyclomatic Complexity, and Lines of Code) using radon.
+    \item Change magnitude metrics (Semantic similarity with CodeBERT and Token similarity with BLEU).
+    \item Classify each fix as Major or Minor from both lenses and check where they agree (or don’t).
+\end{itemize}
+
+By combining these, I classified the bug fixes as Major or Minor and checked where the structural and semantic lenses agreed or conflicted. This is important because commit messages or diffs alone rarely capture how “big” or “complex” a change really is.
+
+\subsection{Environment and Tools}
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item OS: Windows 11, Terminal: PowerShell 7
+    \item Code Editor: Visual Studio Code - Insiders
+    \item Python: 3.13.7
+    \item Key packages: radon, nltk, transformers, torch, scikit-learn
+    \item Models: \href{https://huggingface.co/microsoft/codebert-base}{microsoft/codebert-base} (for embeddings)
+    \item Hardware: NVIDIA RTX 4060 Laptop GPU
+\end{itemize}
+
+\insertimage[0.8\textwidth]{../images/lab3/1.png}[Environment Setup]
+
+\section{Methodology and Execution}
+
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/lab3.ipynb}{lab3.ipynb}
+
+\subsection{Starting point (Lab 2 dataset)}
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item Input CSV: \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/lab2_diffs.csv}{\texttt{lab3/lab2\_diffs.csv}}
+    \item Columns included: Commit Hash, Message, File Name, Source Code (before), Source Code (current), Diff, LLM Inference (fix type), Rectified Message
+\end{itemize}
+
+I first loaded the dataset, checked the first 10--20 rows, and verified that there were no missing critical columns. Then, I checked for NaNs in key columns in the dataset.
+
+\insertimage[\textwidth]{../images/lab3/2.png}[Dataset Preview]
+\insertimage[0.7\textwidth]{../images/lab3/3.png}[NaN Counts]
+
+\subsection{Baseline Descriptive Stats}
+From the dataset, I computed the following statistics to understand the dataset:
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item Total unique commits and total file entries.
+    \item Average modified files per commit.
+    \item Distribution of fix types from \texttt{LLM Inference (fix type)}.
+    \item Most frequently modified filenames and extensions.
+\end{itemize}
+
+The following images show the code and output for these computations:
+\insertimage[0.8\textwidth]{../images/lab3/4.png}[Baseline Stats Code]
+\insertimage[0.8\textwidth]{../images/lab3/5.png}[Baseline Stats]
+\insertimage[0.8\textwidth]{../images/lab3/6.png}[Baseline Stats]
+
+\subsection{Structural metrics with radon}
+For each file, I ran radon on both ``before'' and ``current'' versions of the source code and recorded the following structural metrics:
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item \textbf{Maintainability Index (MI) --} A composite score that combines factors like lines of code, complexity, and comments to indicate how easy a piece of code is to maintain. A higher MI usually means the code is more readable and maintainable.
+    \item \textbf{Cyclomatic Complexity (CC) --} A measure of how many independent paths exist through the code, essentially capturing the decision points (like if/else, loops). Higher CC means the code is more complex and harder to test thoroughly.
+    \item \textbf{Lines of Code (LOC) --} The raw number of lines in the code. While simple, this metric is a direct measure of the size of the code and often correlates with the effort required to understand or modify it.
+\end{itemize}
+
+I then computed their deltas: \texttt{MI\_Change}, \texttt{CC\_Change}, \texttt{LOC\_Change}. I caught any parsing exceptions and recorded them as NaN (those propagate to ``Unknown'' later). I saved these results to \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/results/structural_metrics.csv}{\texttt{results/structural\_metrics.csv}}.
+
+The following image show the code implementation for structural metrics computation:
+\insertimage[0.9\textwidth]{../images/lab3/7.png}[Code snippet for structural metrics computation]
+\insertimage[\textwidth]{../images/lab3/8.png}[Preview of structural\_metrics.csv]
+
+\subsection{Change magnitude: semantic vs token similarity}
+To understand how much the code changed between the \textit{before} and \textit{after} versions, I measured change magnitude using two complementary metrics:
+
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item \textbf{Semantic similarity --} Computed using CodeBERT embeddings with cosine similarity. 
+    This captures whether the two versions of the code still mean the same thing, even if the surface-level tokens look different.
+    
+    \item \textbf{Token similarity --} Measured using BLEU with NLTK’s tokenizer (with smoothing). 
+    This focuses on how closely the literal tokens match between the two code snippets, making it sensitive to formatting and small textual edits.
+\end{itemize}
+
+I added 2 columns for these values to the dataframe and saved the dataset to \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/results/change_magnitude_metrics.csv}{\texttt{results/change\_magnitude\_metrics.csv}}.
+
+The following images show the code implementation for calculating the semantic similarity and token similarity:
+\insertimage[0.8\textwidth]{../images/lab3/9.png}[Code snippet for semantic similarity]
+\insertimage[0.8\textwidth]{../images/lab3/10.png}[Code snippet for token similarity]
+\insertimage[\textwidth]{../images/lab3/11.png}[Table preview showing Semantic\_Similarity and Token\_Similarity]
+
+\subsection{Classification and agreement}
+After computing the similarity scores, I mapped each bug-fix commit into categories of \textit{Major} or \textit{Minor} using simple threshold rules. 
+This step helped in comparing how the two metrics align in their judgment of the same change.
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item Semantic similarity $\geq$ 0.80 $\Rightarrow$ \textit{Minor}, else \textit{Major}
+    \item Token similarity $\geq$ 0.75 $\Rightarrow$ \textit{Minor}, else \textit{Major}
+    \item Unknown: if the metric could not be computed (NaN), the classification was recorded as \textit{Unknown}.
+\end{itemize}
+
+\insertimage[0.8\textwidth]{../images/lab3/12.png}[Code snippet for classification]
+\insertimage[0.8\textwidth]{../images/lab3/13.png}[Class Distribution of Semantic\_Class and Token\_Class]
+
+Then, I compared the two classifications:
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item If both matched, Classes\_Agree = YES
+    \item If they differed, Classes\_Agree = NO
+    \item If either was Unknown, then agreement was also Unknown
+\end{itemize}
+
+\insertimage[\textwidth]{../images/lab3/14.png}[Code snippet for agreement check]
+\insertimage[0.8\textwidth]{../images/lab3/16.png}[Table showing Agreement column]
+
+I exported the final table to \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/results/final_metrics.csv}{\texttt{results/final\_metrics.csv}} and plotted pie chart for the distribution of agreement column.
+\insertimage[0.8\textwidth]{../images/lab3/15.png}[Class Distribution of Agreement]
+
+\section{Results and Analysis}
+
+\subsection{Final Results}
+
+\textbf{Final table link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/results/final_metrics.csv}{\texttt{final\_metrics.csv}}
+
+Summary of key metrics like structural changes, semantic similarity, and classification agreement:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+Metric & Value \\
+\hline
+Mean MI\_Change & -0.13 \\
+Mean CC\_Change & 0.02 \\
+Mean LOC\_Change & 4.5 \\
+\hline
+Mean Semantic Similarity & 0.9992 \\
+Mean Token Similarity & 0.9596 \\
+\hline
+Semantic Classification (Minor) & 96.0\% \\
+Semantic Classification (Major) & 0.1\% \\
+Semantic Classification (Unknown) & 3.9\% \\
+\hline
+Token Classification (Minor) & 92.6\% \\
+Token Classification (Major) & 3.5\% \\
+Token Classification (Unknown) & 3.9\% \\
+\hline
+Agreement (YES) & 92.6\% \\
+Agreement (NO) & 3.5\% \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Visualizations}
+\insertimage[\textwidth]{../images/lab3/17.png}[Bar plots for Distribution of structural metrics]
+\insertimage[0.8\textwidth]{../images/lab3/18.png}[Bar plots for Distribution of Semantic and Token Similarity]
+
+\section{Discussion and Conclusion}
+
+During this lab, I encountered a few challenges that slowed me down at first. One issue was that Radon sometimes failed when analyzing code written in older versions of Python, which meant I had to either skip those snippets or handle errors gracefully. Another challenge was that Radon itself was a completely new library for me, so I had to spend time going through its documentation and experimenting before I could use it confidently. I also ran into problems with the NLTK tokenizer setup -- the lab notebook would throw runtime errors until I figured out that the punkt package needed to be downloaded separately.
+
+This lab helped me learn a lot. I now have a much better understanding of \textbf{structural metrics} like Maintainability Index (MI), Cyclomatic Complexity (CC), and Lines of Code (LOC), and how they can reflect code quality changes. On the other hand, exploring \textbf{semantic similarity with CodeBERT} and \textbf{token similarity with BLEU} showed me how different perspectives can highlight different aspects of the same bug fix.
+
+Overall, this lab felt like a natural extension of Lab 2. It pushed me to look beyond raw diffs and I learnt how we can classify a change/bugfix as ``major'' or ``minor'' by combining structural and semantic metrics.
+
+
+\section{References}
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item \href{https://pypi.org/project/radon}{Radon documentation}
+    \item \href{https://huggingface.co/microsoft/codebert-base}{CodeBERT model (Hugging Face)}
+    \item \href{https://www.nltk.org/}{NLTK tokenizer}
+    \item \href{https://drive.google.com/file/d/1erOvLfZuDeQw798jfHmX3t9MtKl8xmsN/view}{Lab Document (Google Doc)}
+\end{itemize}
+
+\end{document}

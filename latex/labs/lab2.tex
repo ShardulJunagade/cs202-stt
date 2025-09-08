@@ -25,13 +25,13 @@
 \captionsetup[figure]{labelformat=empty}
 
 % Customize section/chapter fonts
-\titleformat{\chapter}[hang]{\huge\bfseries}{}{0.4em}{} 
+\titleformat{\chapter}[block]{\huge\bfseries}{}{0pt}{}
 \titleformat{\section}{\Large\bfseries}{\thesection}{0.4em}{} 
 \titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.4em}{} 
 
 % Define custom command for images with optional caption
 \usepackage{xparse}
-\NewDocumentCommand{\insertimage}{O{0.9\textwidth} m o}{%
+\NewDocumentCommand{\insertimage}{O{0.8\textwidth} m o}{%
     \begin{center}
         \includegraphics[width=#1]{#2}%
         \IfValueT{#3}{\\\captionof{figure}{#3}}%
@@ -40,7 +40,7 @@
 
 % Front Page Info
 \title{\Huge Assignment-1 \\[0.5cm] \LARGE Software Tools and Techniques for CSE}
-\author{\Large Shardul Junagade}
+\author{\Large Shardul Junagade (23110297) \\[0.2cm] \Large Repository: \href{https://github.com/ShardulJunagade/cs202-stt}{cs202-stt}}
 \date{\large \today}
 
 \begin{document}
@@ -57,6 +57,8 @@
 
 % ---------- Lab 2 ----------
 \chapter{Lab 2: Mining Bug-Fixing Commits, LLM Inference, Rectifier, and Evaluation}
+
+\textbf{Repository Link:} \href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab2}{cs202-stt/lab2}
 
 \section{Introduction, Setup, and Tools}
 
@@ -114,7 +116,7 @@ Based on these reasons, Manim seemed like a balanced and practical choice for ca
 \insertimage[0.8\textwidth]{../images/lab2/3.png}[Git Clone]
 
 \subsection{Identifying Bug-Fixing Commits}
-\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/lab2/bugfix_commits.ipynb}{bugfix\_commits.ipynb}
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab2/bugfix_commits.ipynb}{bugfix\_commits.ipynb}
 
 I first defined a heuristic to detect bug-fixing commits. I scanned commit messages for keywords such as:
 \begin{quote}
@@ -139,7 +141,7 @@ I traversed 6,344 commits, out of which, the keyword filter flagged 1358 as bug-
 \insertimage[0.9\textwidth]{../images/lab2/5.png}[Bug Fixing Commits]
 
 \subsection{Extracting File-level Diffs}
-\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/lab2/diff_extract_and_llm_infer.ipynb}{diff\_extract\_and\_llm\_infer.ipynb}
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab2/diff_extract_and_llm_infer.ipynb}{diff\_extract\_and\_llm\_infer.ipynb}
 
 Since commits often modify multiple files, I processed each file separately. For each bug-fixing commit, I extracted the before and after source codes for each modified file and also stored metadata such as filename, change type, and the git diff.
 
@@ -150,7 +152,7 @@ After running the code, I extracted 2041 file-level diffs and saved these entrie
 \insertimage[0.9\textwidth]{../images/lab2/8.png}[File-level Diffs]
 
 \subsection{LLM Inference of ``fix type''}
-\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/lab2/diff_extract_and_llm_infer.ipynb}{diff\_extract\_and\_llm\_infer.ipynb}
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab2/diff_extract_and_llm_infer.ipynb}{diff\_extract\_and\_llm\_infer.ipynb}
 
 I used the Hugging Face model \textbf{CommitPredictorT5} to infer the type of fix from the diff. I gave the following prompt template to the pretrained model.
 \begin{verbatim}
@@ -164,7 +166,7 @@ The following code snippet shows the implementation:
 \insertimage[0.9\textwidth]{../images/lab2/10.png}[LLM Inference Samples]
 
 \subsection{Rectifier Formulation}
-\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/lab2/ollama_rectifier.ipynb}{ollama\_rectifier.ipynb}
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab2/ollama_rectifier.ipynb}{ollama\_rectifier.ipynb}
 
 Developer messages and LLM outputs can still be vague or misaligned, especially when multiple files are involved. Many times developers may not clearly specify the bug or issue being addressed. Developers often combine multiple changes/fixes in a single commit and the LLM may not capture all relevant context. To improve clarity, I designed a rectifier with the following rules:
 \begin{itemize}[itemsep=0.05em, topsep=0pt]
@@ -182,7 +184,7 @@ The following image shows the code implementation for the rectifier:
 
 
 \subsection{Evaluation with CodeBERT}
-\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/lab2/ollama_evaluation.ipynb}{ollama\_evaluation.ipynb}
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab2/ollama_evaluation.ipynb}{ollama\_evaluation.ipynb}
 
 To measure how well each message aligned with its code change, I used \textbf{microsoft/codebert-base}. First, I generated embeddings for both the diff text and the corresponding messages (developer, LLM, and rectified). Then, I computed the cosine similarity between these embeddings to quantify how semantically close each message was to the actual code change. In this setup, a higher similarity score indicates a stronger alignment between the text and the code.
 
@@ -248,7 +250,8 @@ During the lab, I faced a few challenges that slowed me down initially. PyDrille
 Working through these issues taught me a few important lessons. I found that analyzing changes at the file level and then applying rectification added real value, because it made commit messages more precise and easier to interpret. I also realized that building a pipeline by combining several tools -- PyDriller for mining, Hugging Face models for inference, Ollama for rectification, and CodeBERT for evaluation -- can be powerful, but it also demands a lot of care in data handling. Even small oversights, like inconsistent CSV column names, can break later steps in the workflow.
 
 \subsection{Conclusion}
-Overall, the end-to-end pipeline -- from mining commits to generating diffs, running LLM inference, rectifying the outputs, and finally evaluating them -- proved to be quite workable. The rectifier in particular helped improve the quality of commit messages, often making them more specific and useful than both the original developer-written messages and the raw LLM predictions. Although the approach is not perfect, it serves as a strong starting point for building datasets and improving maintainability in open-source projects.
+Overall, the end-to-end pipeline -- from mining commits to generating diffs, running LLM inference, rectifying the outputs, and finally evaluating them -- proved to be quite workable. The rectifier in particular helped improve the quality of commit messages, often making them more specific and useful than both the original developer-written messages and the raw LLM predictions.
+
 
 \section{References}
 \begin{itemize}[itemsep=0.05em, topsep=0pt]
