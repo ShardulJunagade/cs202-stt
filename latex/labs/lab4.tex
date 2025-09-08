@@ -1,0 +1,267 @@
+\documentclass[10pt,a4paper]{report}
+
+% Packages
+\usepackage[a4paper,margin=0.9in]{geometry} % reduce margins
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{graphicx} % for images
+\usepackage{caption}  % better caption control
+\usepackage{lipsum}   % for dummy text (remove later)
+\usepackage{enumitem}
+\usepackage{amssymb} % for \checkmark symbol
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{CS202 Lab Assignment 1 Report}
+\fancyhead[R]{Shardul Junagade}
+\fancyfoot[C]{\thepage}
+\usepackage{xcolor}
+\newcommand{\command}[1]{\texttt{\textcolor{blue}{#1}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+% Remove figure numbering
+\captionsetup[figure]{labelformat=empty}
+
+% Customize section/chapter fonts
+\titleformat{\chapter}[block]{\huge\bfseries}{}{0pt}{}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.4em}{} 
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.4em}{} 
+
+% Define custom command for images with optional caption
+\usepackage{xparse}
+\NewDocumentCommand{\insertimage}{O{0.8\textwidth} m o}{%
+    \begin{center}
+        \includegraphics[width=#1]{#2}%
+        \IfValueT{#3}{\\\captionof{figure}{#3}}%
+    \end{center}
+}
+
+% Front Page Info
+\title{\Huge Assignment-1 \\[0.5cm] \LARGE Software Tools and Techniques for CSE}
+\author{\Large Shardul Junagade (23110297) \\[0.2cm] \Large Repository: \href{https://github.com/ShardulJunagade/cs202-stt}{cs202-stt}}
+\date{\large \today}
+
+\begin{document}
+
+% Front Page
+\maketitle
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+
+% ---------- Lab 4 ----------
+\chapter{Lab 4: Exploration of Different Diff Algorithms on Open-Source Repositories}
+
+\textbf{Repository Link:} \href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab4}{cs202-stt/lab4}
+
+\section{Introduction, Setup, and Tools}
+
+\subsection{Introduction}
+In this lab, I compared two diff algorithms -- \textbf{Myers} and \textbf{Histogram} -- to see how they behave on real-world open-source repositories.  
+The main task was to extract per-file diffs for each modified file in the commit history, identify where the two algorithms produced different results, and analyze whether these mismatches were more common in code files, test files, or documentation.  
+
+\textbf{Myers Algorithm:} The Myers algorithm is the \textbf{default in Git} and is based on finding the shortest edit script between two versions of a file. It is efficient and works well in general, but sometimes produces diffs that are harder to read, especially when code blocks are moved or reordered.
+
+\textbf{Histogram Algorithm:} The Histogram algorithm, on the other hand, tries to anchor diffs on \emph{rare lines first} (lines that appear less frequently), which often makes the changes more meaningful and easier to follow.
+
+The motivation for this lab was to understand whether the choice of diff algorithm makes a practical difference for developers, reviewers, and automated tools.  
+
+\subsection{Environment and Tools}
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item \textbf{Operating System:} Windows 11  
+    \item \textbf{Terminal:} PowerShell 7  
+    \item \textbf{Code Editor:} Visual Studio Code - Insiders
+    \item \textbf{Python version:} 3.13.7  
+    \item \textbf{PyDriller version:} 2.8
+    \item \textbf{SEART GitHub:} \url{https://seart-ghs.si.usi.ch/}
+    \item \textbf{Notebooks:}  
+    \begin{itemize}[itemsep=0em, topsep=0pt]
+        \item \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab4/diff_extract.ipynb}{\texttt{lab4/diff\_extract.ipynb}} (data extraction)  
+        \item \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab4/diff_analyse.ipynb}{\texttt{lab4/diff\_analyse.ipynb}} (analysis and plotting)  
+    \end{itemize}
+\end{itemize}
+
+\insertimage[0.9\textwidth]{../images/lab4/1.png}[Environment Details]
+
+\section{Methodology and Execution}
+
+\subsection{Repository Selection and Criteria}
+
+My selection was based on:
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item \textbf{Activity:} Projects with regular commits and long histories.  
+    \item \textbf{Popularity:} Well-recognized repositories with high stars and forks.  
+    \item \textbf{Variety of files:} Containing source code, tests, and documentation.  
+    \item \textbf{Language consistency:} All three projects are Python-based, making analysis simpler.  
+\end{itemize}
+
+Normally, I would start with a larger set of repositories using tools like the SEART GitHub Search Engine and then narrow down based on these criteria. The chosen projects already satisfied these requirements.
+
+I selected three well-known Python projects to get varied histories and file types:
+
+\insertimage[0.8\textwidth]{../images/lab4/2.png}[Repository Selection]
+
+\begin{enumerate}[itemsep=0.2em, topsep=0pt]
+    \item \href{https://github.com/psf/requests}{psf/requests} -- requests is a widely used Python library for making HTTP requests. It is popular because of its simple API, reliability, and extensive use in both academic and industry projects. With over 30,000 commits, 10,000 forks, and 50,000 stars on GitHub, it is considered a highly influential and well-maintained project. Its rich commit history makes it suitable for analyzing diff algorithm discrepancies. The project was selected directly from GitHub due to its popularity and long development history.
+
+    \insertimage[0.9\textwidth]{../images/lab4/3.png}[GitHub metrics for psf/requests]
+
+    \item \href{https://github.com/pallets/flask}{pallets/flask} -- Flask is a lightweight Python web framework known for its simplicity and flexibility. It is widely adopted in both small and large-scale web applications. Flask has more than 15,000 commits, 6,000 forks, and 65,000 stars on GitHub, reflecting its popularity and active maintenance. The repository contains extensive test suites and documentation, which makes it an ideal candidate for this lab. Its selection was done using GitHub search and project metrics.
+
+    \insertimage[0.9\textwidth]{../images/lab4/4.png}[GitHub metrics for pallets/flask]
+
+    \item \href{https://github.com/scikit-learn/scikit-learn}{scikit-learn/scikit-learn} -- scikit-learn is one of the most important machine learning libraries in Python. It is heavily used in both research and industry for tasks such as classification, regression, clustering, and model evaluation. The repository has over 27,000 commits, 25,000 forks, and 60,000 stars on GitHub, which highlights its active community and long development history. Due to its diverse codebase and well-documented commit history, it was selected as a representative project for this study.
+
+    \insertimage[0.9\textwidth]{../images/lab4/5.png}[GitHub metrics for scikit-learn/scikit-learn]
+\end{enumerate}
+
+These repositories represent some of the most widely adopted projects in the Python ecosystem. Each of them has tens of thousands of stars on GitHub (Requests: 53k, Flask: 71k, Scikit-learn: 63k), thousands of commits (ranging from 5k to over 32k), and a large contributor base of around 400 developers each. Their popularity, long commit history, active development, and extensive documentation make them excellent candidates for studying diff algorithm behavior for the purpose of this lab.
+
+
+\subsection{Diff Extraction Pipeline and Discrepancy Handling}
+
+\textbf{Notebook link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab4/diff_extract.ipynb}{lab4/diff\_extract.ipynb}
+
+\textbf{CSV Files:} \href{https://iitgnacin-my.sharepoint.com/:f:/g/personal/23110297_iitgn_ac_in/EoSVKnmVOgBFgk962nYvEUsBtuecB5xT6tOSazlldOD6YA?e=UOsFIl}{lab4/results}
+
+I cloned each repository under \texttt{lab4/repos/} using the \command{git clone} command.
+\insertimage[0.9\textwidth]{../images/lab4/6.png}[Git Clone]
+
+Then, I traversed each commit and:
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item Extracted modified files (excluding newly added/deleted files).  
+    \item Computed two diffs per file:
+    \begin{itemize}[itemsep=0em, topsep=0pt]
+        \item Myers (\command{git diff})  
+        \item Histogram (\command{git diff --histogram})  
+    \end{itemize}
+    \item Ignored whitespace and blank line changes using flags \command{-w} and \command{--ignore-blank-lines}. I also handled edge cases like if a commit is a root commit, i.e., has no parent.
+\end{itemize}
+
+For each file-modifying commit I stored the following data:
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item commit\_sha, parent\_commit\_sha
+    \item old\_file\_path, new\_file\_path
+    \item commit\_message
+    \item diff\_myers (plain text) 
+    \item diff\_hist (plain text)
+    \item Discrepancy - A discrepancy was marked as \textbf{``Yes''} if the Myers and Histogram diffs were different, otherwise \textbf{``No''}.  
+\end{itemize}
+
+\insertimage[\textwidth]{../images/lab4/7.png}[Code Snippet for Diff Extraction]
+\insertimage[0.9\textwidth]{../images/lab4/8.png}[Code Output for Diff Extraction]
+\insertimage[0.9\textwidth]{../images/lab4/9.png}[Number of rows extracted]
+
+This gave me a dataset with 95,506 entries. Then, I saved the extracted data into \href{https://iitgnacin-my.sharepoint.com/:f:/g/personal/23110297_iitgn_ac_in/EoSVKnmVOgBFgk962nYvEUsBtuecB5xT6tOSazlldOD6YA?e=UOsFIl}{\texttt{lab4/results/diff\_analysis.csv}}. Since scikit-learn has a huge number of commits, the resulting CSV file exceeded 1GB in size, and could not be pushed to GitHub, so I uploaded the results folder to \href{https://iitgnacin-my.sharepoint.com/:f:/g/personal/23110297_iitgn_ac_in/EoSVKnmVOgBFgk962nYvEUsBtuecB5xT6tOSazlldOD6YA?e=UOsFIl}{OneDrive} instead.
+
+\insertimage[\textwidth]{../images/lab4/10.png}[Dataset Preview]
+
+Out of the 95,506 entries, around 4,000 (4.2\%) had discrepancies between Myers and Histogram diffs, which can be seen in the following image.
+\insertimage[0.5\textwidth]{../images/lab4/11.png}[Discrepancy Distribution]
+
+
+
+
+\subsection{File Type Categorization and Statistics}
+
+\textbf{Notebook link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab4/diff_analyse.ipynb}{lab4/diff\_analyse.ipynb}
+
+
+I categorized files into:
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item \textbf{Source Code} (extensions: .py, .java, .c, .cpp, .h, .js, .ts, .rb, .go, .php) 
+    \item \textbf{Test Code} (paths containing \texttt{test}, \texttt{spec}, or \texttt{mock})  
+    \item \textbf{README} (files named README)  
+    \item \textbf{LICENSE} (files named LICENSE or COPYING)  
+    \item \textbf{Other} (all remaining files)
+\end{itemize}
+
+\insertimage[0.9\textwidth]{../images/lab4/12.png}[Code Snippet for File Categorization]
+
+
+From rows where \texttt{Discrepancy == `Yes'}, I counted mismatch counts per category.
+
+\insertimage[\textwidth]{../images/lab4/13.png}[Mismatch Counts]
+
+\insertimage[0.7\textwidth]{../images/lab4/14.png}
+
+\insertimage[0.7\textwidth]{../images/lab4/15.png}
+
+Finally, I plotted discrepancy distribution pie charts for each file type (Source Code, Test Code, README, and LICENSE) to visually compare how often the two diff algorithms disagreed across different categories.
+
+\insertimage[0.95\textwidth]{../images/lab4/16.png}[Code Snippet for Plotting File-wise Pie Charts]
+
+\insertimage[0.7\textwidth]{../images/lab4/17.png}[Source Code Pie Chart]
+\insertimage[0.7\textwidth]{../images/lab4/18.png}[Test Code Pie Chart]
+\insertimage[0.7\textwidth]{../images/lab4/19.png}[README Pie Chart]
+\insertimage[0.7\textwidth]{../images/lab4/20.png}[LICENSE Pie Chart]
+
+\section{How to decide which performs better? (Myers vs Histogram)}
+
+If I had to automatically determine which algorithm performed better, I would not rely only on the raw mismatch count as we can't figure out which algorithm performed better with just that metric. Instead, I would try to design a small evaluation framework around the usefulness of the produced diff. The basic idea is that a ``better'' diff should be more consistent, easier to read, and should align with the way developers usually expect changes to be shown.
+
+My approach would be:
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item \textbf{Define quality metrics:} For each diff, measure aspects such as number of changed lines reported, length of the diff, and whether moved blocks are detected cleanly. For example, Histogram shows block movements more clearly, while Myers sometimes fragments them into multiple small changes.
+
+    \item \textbf{Cross-check with file type:} For source code files, I would give preference to the algorithm that minimizes noise (e.g., fewer redundant changes). For text-heavy files like README or LICENSE, correctness is simpler, so the shorter diff is often better.
+
+    \item \textbf{Ground truth validation:} On a smaller subset, one could ask developers to label which diff looks clearer or more accurate. These labels could then serve as training data for an automatic scoring function.
+
+    \item \textbf{Automated scoring:} Using the above, each diff can be assigned a score (e.g., based on readability, compactness, and block preservation). Summing these scores across thousands of files would give an aggregate measure of which algorithm is generally more effective.
+\end{enumerate}
+
+\newpage
+\section{Results and Analysis}
+
+\begin{itemize}[itemsep=0.2em, topsep=0pt]
+    \item Total number of modified file diffs analyzed: \textbf{95506}
+    \item Number of mismatches found: \textbf{3998}
+    \item \textbf{Overall discrepancy rate:} Around \textbf{4.2\%} of all modified file diffs showed a mismatch between Myers and Histogram.
+\end{itemize}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+File Type & Mismatches \\
+\hline
+Source Code & \textbf{2406} \\
+Test Code & \textbf{757} \\
+README & \textbf{12} \\
+LICENSE & \textbf{2} \\
+Other & \textbf{820} \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{itemize}[itemsep=0.2em, topsep=0pt]
+    \item \textbf{Source code files} had the most mismatches, since Histogram groups reordered/moved blocks differently than Myers.
+    \item \textbf{Test files} also showed mismatches, often due to block movements or repeated patterns.  
+    \item \textbf{README and LICENSE files} had very few mismatches, especially after ignoring whitespace/blank lines.  
+\end{itemize}
+
+\section{Discussion and Conclusion}
+
+\subsection{Challenges}
+Working with the full commit histories turned out to be quite time-consuming, especially for large projects like scikit-learn. Some commits were huge and took a long time to process, and I also ran into a few issues while saving the results into CSV files. To get around the encoding errors, I had to use surrogate escapes, which made the process more stable. On the positive side, adding the flags to ignore whitespace and blank lines really helped -- it reduced a lot of unnecessary noise in the diffs and made the comparisons cleaner.
+
+\subsection{What I learned}
+Through this lab, I got a hands-on understanding of how git diffs actually work and why they matter in practice. Until now, I had only used \command{git diff} without thinking much about the algorithm behind it. I learned that Git mainly uses two algorithms -- Myers and Histogram -- and that they can produce different outputs for the same commit.
+
+Working through real repositories helped me see these differences clearly. Myers is the default and works well in most cases, but Histogram often produces cleaner results when code blocks are moved or reordered. This gave me a much clearer picture of how diff algorithms affect the way changes are displayed, and why reviewers or tools might prefer one over the other in certain contexts.
+
+\section{References}
+\begin{enumerate}[label={[\arabic*]}, itemsep=0.05em, topsep=0pt]
+    \item \url{https://git-scm.com/docs/git-diff}
+    \item \url{https://github.com/ishepard/pydriller}
+    \item SEART GitHub Search Engine: \url{https://seart-ghs.si.usi.ch/}
+    \item Lab Document: \href{https://drive.google.com/file/d/1wXXE9zMZYFjfrX5OjIdYlJKI0oX1knQS/view}{Google Doc}
+\end{enumerate}
+
+\end{document}

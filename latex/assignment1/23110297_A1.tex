@@ -1,0 +1,849 @@
+\documentclass[10pt,a4paper]{report}
+
+% Packages
+\usepackage[a4paper,margin=0.9in]{geometry} % reduce margins
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{graphicx} % for images
+\usepackage{caption}  % better caption control
+\usepackage{lipsum}   % for dummy text (remove later)
+\usepackage{enumitem}
+\usepackage{amssymb} % for \checkmark symbol
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{CS202 Lab Assignment 1 Report}
+\fancyhead[R]{Shardul Junagade}
+\fancyfoot[C]{\thepage}
+\usepackage{xcolor}
+\newcommand{\command}[1]{\texttt{\textcolor{blue}{#1}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+% Remove figure numbering
+\captionsetup[figure]{labelformat=empty}
+
+% Customize section/chapter fonts
+\titleformat{\chapter}[block]{\huge\bfseries}{}{0pt}{}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.4em}{} 
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.4em}{} 
+
+% Define custom command for images with optional caption
+\usepackage{xparse}
+\NewDocumentCommand{\insertimage}{O{0.8\textwidth} m o}{%
+    \begin{center}
+        \includegraphics[width=#1]{#2}%
+        \IfValueT{#3}{\\\captionof{figure}{#3}}%
+    \end{center}
+}
+
+% Front Page Info
+\title{\Huge Assignment-1 \\[0.5cm] \LARGE Software Tools and Techniques for CSE}
+\author{\Large Shardul Junagade (23110297) \\[0.2cm] \Large Repository: \href{https://github.com/ShardulJunagade/cs202-stt}{cs202-stt}}
+\date{\large \today}
+
+\begin{document}
+
+% Front Page
+\maketitle
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+
+% ---------- Lab 1 ----------
+\chapter{Lab 1: Introduction to Version Controlling, Git Workflows, and Actions}
+
+\textbf{Repository Link:} \href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab1}{cs202-stt/lab1}
+
+\section{Introduction, Setup, and Tools}
+
+\subsection{Introduction}
+The objective of this lab was to gain hands-on experience with Version Control Systems (VCS), specifically Git, and to explore the integration of GitHub with automated workflows such as GitHub Actions. My aim was to understand fundamental concepts like repositories, commits, branches, and remotes, and to perform essential Git operations. Additionally, I set up a continuous integration workflow using GitHub Actions and Pylint to ensure code quality.
+
+\subsection{Setup and Tools}
+I logged in to my GitHub account in the web browser -- \href{https://github.com/ShardulJunagade}{ShardulJunagade} -- for version control. I installed Git and Visual Studio Code by downloading the installers from their official websites and following the installation instructions. After installation, I verified the installation by checking the versions of Git and Visual Studio Code.
+
+\begingroup
+The following is a list of the tools and technologies used in this lab:
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item Operating System: Windows 11
+    \item Terminal: PowerShell 7
+    \item Git version: 2.42.0
+    \item Code Editor: Visual Studio Code
+    \item Python version: 3.13.7
+    \item GitHub for remote repository hosting
+    \item GitHub Actions for CI/CD pipelines
+\end{itemize}
+\endgroup
+
+\insertimage[0.8\textwidth]{../images/lab1/1.png}[Figure 1: Verifying Git installation and version.]
+
+\newpage
+\section{Methodology and Execution}
+
+\subsection{Initializing a Local Repository}
+I created a new folder for the lab, named \texttt{Any\_Name} using the command \command{mkdir Any\_Name} and initialized the folder as a git repository using the command \command{git init}.
+\insertimage[0.8\textwidth]{../images/lab1/2.png}[Figure 2: Initializing a new Git repository.]
+
+
+\subsection{Local Git Configuration}
+Since my global Git configuration was already set up from previous work, I decided to configure my name and email specifically for this repository using the local configuration commands \command{git config user.name} and \command{git config user.email}. This ensures that all commits in this repository are attributed with the correct identity, regardless of the global settings.
+\insertimage[0.8\textwidth]{../images/lab1/3.png}[Figure 3: Configuring local Git user details.]
+
+\subsection{Adding and Committing Files}
+I created a new file named \texttt{README.md} and used the command \command{git status} to inspect the repository. The output indicated one untracked file. I then staged the file with \command{git add README.md} and confirmed the change with another \command{git status}, which now showed the file as staged.
+\insertimage[0.8\textwidth]{../images/lab1/4.png}[Figure 4: Staging the README.md file for commit.]
+
+Next, I committed the staged file using the command \command{git commit -m "Initial commit: Added README.md"}. To verify, I executed \command{git log}, which displayed the commit details along with the message and metadata.
+\insertimage[0.8\textwidth]{../images/lab1/5.png}[Figure 5: Committing the file and viewing the commit history.]
+
+
+\subsection{Working with Remote Repository}
+I created a remote repository on GitHub named \texttt{Any\_Name}.
+
+Repository Link: \url{https://github.com/ShardulJunagade/Any_Name}
+\insertimage[0.8\textwidth]{../images/lab1/6.png}[Figure 6: Creating a new repository on GitHub.]
+
+After that, I linked the remote repository to my local repository using the command \command{git remote add origin <URL>}. Once the connection was established, I pushed my local commits to GitHub with \command{git push -u origin main}.
+\insertimage[0.8\textwidth]{../images/lab1/7.png}[Figure 7: Adding the remote and pushing local commits to GitHub.]
+
+To confirm that everything worked correctly, I opened the repository on GitHub in my browser and verified that all the changes were successfully reflected online. We can see that the README.md file is present.
+\insertimage[0.8\textwidth]{../images/lab1/8.png}[Figure 8: Verifying updates on GitHub.]
+
+For the next step, I cloned the repository using the command \command{git clone <URL>}, and we can see that the README.md file is present in the freshly cloned repo.
+\insertimage[0.8\textwidth]{../images/lab1/9.png}[Figure 9: Cloning a repository from GitHub.]
+
+Then, I moved to GitHub in my web browser and added a new file named \texttt{main.py} that contains a simple Python program. I committed the changes directly on GitHub to the remote repository. This file was now visible in the remote repository on GitHub but not in my local repository.
+\insertimage[0.8\textwidth]{../images/lab1/10.png}[Figure 10: Adding a greeting message in \texttt{main.py} via GitHub.]
+
+Now, I had to pull these changes/commits from the remote repository to my local repository. To do this I executed the command \command{git pull origin main} to fetch and merge the changes. This pulled the new file into my local repository, keeping both versions in sync.
+\insertimage[0.8\textwidth]{../images/lab1/11.png}[Figure 11: Pulling the latest changes from GitHub.]
+
+
+
+\subsection{GitHub Actions -- Pylint Workflow}
+The next task was to automate code quality checks using Pylint.
+
+For this task, I wrote a Python file called \texttt{app.py} that contained a simple calculator program, which you can see below:
+\insertimage[0.68\textwidth]{../images/lab1/12.png}[Figure 12: Initial version of \texttt{app.py} (calculator code).]
+
+After saving the file, I staged, committed, and pushed it to GitHub.
+\insertimage[0.8\textwidth]{../images/lab1/13.png}[Figure 13: Pushing the calculator code to GitHub.]
+
+On GitHub, there was a section of suggested workflows for GitHub Actions. Here, I selected the Pylint workflow and clicked on \texttt{Configure}.
+\insertimage[0.5\textwidth]{../images/lab1/14.png}[Figure 14: Suggested workflows for GitHub Actions.]
+
+Then, I created the \texttt{.github/workflows/Pylint.yml} file to enable linting on every push, as shown below:
+\insertimage[0.8\textwidth]{../images/lab1/15.png}[Figure 15: Creating the \texttt{Pylint.yml} workflow file.]
+
+As soon as I committed the workflow file, GitHub Actions automatically triggered the workflow. The first run failed because Pylint reported several errors in my code, which can be seen below:
+\insertimage[0.8\textwidth]{../images/lab1/16.png}[Figure 16: GitHub Actions running Pylint workflow.]
+\insertimage[0.8\textwidth]{../images/lab1/17.png}[Figure 17: Initial Pylint errors detected.]
+
+After reviewing the error messages, I fixed the issues by adding proper docstrings and correcting other bugs. I committed and pushed the corrected code to the repository.
+% \insertimage[0.8\textwidth]{../images/lab1/18.png}[Figure 18: Updating the calculator code to address Pylint errors.]
+\insertimage[0.8\textwidth]{../images/lab1/20.png}[Figure 19: Pushing the corrected code.]
+
+\newpage
+This time, the workflow passed successfully, and GitHub showed a green tick, which confirmed that my code met the required standards.
+\insertimage[0.8\textwidth]{../images/lab1/21.png}[Figure 20: Successful Pylint workflow run.]
+
+All three workflow runs completed successfully, as indicated by the green tick on each build in the GitHub Actions tab.
+\insertimage[0.8\textwidth]{../images/lab1/22.png}[Figure 21: Workflow completion with a green tick.]
+
+
+
+\section{Results and Analysis}
+
+Through this lab, I successfully created and managed a Git repository, synchronized changes with GitHub, and demonstrated cloning and pulling operations. The GitHub Actions workflow validated my Python code using Pylint, ensuring it followed coding standards and confirming the results with a green tick on GitHub.
+
+\insertimage[0.8\textwidth]{../images/lab1/23.png}[Figure 22: Successful Pylint validation and workflow status.]
+
+The final commit history below shows the whole process -- from the first commit to fixing errors and reaching the successful workflow run.
+\insertimage[0.8\textwidth]{../images/lab1/24.png}[Figure 23: Final commit history showing all changes.]
+
+
+\begin{center}
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Task} & \textbf{Outcome} \\
+\hline
+Initialize repository & Repository created successfully (Figure 2-3) \\
+Push to GitHub & Changes pushed and visible online (Figures 4–8) \\
+Clone and Pull & Repository cloned and synced correctly (Figures 9–11) \\
+GitHub Actions (Pylint) & Failed first due to docstring issues, later passed with green tick (Figures 12–21) \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+
+\section{Discussion and Conclusion}
+
+This lab gave me hands-on practice with Git, starting from creating an empty repository to adding files, staging, committing, pushing to GitHub, cloning repositories, and pulling updates. One of the main challenges I faced was the branch mismatch issue (main vs. master), which caused errors during my first push.
+
+I also found interpreting the Pylint workflow's yaml file slightly tricky at first and even though the Python code was running fine, the workflow still failed due to docstring and formatting issues which were caught by Pylint. Going through the error messages and fixing them was a valuable learning experience. The most satisfying moment was finally seeing the green tick on GitHub after the corrected code passed Pylint.
+
+Overall, this lab gave me a nice overview of how Git and GitHub work together and showed me how CI/CD pipelines can give instant feedback on code quality, something that is very useful in real-world projects where many developers work together.
+
+
+
+
+\section{References}
+\begin{enumerate}[label={[\arabic*]}, itemsep=0.05em, topsep=0pt]
+    \item \href{https://git-scm.com/doc}{Git Documentation}
+    \item \href{https://docs.github.com/en}{GitHub Guides}
+    \item \href{https://education.github.com/git-cheat-sheet-education.pdf}{Git Cheat Sheet}
+    \item \href{https://docs.pylint.org/}{Pylint Documentation}
+    \item Lab Document (Shared on Google Classroom)
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ---------- Lab 2 ----------
+\chapter{Lab 2: Mining Bug-Fixing Commits, LLM Inference, Rectifier, and Evaluation}
+
+\textbf{Repository Link:} \href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab2}{cs202-stt/lab2}
+
+\section{Introduction, Setup, and Tools}
+
+\subsection{Introduction}
+This lab focused on mining open-source repositories to study bug-fixing commits and commit message alignment. I implemented a pipeline to:
+\begin{enumerate}[itemsep=0.05em, topsep=0pt]
+    \item Identify bug-fixing commits from a real-world project.
+    \item Extract file-level diffs from those commits.
+    \item Use a pre-trained LLM to generate concise summaries for each file-level change.
+    \item Rectify those messages to make them more precise and context-aware.
+    \item Evaluate the quality of developer, LLM, and rectified messages using semantic similarity with CodeBERT.
+\end{enumerate}
+
+The motivation behind this pipeline was that commit messages are not always reliable indicators of what a change actually fixes. Developers may batch multiple fixes, write vague messages, or skip details. Automated tools and rectifiers can help make these messages more consistent and useful.
+
+\subsection{Environment and Tools}
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item \textbf{Operating System:} Windows 11
+    \item \textbf{Terminal:} Powershell 7
+    \item \textbf{Python:} 3.13.7
+    \item \textbf{PyTorch:} 2.8 (with CUDA 12.9)
+    \item \textbf{Transformers:} 4.56
+    \item \textbf{PyDriller:} 2.8
+    \item \textbf{Models used:}
+    \begin{itemize}[itemsep=0.05em, topsep=0pt]
+        \item \href{https://huggingface.co/mamiksik/CommitPredictorT5}{mamiksik/CommitPredictorT5} (LLM Inference)
+        \item \href{https://ollama.com/library/codellama}{codellama:7b} via Ollama (Rectifier)
+        \item \href{https://huggingface.co/microsoft/codebert-base}{microsoft/codebert-base} (Evaluation)
+    \end{itemize}
+    \item \textbf{Repository analyzed:} \href{https://github.com/3b1b/manim}{3b1b/manim}
+\end{itemize}
+
+\insertimage[0.9\textwidth]{../images/lab2/1.png}[Environment Details]
+
+\section{Methodology and Execution}
+
+\subsection{Repository Selection}
+For this lab, I chose the repository \href{https://github.com/3b1b/manim}{3b1b/manim}. Manim (short for Mathematical Animation Engine) is a Python library that started with Grant Sanderson’s 3Blue1Brown channel and has since grown into a large open-source project. It is mainly used to create mathematical animations and visualizations, and because of its popularity it now has a wide contributor base and frequent updates.
+
+I felt Manim was a good choice because it’s not just an academic toy project but a tool actually used by educators, researchers, and content creators. That also means its commit history has plenty of real bug fixes to study, which fits well with the aim of this assignment.
+
+\subsubsection{Selection Criteria}
+\insertimage[0.9\textwidth]{../images/lab2/2.png}[Repository Statistics]
+
+While narrowing down the repository, I kept the following points in mind:
+\begin{enumerate}
+    \item \textbf{Number of commits:} Manim has more than \textbf{6300 commits}, which is large enough to give me enough bug-fixing commits for analysis.
+    \item \textbf{Popularity:} With around \textbf{78k stars} and \textbf{6.7k forks}, the project has a huge user base and community involvement, so the data is representative of real usage.
+    \item \textbf{Programming language:} The project is written in \textbf{Python}, which works well since the lab tools like PyDriller and radon are also Python-based.
+    \item \textbf{Relevance:} Since Manim deals with mathematical visualization and graphics, correctness and stability are very important. That makes bug-fixing commits here especially meaningful to analyze.
+    \item \textbf{Active development:} The repo is still very active, with the last commit in June 2025 and contributions from over \textbf{160 developers}, showing that the project is maintained and evolving.
+\end{enumerate}
+
+Based on these reasons, Manim seemed like a balanced and practical choice for carrying out this lab. Then I cloned the repository locally using the \command{git clone <URL>} command.
+\insertimage[0.8\textwidth]{../images/lab2/3.png}[Git Clone]
+
+\subsection{Identifying Bug-Fixing Commits}
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab2/bugfix_commits.ipynb}{bugfix\_commits.ipynb}
+
+I first defined a heuristic to detect bug-fixing commits. I scanned commit messages for keywords such as:
+\begin{quote}
+fix, bug, patch, error, issue, defect, crash, flaw, repair, resolve, solve, fail, leak, vulnerability
+\end{quote}
+
+This simple keyword filter is fast and transparent. The downside is that it may miss commits where developers did not explicitly mention a bug (false negatives), or capture irrelevant commits where the keyword appeared casually (false positives).
+
+Using PyDriller, I traversed the commit history of the \textbf{manim} repository and stored each matching commit in a CSV (\texttt{bugfix\_commits.csv}) with the following fields:
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item Commit hash
+    \item Commit message
+    \item Parent hashes
+    \item Is merge commit?
+    \item Modified files
+\end{itemize}
+
+The following code snippet shows the implementation:
+\insertimage[0.9\textwidth]{../images/lab2/4.png}[Code for extracting Bug Fixing Commits]
+
+I traversed 6,344 commits, out of which, the keyword filter flagged 1358 as bug-fix candidates (21\%).
+\insertimage[0.9\textwidth]{../images/lab2/5.png}[Bug Fixing Commits]
+
+\subsection{Extracting File-level Diffs}
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab2/diff_extract_and_llm_infer.ipynb}{diff\_extract\_and\_llm\_infer.ipynb}
+
+Since commits often modify multiple files, I processed each file separately. For each bug-fixing commit, I extracted the before and after source codes for each modified file and also stored metadata such as filename, change type, and the git diff.
+
+The following image shows the code implementation:
+\insertimage[0.9\textwidth]{../images/lab2/6.png}[Code for extracting Per-File Diffs]
+
+After running the code, I extracted 2041 file-level diffs and saved these entries to \texttt{diffs\_per\_file.csv}.
+\insertimage[0.9\textwidth]{../images/lab2/8.png}[File-level Diffs]
+
+\subsection{LLM Inference of ``fix type''}
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab2/diff_extract_and_llm_infer.ipynb}{diff\_extract\_and\_llm\_infer.ipynb}
+
+I used the Hugging Face model \textbf{CommitPredictorT5} to infer the type of fix from the diff. I gave the following prompt template to the pretrained model.
+\begin{verbatim}
+File: <filename>
+Diff: <diff>
+\end{verbatim}
+The model generated concise commit-style summaries (max length = 64 tokens). These were appended to the CSV as an extra column: \textit{LLM Inference (fix type)} and I saved this dataset to \texttt{diffs\_per\_file\_with\_llm\_infer.csv}. This allowed direct comparison between the developer written commit messages and the LLM predictions.
+
+The following code snippet shows the implementation:
+\insertimage[0.9\textwidth]{../images/lab2/9.png}[Code for LLM Inference]
+\insertimage[0.9\textwidth]{../images/lab2/10.png}[LLM Inference Samples]
+
+\subsection{Rectifier Formulation}
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab2/ollama_rectifier.ipynb}{ollama\_rectifier.ipynb}
+
+Developer messages and LLM outputs can still be vague or misaligned, especially when multiple files are involved. Many times developers may not clearly specify the bug or issue being addressed. Developers often combine multiple changes/fixes in a single commit and the LLM may not capture all relevant context. To improve clarity, I designed a rectifier with the following rules:
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item Input: file name, change type, diff, and optionally developer + LLM messages.
+    \item Output style: \texttt{[file]: Fix <bug/issue> in <component> by <specific action>}
+    \item Keep messages short ($<$ 20 words) and avoid vague verbs.
+\end{itemize}
+
+I implemented this rectifier with \textbf{Ollama + codellama:7b} for local inference on my NVIDIA RTX 4060 machine and added 1 more column named \textit{Rectified Message} to the CSV for the rectified messages. I saved the results to \texttt{ollama\_rectified\_commits.csv}.
+
+The following image shows the code implementation for the rectifier:
+\insertimage[0.9\textwidth]{../images/lab2/11.png}[Code for Rectifier]
+\insertimage[0.9\textwidth]{../images/lab2/12.png}[Rectifier Sample Results]
+
+
+
+\subsection{Evaluation with CodeBERT}
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab2/ollama_evaluation.ipynb}{ollama\_evaluation.ipynb}
+
+To measure how well each message aligned with its code change, I used \textbf{microsoft/codebert-base}. First, I generated embeddings for both the diff text and the corresponding messages (developer, LLM, and rectified). Then, I computed the cosine similarity between these embeddings to quantify how semantically close each message was to the actual code change. In this setup, a higher similarity score indicates a stronger alignment between the text and the code.
+
+I decided to keep the threshold for precision at 0.9. Any score greater than 0.9 was considered “precise.” Using this rule, I could compute the hit rate for each category of message and answer the three research questions (RQ1–RQ3). The results were saved to \texttt{ollama\_scores\_codebert.csv}. The following image shows the code implementation for the evaluation:
+
+\insertimage[0.8\textwidth]{../images/lab2/13.png}[Code for Evaluation]
+\insertimage[0.8\textwidth]{../images/lab2/14.png}[CodeBERT Scores]
+\insertimage[0.9\textwidth]{../images/lab2/15.png}[Mean Hit Rates]
+
+We can see that the developer messages had a precision hit rate of 91\%, the LLM inference messages had a hit rate of 92\%, and the rectified messages improved the hit rate to 100\%. This indicates that the rectifier was effective in enhancing the alignment between the messages and the code changes.
+
+\section{Results and Analysis}
+
+\textbf{Bug-fixing commits found:} 1358\\
+\textbf{File-level diffs extracted:} 2041
+
+Following are few examples of developer messages, LLM inferences, and my rectified messages:
+
+\begin{tabular}{|p{4cm}|p{4cm}|p{7cm}|}
+\hline
+\textbf{Developer Message} & \textbf{LLM Inference} & \textbf{Rectified Message} \\
+\hline
+A few fixes to initial point\_thickness implementation & add missing constants & [constants.py]: Fix default point thickness to be 4 in DEFAULT\_POINT\_THICKNESS by specifying it explicitly. \\
+\hline
+A few fixes to initial point\_thickness implementation & add nudge to displayer.py & [displayer.py]: Fix potential offset issue in point\_thickness by adjusting the thickness of a plus-sign-shaped pixel arrangement to ensure correct rendering on high-quality displays. \\
+\hline
+A few fixes to initial point\_thickness implementation & add missing docstring & [mobject.py]: Fix inconsistent point\_thickness implementation in Mobject1D and Mobject2D by specifying a default value for the attribute. \\
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+\begin{tabular}{|c|l|c|}
+\hline
+\textbf{RQ}  & \textbf{Message Type}    & \textbf{Hit Rate (threshold = 0.9)} \\
+\hline
+RQ1 & Developer messages  & $\sim$91\% \\
+RQ2 & LLM inference       & $\sim$93\% \\
+RQ3 & Rectified messages  & 100\% \\
+\hline
+\end{tabular}
+
+Developer messages were often short and lacked detail, lowering their alignment scores. The LLM inference was generally good but sometimes missed context that the rectifier captured.
+
+My rectifier is able to consistently produce high-quality, precise messages. This is mainly because of 3 reasons:
+\begin{enumerate}
+    \item \textbf{Better Large Language Model (LLM):} The use of a more advanced LLM for inference likely contributed to the improved message quality. The LLM was able to better understand the context and nuances of the code changes, resulting in more accurate and relevant messages.
+    \item \textbf{Better Context:} By using the specific file name and change type as part of the input, the rectifier can generate messages that are more closely aligned with the actual code changes being made. This helps to reduce ambiguity and improve precision.
+    \item \textbf{Structured Output:} The output format of the rectifier is designed to be concise and specific, which helps to ensure that the messages are clear and actionable.
+\end{enumerate}
+
+
+
+
+
+
+\section{Discussion and Conclusion}
+
+\subsection{Challenges faced}
+During the lab, I faced a few challenges that slowed me down initially. PyDriller, for example, was a new library for me, and I needed some time to get comfortable with its API and how to extract the right commit-level information. Another difficulty came from the keyword-based heuristic I used to identify bug-fixing commits. While it worked reasonably well, it sometimes missed commits where developers didn’t explicitly mention bug-related terms, and on the other hand it also pulled in a few extra commits that weren’t true bug fixes. Finally, token limits posed a practical issue -- some of the larger diffs had to be truncated before being passed to the model, and this occasionally hurt the accuracy of the LLM’s generated summaries.
+
+\subsection{Lessons learned}
+Working through these issues taught me a few important lessons. I found that analyzing changes at the file level and then applying rectification added real value, because it made commit messages more precise and easier to interpret. I also realized that building a pipeline by combining several tools -- PyDriller for mining, Hugging Face models for inference, Ollama for rectification, and CodeBERT for evaluation -- can be powerful, but it also demands a lot of care in data handling. Even small oversights, like inconsistent CSV column names, can break later steps in the workflow.
+
+\subsection{Conclusion}
+Overall, the end-to-end pipeline -- from mining commits to generating diffs, running LLM inference, rectifying the outputs, and finally evaluating them -- proved to be quite workable. The rectifier in particular helped improve the quality of commit messages, often making them more specific and useful than both the original developer-written messages and the raw LLM predictions.
+
+
+\section{References}
+\begin{enumerate}[label={[\arabic*]}, itemsep=0.05em, topsep=0pt]
+    \item \href{https://pydriller.readthedocs.io}{PyDriller}
+    \item \href{https://huggingface.co/docs/transformers}{Hugging Face Transformers}
+    \item \href{https://huggingface.co/microsoft/codebert-base}{CodeBERT (microsoft/codebert-base)}
+    \item \href{https://huggingface.co/mamiksik/CommitPredictorT5}{CommitPredictorT5 (mamiksik/CommitPredictorT5)}
+    \item \href{https://ollama.ai}{Ollama}
+    \item \href{https://github.com/3b1b/manim}{Repository analyzed (manim)}
+    \item Lab Document: \href{https://drive.google.com/file/d/1L4pCGQCekeELjgOJ4HxQ-Tso0QaOKIDf/view}{Google Doc}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ---------- Lab 3 ----------
+\chapter{Lab 3: Multi-Metric Bug Context Analysis and Agreement Detection in Bug-Fix Commits}
+
+\textbf{Repository Link:} \href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab3}{cs202-stt/lab3}
+
+\section{Introduction, Setup, and Tools}
+
+\subsection{Introduction}
+In Lab 2, I had prepared a per-file dataset of bug-fix commits with extracted diffs and model-generated summaries. The purpose of this lab was to analyse the relation between structural code quality and magnitude of changes in bug-fix commits. Specifically, I aimed to investigate:
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item Structural metrics around each fix (Maintainability Index, Cyclomatic Complexity, and Lines of Code) using radon.
+    \item Change magnitude metrics (Semantic similarity with CodeBERT and Token similarity with BLEU).
+    \item Classify each fix as Major or Minor from both lenses and check where they agree (or don’t).
+\end{itemize}
+
+By combining these, I classified the bug fixes as Major or Minor and checked where the structural and semantic lenses agreed or conflicted. This is important because commit messages or diffs alone rarely capture how “big” or “complex” a change really is.
+
+\subsection{Environment and Tools}
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item OS: Windows 11, Terminal: PowerShell 7
+    \item Code Editor: Visual Studio Code - Insiders
+    \item Python: 3.13.7
+    \item Key packages: radon, nltk, transformers, torch, scikit-learn
+    \item Models: \href{https://huggingface.co/microsoft/codebert-base}{microsoft/codebert-base} (for embeddings)
+    \item Hardware: NVIDIA RTX 4060 Laptop GPU
+\end{itemize}
+
+\insertimage[0.8\textwidth]{../images/lab3/1.png}[Environment Setup]
+
+\section{Methodology and Execution}
+
+\textbf{Notebook Link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/lab3.ipynb}{lab3.ipynb}
+
+\subsection{Starting point (Lab 2 dataset)}
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item Input CSV: \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/lab2_diffs.csv}{\texttt{lab3/lab2\_diffs.csv}}
+    \item Columns included: Commit Hash, Message, File Name, Source Code (before), Source Code (current), Diff, LLM Inference (fix type), Rectified Message
+\end{itemize}
+
+I first loaded the dataset, checked the first 10--20 rows, and verified that there were no missing critical columns. Then, I checked for NaNs in key columns in the dataset.
+
+\insertimage[\textwidth]{../images/lab3/2.png}[Dataset Preview]
+\insertimage[0.7\textwidth]{../images/lab3/3.png}[NaN Counts]
+
+\subsection{Baseline Descriptive Stats}
+From the dataset, I computed the following statistics to understand the dataset:
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item Total unique commits and total file entries.
+    \item Average modified files per commit.
+    \item Distribution of fix types from \texttt{LLM Inference (fix type)}.
+    \item Most frequently modified filenames and extensions.
+\end{itemize}
+
+The following images show the code and output for these computations:
+\insertimage[0.8\textwidth]{../images/lab3/4.png}[Baseline Stats Code]
+\insertimage[0.8\textwidth]{../images/lab3/5.png}[Baseline Stats]
+\insertimage[0.8\textwidth]{../images/lab3/6.png}[Baseline Stats]
+
+\subsection{Structural metrics with radon}
+For each file, I ran radon on both ``before'' and ``current'' versions of the source code and recorded the following structural metrics:
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item \textbf{Maintainability Index (MI) --} A composite score that combines factors like lines of code, complexity, and comments to indicate how easy a piece of code is to maintain. A higher MI usually means the code is more readable and maintainable.
+    \item \textbf{Cyclomatic Complexity (CC) --} A measure of how many independent paths exist through the code, essentially capturing the decision points (like if/else, loops). Higher CC means the code is more complex and harder to test thoroughly.
+    \item \textbf{Lines of Code (LOC) --} The raw number of lines in the code. While simple, this metric is a direct measure of the size of the code and often correlates with the effort required to understand or modify it.
+\end{itemize}
+
+I then computed their deltas: \texttt{MI\_Change}, \texttt{CC\_Change}, \texttt{LOC\_Change}. I caught any parsing exceptions and recorded them as NaN (those propagate to ``Unknown'' later). I saved these results to \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/results/structural_metrics.csv}{\texttt{results/structural\_metrics.csv}}.
+
+The following image show the code implementation for structural metrics computation:
+\insertimage[0.9\textwidth]{../images/lab3/7.png}[Code snippet for structural metrics computation]
+\insertimage[\textwidth]{../images/lab3/8.png}[Preview of structural\_metrics.csv]
+
+\subsection{Change magnitude: semantic vs token similarity}
+To understand how much the code changed between the \textit{before} and \textit{after} versions, I measured change magnitude using two complementary metrics:
+
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item \textbf{Semantic similarity --} Computed using CodeBERT embeddings with cosine similarity. 
+    This captures whether the two versions of the code still mean the same thing, even if the surface-level tokens look different.
+    
+    \item \textbf{Token similarity --} Measured using BLEU with NLTK’s tokenizer (with smoothing). 
+    This focuses on how closely the literal tokens match between the two code snippets, making it sensitive to formatting and small textual edits.
+\end{itemize}
+
+I added 2 columns for these values to the dataframe and saved the dataset to \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/results/change_magnitude_metrics.csv}{\texttt{results/change\_magnitude\_metrics.csv}}.
+
+The following images show the code implementation for calculating the semantic similarity and token similarity:
+\insertimage[0.8\textwidth]{../images/lab3/9.png}[Code snippet for semantic similarity]
+\insertimage[0.8\textwidth]{../images/lab3/10.png}[Code snippet for token similarity]
+\insertimage[\textwidth]{../images/lab3/11.png}[Table preview showing Semantic\_Similarity and Token\_Similarity]
+
+\subsection{Classification and agreement}
+After computing the similarity scores, I mapped each bug-fix commit into categories of \textit{Major} or \textit{Minor} using simple threshold rules. 
+This step helped in comparing how the two metrics align in their judgment of the same change.
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item Semantic similarity $\geq$ 0.80 $\Rightarrow$ \textit{Minor}, else \textit{Major}
+    \item Token similarity $\geq$ 0.75 $\Rightarrow$ \textit{Minor}, else \textit{Major}
+    \item Unknown: if the metric could not be computed (NaN), the classification was recorded as \textit{Unknown}.
+\end{itemize}
+
+\insertimage[0.8\textwidth]{../images/lab3/12.png}[Code snippet for classification]
+\insertimage[0.8\textwidth]{../images/lab3/13.png}[Class Distribution of Semantic\_Class and Token\_Class]
+
+Then, I compared the two classifications:
+\begin{itemize}[itemsep=0.05em, topsep=0pt]
+    \item If both matched, Classes\_Agree = YES
+    \item If they differed, Classes\_Agree = NO
+    \item If either was Unknown, then agreement was also Unknown
+\end{itemize}
+
+\insertimage[\textwidth]{../images/lab3/14.png}[Code snippet for agreement check]
+\insertimage[0.8\textwidth]{../images/lab3/16.png}[Table showing Agreement column]
+
+I exported the final table to \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/results/final_metrics.csv}{\texttt{results/final\_metrics.csv}} and plotted pie chart for the distribution of agreement column.
+\insertimage[0.8\textwidth]{../images/lab3/15.png}[Class Distribution of Agreement]
+
+\section{Results and Analysis}
+
+\subsection{Final Results}
+
+\textbf{Final table link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab3/results/final_metrics.csv}{\texttt{final\_metrics.csv}}
+
+Summary of key metrics like structural changes, semantic similarity, and classification agreement:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+Metric & Value \\
+\hline
+Mean MI\_Change & -0.13 \\
+Mean CC\_Change & 0.02 \\
+Mean LOC\_Change & 4.5 \\
+\hline
+Mean Semantic Similarity & 0.9992 \\
+Mean Token Similarity & 0.9596 \\
+\hline
+Semantic Classification (Minor) & 96.0\% \\
+Semantic Classification (Major) & 0.1\% \\
+Semantic Classification (Unknown) & 3.9\% \\
+\hline
+Token Classification (Minor) & 92.6\% \\
+Token Classification (Major) & 3.5\% \\
+Token Classification (Unknown) & 3.9\% \\
+\hline
+Agreement (YES) & 92.6\% \\
+Agreement (NO) & 3.5\% \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Visualizations}
+\insertimage[\textwidth]{../images/lab3/17.png}[Bar plots for Distribution of structural metrics]
+\insertimage[0.8\textwidth]{../images/lab3/18.png}[Bar plots for Distribution of Semantic and Token Similarity]
+
+\section{Discussion and Conclusion}
+
+During this lab, I encountered a few challenges that slowed me down at first. One issue was that Radon sometimes failed when analyzing code written in older versions of Python, which meant I had to either skip those snippets or handle errors gracefully. Another challenge was that Radon itself was a completely new library for me, so I had to spend time going through its documentation and experimenting before I could use it confidently. I also ran into problems with the NLTK tokenizer setup -- the lab notebook would throw runtime errors until I figured out that the punkt package needed to be downloaded separately.
+
+This lab helped me learn a lot. I now have a much better understanding of \textbf{structural metrics} like Maintainability Index (MI), Cyclomatic Complexity (CC), and Lines of Code (LOC), and how they can reflect code quality changes. On the other hand, exploring \textbf{semantic similarity with CodeBERT} and \textbf{token similarity with BLEU} showed me how different perspectives can highlight different aspects of the same bug fix.
+
+Overall, this lab felt like a natural extension of Lab 2. It pushed me to look beyond raw diffs and I learnt how we can classify a change/bugfix as ``major'' or ``minor'' by combining structural and semantic metrics.
+
+
+\section{References}
+\begin{enumerate}[label={[\arabic*]}, itemsep=0.05em, topsep=0pt]
+    \item \href{https://pypi.org/project/radon}{Radon documentation}
+    \item \href{https://huggingface.co/microsoft/codebert-base}{CodeBERT model (Hugging Face)}
+    \item \href{https://www.nltk.org/}{NLTK tokenizer}
+    \item \href{https://drive.google.com/file/d/1erOvLfZuDeQw798jfHmX3t9MtKl8xmsN/view}{Lab Document (Google Doc)}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ---------- Lab 4 ----------
+\chapter{Lab 4: Exploration of Different Diff Algorithms on Open-Source Repositories}
+
+\textbf{Repository Link:} \href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab4}{cs202-stt/lab4}
+
+\section{Introduction, Setup, and Tools}
+
+\subsection{Introduction}
+In this lab, I compared two diff algorithms -- \textbf{Myers} and \textbf{Histogram} -- to see how they behave on real-world open-source repositories.  
+The main task was to extract per-file diffs for each modified file in the commit history, identify where the two algorithms produced different results, and analyze whether these mismatches were more common in code files, test files, or documentation.  
+
+\textbf{Myers Algorithm:} The Myers algorithm is the \textbf{default in Git} and is based on finding the shortest edit script between two versions of a file. It is efficient and works well in general, but sometimes produces diffs that are harder to read, especially when code blocks are moved or reordered.
+
+\textbf{Histogram Algorithm:} The Histogram algorithm, on the other hand, tries to anchor diffs on \emph{rare lines first} (lines that appear less frequently), which often makes the changes more meaningful and easier to follow.
+
+The motivation for this lab was to understand whether the choice of diff algorithm makes a practical difference for developers, reviewers, and automated tools.  
+
+\subsection{Environment and Tools}
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item \textbf{Operating System:} Windows 11  
+    \item \textbf{Terminal:} PowerShell 7  
+    \item \textbf{Code Editor:} Visual Studio Code - Insiders
+    \item \textbf{Python version:} 3.13.7  
+    \item \textbf{PyDriller version:} 2.8
+    \item \textbf{SEART GitHub:} \url{https://seart-ghs.si.usi.ch/}
+    \item \textbf{Notebooks:}  
+    \begin{itemize}[itemsep=0em, topsep=0pt]
+        \item \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab4/diff_extract.ipynb}{\texttt{lab4/diff\_extract.ipynb}} (data extraction)  
+        \item \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab4/diff_analyse.ipynb}{\texttt{lab4/diff\_analyse.ipynb}} (analysis and plotting)  
+    \end{itemize}
+\end{itemize}
+
+\insertimage[0.9\textwidth]{../images/lab4/1.png}[Environment Details]
+
+\section{Methodology and Execution}
+
+\subsection{Repository Selection and Criteria}
+
+My selection was based on:
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item \textbf{Activity:} Projects with regular commits and long histories.  
+    \item \textbf{Popularity:} Well-recognized repositories with high stars and forks.  
+    \item \textbf{Variety of files:} Containing source code, tests, and documentation.  
+    \item \textbf{Language consistency:} All three projects are Python-based, making analysis simpler.  
+\end{itemize}
+
+Normally, I would start with a larger set of repositories using tools like the SEART GitHub Search Engine and then narrow down based on these criteria. The chosen projects already satisfied these requirements.
+
+I selected three well-known Python projects to get varied histories and file types:
+
+\insertimage[0.8\textwidth]{../images/lab4/2.png}[Repository Selection]
+
+\begin{enumerate}[itemsep=0.2em, topsep=0pt]
+    \item \href{https://github.com/psf/requests}{psf/requests} -- requests is a widely used Python library for making HTTP requests. It is popular because of its simple API, reliability, and extensive use in both academic and industry projects. With over 30,000 commits, 10,000 forks, and 50,000 stars on GitHub, it is considered a highly influential and well-maintained project. Its rich commit history makes it suitable for analyzing diff algorithm discrepancies. The project was selected directly from GitHub due to its popularity and long development history.
+
+    \insertimage[0.9\textwidth]{../images/lab4/3.png}[GitHub metrics for psf/requests]
+
+    \item \href{https://github.com/pallets/flask}{pallets/flask} -- Flask is a lightweight Python web framework known for its simplicity and flexibility. It is widely adopted in both small and large-scale web applications. Flask has more than 15,000 commits, 6,000 forks, and 65,000 stars on GitHub, reflecting its popularity and active maintenance. The repository contains extensive test suites and documentation, which makes it an ideal candidate for this lab. Its selection was done using GitHub search and project metrics.
+
+    \insertimage[0.9\textwidth]{../images/lab4/4.png}[GitHub metrics for pallets/flask]
+
+    \item \href{https://github.com/scikit-learn/scikit-learn}{scikit-learn/scikit-learn} -- scikit-learn is one of the most important machine learning libraries in Python. It is heavily used in both research and industry for tasks such as classification, regression, clustering, and model evaluation. The repository has over 27,000 commits, 25,000 forks, and 60,000 stars on GitHub, which highlights its active community and long development history. Due to its diverse codebase and well-documented commit history, it was selected as a representative project for this study.
+
+    \insertimage[0.9\textwidth]{../images/lab4/5.png}[GitHub metrics for scikit-learn/scikit-learn]
+\end{enumerate}
+
+These repositories represent some of the most widely adopted projects in the Python ecosystem. Each of them has tens of thousands of stars on GitHub (Requests: 53k, Flask: 71k, Scikit-learn: 63k), thousands of commits (ranging from 5k to over 32k), and a large contributor base of around 400 developers each. Their popularity, long commit history, active development, and extensive documentation make them excellent candidates for studying diff algorithm behavior for the purpose of this lab.
+
+
+\subsection{Diff Extraction Pipeline and Discrepancy Handling}
+
+\textbf{Notebook link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab4/diff_extract.ipynb}{lab4/diff\_extract.ipynb}
+
+\textbf{CSV Files:} \href{https://iitgnacin-my.sharepoint.com/:f:/g/personal/23110297_iitgn_ac_in/EoSVKnmVOgBFgk962nYvEUsBtuecB5xT6tOSazlldOD6YA?e=UOsFIl}{lab4/results}
+
+I cloned each repository under \texttt{lab4/repos/} using the \command{git clone} command.
+\insertimage[0.9\textwidth]{../images/lab4/6.png}[Git Clone]
+
+Then, I traversed each commit and:
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item Extracted modified files (excluding newly added/deleted files).  
+    \item Computed two diffs per file:
+    \begin{itemize}[itemsep=0em, topsep=0pt]
+        \item Myers (\command{git diff})  
+        \item Histogram (\command{git diff --histogram})  
+    \end{itemize}
+    \item Ignored whitespace and blank line changes using flags \command{-w} and \command{--ignore-blank-lines}. I also handled edge cases like if a commit is a root commit, i.e., has no parent.
+\end{itemize}
+
+For each file-modifying commit I stored the following data:
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item commit\_sha, parent\_commit\_sha
+    \item old\_file\_path, new\_file\_path
+    \item commit\_message
+    \item diff\_myers (plain text) 
+    \item diff\_hist (plain text)
+    \item Discrepancy - A discrepancy was marked as \textbf{``Yes''} if the Myers and Histogram diffs were different, otherwise \textbf{``No''}.  
+\end{itemize}
+
+\insertimage[\textwidth]{../images/lab4/7.png}[Code Snippet for Diff Extraction]
+\insertimage[0.9\textwidth]{../images/lab4/8.png}[Code Output for Diff Extraction]
+\insertimage[0.9\textwidth]{../images/lab4/9.png}[Number of rows extracted]
+
+This gave me a dataset with 95,506 entries. Then, I saved the extracted data into \href{https://iitgnacin-my.sharepoint.com/:f:/g/personal/23110297_iitgn_ac_in/EoSVKnmVOgBFgk962nYvEUsBtuecB5xT6tOSazlldOD6YA?e=UOsFIl}{\texttt{lab4/results/diff\_analysis.csv}}. Since scikit-learn has a huge number of commits, the resulting CSV file exceeded 1GB in size, and could not be pushed to GitHub, so I uploaded the results folder to \href{https://iitgnacin-my.sharepoint.com/:f:/g/personal/23110297_iitgn_ac_in/EoSVKnmVOgBFgk962nYvEUsBtuecB5xT6tOSazlldOD6YA?e=UOsFIl}{OneDrive} instead.
+
+\insertimage[\textwidth]{../images/lab4/10.png}[Dataset Preview]
+
+Out of the 95,506 entries, around 4,000 (4.2\%) had discrepancies between Myers and Histogram diffs, which can be seen in the following image.
+\insertimage[0.5\textwidth]{../images/lab4/11.png}[Discrepancy Distribution]
+
+
+
+
+\subsection{File Type Categorization and Statistics}
+
+\textbf{Notebook link:} \href{https://github.com/ShardulJunagade/cs202-stt/blob/main/lab4/diff_analyse.ipynb}{lab4/diff\_analyse.ipynb}
+
+
+I categorized files into:
+\begin{itemize}[itemsep=0em, topsep=0pt]
+    \item \textbf{Source Code} (extensions: .py, .java, .c, .cpp, .h, .js, .ts, .rb, .go, .php) 
+    \item \textbf{Test Code} (paths containing \texttt{test}, \texttt{spec}, or \texttt{mock})  
+    \item \textbf{README} (files named README)  
+    \item \textbf{LICENSE} (files named LICENSE or COPYING)  
+    \item \textbf{Other} (all remaining files)
+\end{itemize}
+
+\insertimage[0.9\textwidth]{../images/lab4/12.png}[Code Snippet for File Categorization]
+
+
+From rows where \texttt{Discrepancy == `Yes'}, I counted mismatch counts per category.
+
+\insertimage[\textwidth]{../images/lab4/13.png}[Mismatch Counts]
+
+\insertimage[0.7\textwidth]{../images/lab4/14.png}
+
+\insertimage[0.7\textwidth]{../images/lab4/15.png}
+
+Finally, I plotted discrepancy distribution pie charts for each file type (Source Code, Test Code, README, and LICENSE) to visually compare how often the two diff algorithms disagreed across different categories.
+
+\insertimage[0.95\textwidth]{../images/lab4/16.png}[Code Snippet for Plotting File-wise Pie Charts]
+
+\insertimage[0.7\textwidth]{../images/lab4/17.png}[Source Code Pie Chart]
+\insertimage[0.7\textwidth]{../images/lab4/18.png}[Test Code Pie Chart]
+\insertimage[0.7\textwidth]{../images/lab4/19.png}[README Pie Chart]
+\insertimage[0.7\textwidth]{../images/lab4/20.png}[LICENSE Pie Chart]
+
+\section{How to decide which performs better? (Myers vs Histogram)}
+
+If I had to automatically determine which algorithm performed better, I would not rely only on the raw mismatch count as we can't figure out which algorithm performed better with just that metric. Instead, I would try to design a small evaluation framework around the usefulness of the produced diff. The basic idea is that a ``better'' diff should be more consistent, easier to read, and should align with the way developers usually expect changes to be shown.
+
+My approach would be:
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item \textbf{Define quality metrics:} For each diff, measure aspects such as number of changed lines reported, length of the diff, and whether moved blocks are detected cleanly. For example, Histogram shows block movements more clearly, while Myers sometimes fragments them into multiple small changes.
+
+    \item \textbf{Cross-check with file type:} For source code files, I would give preference to the algorithm that minimizes noise (e.g., fewer redundant changes). For text-heavy files like README or LICENSE, correctness is simpler, so the shorter diff is often better.
+
+    \item \textbf{Ground truth validation:} On a smaller subset, one could ask developers to label which diff looks clearer or more accurate. These labels could then serve as training data for an automatic scoring function.
+
+    \item \textbf{Automated scoring:} Using the above, each diff can be assigned a score (e.g., based on readability, compactness, and block preservation). Summing these scores across thousands of files would give an aggregate measure of which algorithm is generally more effective.
+\end{enumerate}
+
+\newpage
+\section{Results and Analysis}
+
+\begin{itemize}[itemsep=0.2em, topsep=0pt]
+    \item Total number of modified file diffs analyzed: \textbf{95506}
+    \item Number of mismatches found: \textbf{3998}
+    \item \textbf{Overall discrepancy rate:} Around \textbf{4.2\%} of all modified file diffs showed a mismatch between Myers and Histogram.
+\end{itemize}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+File Type & Mismatches \\
+\hline
+Source Code & \textbf{2406} \\
+Test Code & \textbf{757} \\
+README & \textbf{12} \\
+LICENSE & \textbf{2} \\
+Other & \textbf{820} \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{itemize}[itemsep=0.2em, topsep=0pt]
+    \item \textbf{Source code files} had the most mismatches, since Histogram groups reordered/moved blocks differently than Myers.
+    \item \textbf{Test files} also showed mismatches, often due to block movements or repeated patterns.  
+    \item \textbf{README and LICENSE files} had very few mismatches, especially after ignoring whitespace/blank lines.  
+\end{itemize}
+
+\section{Discussion and Conclusion}
+
+\subsection{Challenges}
+Working with the full commit histories turned out to be quite time-consuming, especially for large projects like scikit-learn. Some commits were huge and took a long time to process, and I also ran into a few issues while saving the results into CSV files. To get around the encoding errors, I had to use surrogate escapes, which made the process more stable. On the positive side, adding the flags to ignore whitespace and blank lines really helped -- it reduced a lot of unnecessary noise in the diffs and made the comparisons cleaner.
+
+\subsection{What I learned}
+Through this lab, I got a hands-on understanding of how git diffs actually work and why they matter in practice. Until now, I had only used \command{git diff} without thinking much about the algorithm behind it. I learned that Git mainly uses two algorithms -- Myers and Histogram -- and that they can produce different outputs for the same commit.
+
+Working through real repositories helped me see these differences clearly. Myers is the default and works well in most cases, but Histogram often produces cleaner results when code blocks are moved or reordered. This gave me a much clearer picture of how diff algorithms affect the way changes are displayed, and why reviewers or tools might prefer one over the other in certain contexts.
+
+\section{References}
+\begin{enumerate}[label={[\arabic*]}, itemsep=0.05em, topsep=0pt]
+    \item \url{https://git-scm.com/docs/git-diff}
+    \item \url{https://github.com/ishepard/pydriller}
+    \item SEART GitHub Search Engine: \url{https://seart-ghs.si.usi.ch/}
+    \item Lab Document: \href{https://drive.google.com/file/d/1wXXE9zMZYFjfrX5OjIdYlJKI0oX1knQS/view}{Google Doc}
+\end{enumerate}
+
+
+
+
+\end{document}
