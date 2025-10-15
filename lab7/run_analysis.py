@@ -1,11 +1,9 @@
-from __future__ import annotations
-
 import argparse
 from pathlib import Path
 from typing import Dict, List
 
-from analyzer.c_parser_adapter import find_main_function, parse_c_file
-from analyzer.cfg_builder import build_cfg_from_function
+from analyzer.c_parser import read_c_file, strip_preprocessor_and_comments, extract_main_function_source
+from analyzer.cfg_builder import build_cfg_from_main_source
 from analyzer.dataflow import compute_reaching_definitions, find_ambiguous_variables
 from analyzer.report import (
     plot_cyclomatic_complexity,
@@ -22,9 +20,12 @@ OUTPUT_DIR = Path("lab7/output")
 
 
 def analyze_program(program_path: Path) -> Dict[str, int]:
-    ast = parse_c_file(str(program_path))
-    main_function = find_main_function(ast)
-    cfg = build_cfg_from_function(main_function)
+    print(f"[info] Analyzing {program_path.name} ...")
+    source = read_c_file(str(program_path))
+    cleaned = strip_preprocessor_and_comments(source)
+    body, start_line = extract_main_function_source(cleaned)
+    
+    cfg = build_cfg_from_main_source(body, start_line)
 
     snapshots = compute_reaching_definitions(cfg)
     ambiguous = find_ambiguous_variables(cfg)
@@ -49,6 +50,7 @@ def analyze_program(program_path: Path) -> Dict[str, int]:
         program_output_dir / "summary.json",
     )
 
+    print(f"[done] {program_name}: N={nodes}, E={edges}, CC={cyclomatic_complexity}")
     return {"program": program_name, "nodes": nodes, "edges": edges, "cc": cyclomatic_complexity}
 
 
@@ -82,10 +84,9 @@ def parse_arguments() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def main() -> None:
+if __name__ == "__main__":
     args = parse_arguments()
     programs_dir: Path = args.programs_dir
-    global OUTPUT_DIR
     OUTPUT_DIR = args.output_dir
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -97,7 +98,3 @@ def main() -> None:
     for program_file in program_files:
         metrics.append(analyze_program(program_file))
     generate_metrics_summary(metrics)
-
-
-if __name__ == "__main__":
-    main()

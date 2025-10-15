@@ -1,368 +1,336 @@
 digraph CFG {
     node [shape=box];
     B0 [label="B0:
-int categories = 8
-int stores = 12
-int weeks = 10
-int stock[8][12][10]
-int reorderThreshold[8]
-int reorderCount[8]
-int totalStock = 0
-int totalDeficit = 0
-int totalSurplus = 0
-int outOfStock = 0
-int overStocked = 0
-int balanced = 0
-int storeIndex = 0
-int categoryIndex = 0
-int weekIndex = 0
-int forecast[8][12]
-int demandSpike[8][12]
-int demandDrop[8][12]
-int movingAvg[8][12]
-int trendGrowth = 0
-int trendDecline = 0
-int trendStable = 0
-int highestStock = 0
-int lowestStock = 0
-int cumulativeVariance = 0
-int maxVarianceCategory = 0
-int minVarianceCategory = 0
-int tempVariance = 0
-int stockChange = 0
-int previousStock = 0
-int sameTrendCount = 0
-int trendDirection = 0
-int lastTrendDirection = 0
-int longestGrowthStreak = 0
-int longestDeclineStreak = 0
-int currentGrowthStreak = 0
-int currentDeclineStreak = 0
-int restockPlan[8]
-int clearancePlan[8]
-int auditFlag[8]
-int exceptionCount = 0
-int balancedWeeks = 0
-int balancedStores = 0
-categoryIndex = 0"]; 
+int categories = 8;
+int stores = 12;
+int weeks = 10;
+int stock[8][12][10];
+int reorderThreshold[8];
+int reorderCount[8];
+int totalStock = 0;
+int totalDeficit = 0;
+int totalSurplus = 0;
+int outOfStock = 0;
+int overStocked = 0;
+int balanced = 0;
+int storeIndex = 0;
+int categoryIndex = 0;
+int weekIndex = 0;
+int forecast[8][12];
+int demandSpike[8][12];
+int demandDrop[8][12];
+int movingAvg[8][12];
+int trendGrowth = 0;
+int trendDecline = 0;
+int trendStable = 0;
+int highestStock = 0;
+int lowestStock = 0;
+int cumulativeVariance = 0;
+int maxVarianceCategory = 0;
+int minVarianceCategory = 0;
+int tempVariance = 0;
+int stockChange = 0;
+int previousStock = 0;
+int sameTrendCount = 0;
+int trendDirection = 0;
+int lastTrendDirection = 0;
+int longestGrowthStreak = 0;
+int longestDeclineStreak = 0;
+int currentGrowthStreak = 0;
+int currentDeclineStreak = 0;
+int restockPlan[8];
+int clearancePlan[8];
+int auditFlag[8];
+int exceptionCount = 0;
+int balancedWeeks = 0;
+int balancedStores = 0;
+categoryIndex = 0;"]; 
     B1 [label="B1:
 for-cond (categoryIndex < categories)"]; 
     B2 [label="B2:
-categoryIndex = 0"]; 
+categoryIndex = 0;"]; 
     B3 [label="B3:
-categoryIndex++"]; 
+categoryIndex++;"]; 
     B4 [label="B4:
-reorderThreshold[categoryIndex] = 50 + (categoryIndex * 5)
-reorderCount[categoryIndex] = 0
-restockPlan[categoryIndex] = 0
-clearancePlan[categoryIndex] = 0
-auditFlag[categoryIndex] = 0"]; 
+reorderThreshold[categoryIndex] = 50 + categoryIndex * 5;
+reorderCount[categoryIndex] = 0;
+restockPlan[categoryIndex] = 0;
+clearancePlan[categoryIndex] = 0;
+auditFlag[categoryIndex] = 0;"]; 
     B5 [label="B5:
 for-cond (categoryIndex < categories)"]; 
     B6 [label="B6:
-highestStock = totalStock / ((categories * stores) * weeks)
-lowestStock = highestStock
-categoryIndex = 0"]; 
+highestStock = totalStock / (categories * stores * weeks);
+lowestStock = highestStock;
+categoryIndex = 0;"]; 
     B7 [label="B7:
-categoryIndex++"]; 
+categoryIndex++;"]; 
     B8 [label="B8:
-storeIndex = 0"]; 
+storeIndex = 0;"]; 
     B9 [label="B9:
 for-cond (storeIndex < stores)"]; 
     B10 [label="B10:"]; 
     B11 [label="B11:
-storeIndex++"]; 
+storeIndex++;"]; 
     B12 [label="B12:
-weekIndex = 0"]; 
+weekIndex = 0;"]; 
     B13 [label="B13:
 for-cond (weekIndex < weeks)"]; 
     B14 [label="B14:"]; 
     B15 [label="B15:
-weekIndex++"]; 
+weekIndex++;"]; 
     B16 [label="B16:
-stock[categoryIndex][storeIndex][weekIndex] = ((((categoryIndex * 13) + (storeIndex * 7)) + (weekIndex * 5)) % 200) + 20
-totalStock += stock[categoryIndex][storeIndex][weekIndex]"]; 
+stock[categoryIndex][storeIndex][weekIndex] = (categoryIndex * 13 + storeIndex * 7 + weekIndex * 5) % 200 + 20;
+totalStock += stock[categoryIndex][storeIndex][weekIndex];"]; 
     B17 [label="B17:
 if (stock[categoryIndex][storeIndex][weekIndex] < reorderThreshold[categoryIndex])"]; 
     B18 [label="B18:
-totalDeficit += reorderThreshold[categoryIndex] - stock[categoryIndex][storeIndex][weekIndex]
-reorderCount[categoryIndex] += 1"]; 
-    B19 [label="B19:"]; 
+totalDeficit += reorderThreshold[categoryIndex] - stock[categoryIndex][storeIndex][weekIndex];
+reorderCount[categoryIndex] += 1;"]; 
+    B19 [label="B19:
+totalSurplus += stock[categoryIndex][storeIndex][weekIndex] - reorderThreshold[categoryIndex] * 2;"]; 
     B20 [label="B20:"]; 
     B21 [label="B21:
-if (stock[categoryIndex][storeIndex][weekIndex] > (reorderThreshold[categoryIndex] * 2))"]; 
-    B22 [label="B22:
-totalSurplus += stock[categoryIndex][storeIndex][weekIndex] - (reorderThreshold[categoryIndex] * 2)"]; 
-    B23 [label="B23:"]; 
-    B24 [label="B24:
 for-cond (categoryIndex < categories)"]; 
+    B22 [label="B22:
+weekIndex = 0;"]; 
+    B23 [label="B23:
+categoryIndex++;"]; 
+    B24 [label="B24:
+tempVariance = 0;
+storeIndex = 0;"]; 
     B25 [label="B25:
-weekIndex = 0"]; 
-    B26 [label="B26:
-categoryIndex++"]; 
-    B27 [label="B27:
-tempVariance = 0
-storeIndex = 0"]; 
-    B28 [label="B28:
 for-cond (storeIndex < stores)"]; 
-    B29 [label="B29:"]; 
-    B30 [label="B30:
-storeIndex++"]; 
-    B31 [label="B31:
-int runningTotal = 0
-weekIndex = 0"]; 
-    B32 [label="B32:
+    B26 [label="B26:"]; 
+    B27 [label="B27:
+storeIndex++;"]; 
+    B28 [label="B28:
+int runningTotal = 0;
+weekIndex = 0;"]; 
+    B29 [label="B29:
 for-cond (weekIndex < weeks)"]; 
+    B30 [label="B30:
+movingAvg[categoryIndex][storeIndex] = runningTotal / weeks;"]; 
+    B31 [label="B31:
+weekIndex++;"]; 
+    B32 [label="B32:
+runningTotal += stock[categoryIndex][storeIndex][weekIndex];"]; 
     B33 [label="B33:
-movingAvg[categoryIndex][storeIndex] = runningTotal / weeks"]; 
+if (weekIndex == weeks - 1)"]; 
     B34 [label="B34:
-weekIndex++"]; 
-    B35 [label="B35:
-runningTotal += stock[categoryIndex][storeIndex][weekIndex]"]; 
+forecast[categoryIndex][storeIndex] = runningTotal / weeks;"]; 
+    B35 [label="B35:"]; 
     B36 [label="B36:
-if (weekIndex == (weeks - 1))"]; 
+if (stock[categoryIndex][storeIndex][weekIndex] > highestStock)"]; 
     B37 [label="B37:
-forecast[categoryIndex][storeIndex] = runningTotal / weeks"]; 
+highestStock = stock[categoryIndex][storeIndex][weekIndex];"]; 
     B38 [label="B38:"]; 
     B39 [label="B39:
-if (stock[categoryIndex][storeIndex][weekIndex] > highestStock)"]; 
+if (stock[categoryIndex][storeIndex][weekIndex] < lowestStock)"]; 
     B40 [label="B40:
-highestStock = stock[categoryIndex][storeIndex][weekIndex]"]; 
+lowestStock = stock[categoryIndex][storeIndex][weekIndex];"]; 
     B41 [label="B41:"]; 
     B42 [label="B42:
-if (stock[categoryIndex][storeIndex][weekIndex] < lowestStock)"]; 
-    B43 [label="B43:
-lowestStock = stock[categoryIndex][storeIndex][weekIndex]"]; 
-    B44 [label="B44:"]; 
-    B45 [label="B45:
 if (weekIndex > 0)"]; 
-    B46 [label="B46:
-previousStock = stock[categoryIndex][storeIndex][weekIndex - 1]
-stockChange = stock[categoryIndex][storeIndex][weekIndex] - previousStock"]; 
-    B47 [label="B47:
+    B43 [label="B43:
+previousStock = stock[categoryIndex][storeIndex][weekIndex - 1];
+stockChange = stock[categoryIndex][storeIndex][weekIndex] - previousStock;"]; 
+    B44 [label="B44:
 if (stockChange > 30)"]; 
+    B45 [label="B45:
+demandSpike[categoryIndex][storeIndex] += 1;"]; 
+    B46 [label="B46:
+demandDrop[categoryIndex][storeIndex] += 1;"]; 
+    B47 [label="B47:"]; 
     B48 [label="B48:
-demandSpike[categoryIndex][storeIndex] += 1"]; 
-    B49 [label="B49:"]; 
-    B50 [label="B50:"]; 
-    B51 [label="B51:
-if (stockChange < (-30))"]; 
-    B52 [label="B52:
-demandDrop[categoryIndex][storeIndex] += 1"]; 
-    B53 [label="B53:"]; 
-    B54 [label="B54:
 if (stockChange > 0)"]; 
-    B55 [label="B55:
-trendDirection = 1
-currentGrowthStreak += 1
-currentDeclineStreak = 0"]; 
-    B56 [label="B56:"]; 
-    B57 [label="B57:"]; 
-    B58 [label="B58:
-if (stockChange < 0)"]; 
-    B59 [label="B59:
-trendDirection = -1
-currentDeclineStreak += 1
-currentGrowthStreak = 0"]; 
-    B60 [label="B60:"]; 
-    B61 [label="B61:
-trendDirection = 0
-currentGrowthStreak = 0
-currentDeclineStreak = 0"]; 
-    B62 [label="B62:
-if ((trendDirection == lastTrendDirection) && (trendDirection != 0))"]; 
-    B63 [label="B63:
-sameTrendCount += 1"]; 
-    B64 [label="B64:"]; 
-    B65 [label="B65:
-sameTrendCount = 1"]; 
-    B66 [label="B66:
+    B49 [label="B49:
+trendDirection = 1;
+currentGrowthStreak += 1;
+currentDeclineStreak = 0;"]; 
+    B50 [label="B50:
+trendDirection = -1;
+currentDeclineStreak += 1;
+currentGrowthStreak = 0;"]; 
+    B51 [label="B51:
+else
+trendDirection = 0;
+currentGrowthStreak = 0;
+currentDeclineStreak = 0;"]; 
+    B52 [label="B52:
+if (trendDirection == lastTrendDirection && trendDirection != 0)"]; 
+    B53 [label="B53:
+sameTrendCount += 1;"]; 
+    B54 [label="B54:
+sameTrendCount = 1;"]; 
+    B55 [label="B55:"]; 
+    B56 [label="B56:
 if (currentGrowthStreak > longestGrowthStreak)"]; 
-    B67 [label="B67:
-longestGrowthStreak = currentGrowthStreak"]; 
-    B68 [label="B68:"]; 
-    B69 [label="B69:
+    B57 [label="B57:
+longestGrowthStreak = currentGrowthStreak;"]; 
+    B58 [label="B58:"]; 
+    B59 [label="B59:
 if (currentDeclineStreak > longestDeclineStreak)"]; 
+    B60 [label="B60:
+longestDeclineStreak = currentDeclineStreak;"]; 
+    B61 [label="B61:
+lastTrendDirection = trendDirection;"]; 
+    B62 [label="B62:
+runningTotal += stock[categoryIndex][storeIndex][weekIndex];"]; 
+    B63 [label="B63:
+if (movingAvg[categoryIndex][storeIndex] >= reorderThreshold[categoryIndex] && movingAvg[categoryIndex][storeIndex] <= reorderThreshold[categoryIndex] * 2)"]; 
+    B64 [label="B64:
+balancedStores += 1;"]; 
+    B65 [label="B65:"]; 
+    B66 [label="B66:
+if (reorderCount[categoryIndex] > weeks * stores / 2)"]; 
+    B67 [label="B67:
+restockPlan[categoryIndex] = 1;"]; 
+    B68 [label="B68:
+clearancePlan[categoryIndex] = 1;"]; 
+    B69 [label="B69:"]; 
     B70 [label="B70:
-longestDeclineStreak = currentDeclineStreak"]; 
+if (restockPlan[categoryIndex] == 1 && clearancePlan[categoryIndex] == 1)"]; 
     B71 [label="B71:
-lastTrendDirection = trendDirection"]; 
+auditFlag[categoryIndex] = 1;
+exceptionCount += 1;"]; 
     B72 [label="B72:
-runningTotal += stock[categoryIndex][storeIndex][weekIndex]"]; 
+tempVariance = highestStock - lowestStock;
+cumulativeVariance += tempVariance;"]; 
     B73 [label="B73:
-if ((movingAvg[categoryIndex][storeIndex] >= reorderThreshold[categoryIndex]) && (movingAvg[categoryIndex][storeIndex] <= (reorderThreshold[categoryIndex] * 2)))"]; 
+if (tempVariance > maxVarianceCategory)"]; 
     B74 [label="B74:
-balancedStores += 1"]; 
+maxVarianceCategory = tempVariance;"]; 
     B75 [label="B75:"]; 
     B76 [label="B76:
-if (reorderCount[categoryIndex] > ((weeks * stores) / 2))"]; 
+if (tempVariance < minVarianceCategory || categoryIndex == 0)"]; 
     B77 [label="B77:
-restockPlan[categoryIndex] = 1"]; 
+minVarianceCategory = tempVariance;"]; 
     B78 [label="B78:"]; 
-    B79 [label="B79:"]; 
+    B79 [label="B79:
+for-cond (weekIndex < weeks)"]; 
     B80 [label="B80:
-if (reorderCount[categoryIndex] == 0)"]; 
+categoryIndex = 0;"]; 
     B81 [label="B81:
-clearancePlan[categoryIndex] = 1"]; 
-    B82 [label="B82:"]; 
+weekIndex++;"]; 
+    B82 [label="B82:
+int weekBalanced = 0;
+categoryIndex = 0;"]; 
     B83 [label="B83:
-if ((restockPlan[categoryIndex] == 1) && (clearancePlan[categoryIndex] == 1))"]; 
-    B84 [label="B84:
-auditFlag[categoryIndex] = 1
-exceptionCount += 1"]; 
+for-cond (categoryIndex < categories)"]; 
+    B84 [label="B84:"]; 
     B85 [label="B85:
-tempVariance = highestStock - lowestStock
-cumulativeVariance += tempVariance"]; 
+categoryIndex++;"]; 
     B86 [label="B86:
-if (tempVariance > maxVarianceCategory)"]; 
+int totalWeekStock = 0;
+storeIndex = 0;"]; 
     B87 [label="B87:
-maxVarianceCategory = tempVariance"]; 
+for-cond (storeIndex < stores)"]; 
     B88 [label="B88:"]; 
     B89 [label="B89:
-if ((tempVariance < minVarianceCategory) || (categoryIndex == 0))"]; 
+storeIndex++;"]; 
     B90 [label="B90:
-minVarianceCategory = tempVariance"]; 
-    B91 [label="B91:"]; 
+totalWeekStock += stock[categoryIndex][storeIndex][weekIndex];"]; 
+    B91 [label="B91:
+if (totalWeekStock >= reorderThreshold[categoryIndex] * stores && totalWeekStock <= reorderThreshold[categoryIndex] * 3)"]; 
     B92 [label="B92:
-for-cond (weekIndex < weeks)"]; 
-    B93 [label="B93:
-categoryIndex = 0"]; 
+weekBalanced += 1;"]; 
+    B93 [label="B93:"]; 
     B94 [label="B94:
-weekIndex++"]; 
+if (weekBalanced == categories)"]; 
     B95 [label="B95:
-int weekBalanced = 0
-categoryIndex = 0"]; 
-    B96 [label="B96:
+balancedWeeks += 1;"]; 
+    B96 [label="B96:"]; 
+    B97 [label="B97:
 for-cond (categoryIndex < categories)"]; 
-    B97 [label="B97:"]; 
-    B98 [label="B98:
-categoryIndex++"]; 
+    B98 [label="B98:"]; 
     B99 [label="B99:
-int totalWeekStock = 0
-storeIndex = 0"]; 
+categoryIndex++;"]; 
     B100 [label="B100:
+int totalCategoryStock = 0;
+int totalCategoryDeficit = 0;
+int totalCategorySurplus = 0;
+storeIndex = 0;"]; 
+    B101 [label="B101:
 for-cond (storeIndex < stores)"]; 
-    B101 [label="B101:"]; 
-    B102 [label="B102:
-storeIndex++"]; 
+    B102 [label="B102:"]; 
     B103 [label="B103:
-totalWeekStock += stock[categoryIndex][storeIndex][weekIndex]"]; 
+storeIndex++;"]; 
     B104 [label="B104:
-if ((totalWeekStock >= (reorderThreshold[categoryIndex] * stores)) && (totalWeekStock <= (reorderThreshold[categoryIndex] * 3)))"]; 
+weekIndex = 0;"]; 
     B105 [label="B105:
-weekBalanced += 1"]; 
+for-cond (weekIndex < weeks)"]; 
     B106 [label="B106:"]; 
     B107 [label="B107:
-if (weekBalanced == categories)"]; 
+weekIndex++;"]; 
     B108 [label="B108:
-balancedWeeks += 1"]; 
-    B109 [label="B109:"]; 
+totalCategoryStock += stock[categoryIndex][storeIndex][weekIndex];"]; 
+    B109 [label="B109:
+if (stock[categoryIndex][storeIndex][weekIndex] < reorderThreshold[categoryIndex])"]; 
     B110 [label="B110:
-for-cond (categoryIndex < categories)"]; 
+totalCategoryDeficit += reorderThreshold[categoryIndex] - stock[categoryIndex][storeIndex][weekIndex];"]; 
     B111 [label="B111:"]; 
     B112 [label="B112:
-categoryIndex++"]; 
+if (stock[categoryIndex][storeIndex][weekIndex] > reorderThreshold[categoryIndex] * 2)"]; 
     B113 [label="B113:
-int totalCategoryStock = 0
-int totalCategoryDeficit = 0
-int totalCategorySurplus = 0
-storeIndex = 0"]; 
-    B114 [label="B114:
-for-cond (storeIndex < stores)"]; 
-    B115 [label="B115:"]; 
-    B116 [label="B116:
-storeIndex++"]; 
-    B117 [label="B117:
-weekIndex = 0"]; 
-    B118 [label="B118:
-for-cond (weekIndex < weeks)"]; 
-    B119 [label="B119:"]; 
-    B120 [label="B120:
-weekIndex++"]; 
-    B121 [label="B121:
-totalCategoryStock += stock[categoryIndex][storeIndex][weekIndex]"]; 
-    B122 [label="B122:
-if (stock[categoryIndex][storeIndex][weekIndex] < reorderThreshold[categoryIndex])"]; 
-    B123 [label="B123:
-totalCategoryDeficit += reorderThreshold[categoryIndex] - stock[categoryIndex][storeIndex][weekIndex]"]; 
-    B124 [label="B124:"]; 
-    B125 [label="B125:
-if (stock[categoryIndex][storeIndex][weekIndex] > (reorderThreshold[categoryIndex] * 2))"]; 
-    B126 [label="B126:
-totalCategorySurplus += stock[categoryIndex][storeIndex][weekIndex] - (reorderThreshold[categoryIndex] * 2)"]; 
-    B127 [label="B127:"]; 
-    B128 [label="B128:
+totalCategorySurplus += stock[categoryIndex][storeIndex][weekIndex] - reorderThreshold[categoryIndex] * 2;"]; 
+    B114 [label="B114:"]; 
+    B115 [label="B115:
 if (totalCategoryDeficit > totalCategorySurplus)"]; 
-    B129 [label="B129:
-trendDecline += 1"]; 
-    B130 [label="B130:"]; 
-    B131 [label="B131:"]; 
-    B132 [label="B132:
-if (totalCategoryDeficit < totalCategorySurplus)"]; 
-    B133 [label="B133:
-trendGrowth += 1"]; 
-    B134 [label="B134:"]; 
-    B135 [label="B135:
-trendStable += 1"]; 
-    B136 [label="B136:
-if (totalCategoryStock < ((reorderThreshold[categoryIndex] * stores) * weeks))"]; 
-    B137 [label="B137:
-outOfStock += 1"]; 
-    B138 [label="B138:"]; 
-    B139 [label="B139:"]; 
-    B140 [label="B140:
-if (totalCategoryStock > (((reorderThreshold[categoryIndex] * stores) * weeks) * 2))"]; 
-    B141 [label="B141:
-overStocked += 1"]; 
-    B142 [label="B142:"]; 
-    B143 [label="B143:
-balanced += 1"]; 
-    B144 [label="B144:
+    B116 [label="B116:
+trendDecline += 1;"]; 
+    B117 [label="B117:
+trendGrowth += 1;"]; 
+    B118 [label="B118:
+else
+trendStable += 1;"]; 
+    B119 [label="B119:
+if (totalCategoryStock < reorderThreshold[categoryIndex] * stores * weeks)"]; 
+    B120 [label="B120:
+outOfStock += 1;"]; 
+    B121 [label="B121:
+overStocked += 1;"]; 
+    B122 [label="B122:
+else
+balanced += 1;"]; 
+    B123 [label="B123:
 if (trendGrowth > trendDecline)"]; 
-    B145 [label="B145:
-sameTrendCount += trendGrowth"]; 
-    B146 [label="B146:"]; 
-    B147 [label="B147:"]; 
-    B148 [label="B148:
-if (trendGrowth < trendDecline)"]; 
-    B149 [label="B149:
-sameTrendCount += trendDecline"]; 
-    B150 [label="B150:"]; 
-    B151 [label="B151:
-sameTrendCount += trendStable"]; 
-    B152 [label="B152:
+    B124 [label="B124:
+sameTrendCount += trendGrowth;"]; 
+    B125 [label="B125:
+sameTrendCount += trendDecline;"]; 
+    B126 [label="B126:
+else
+sameTrendCount += trendStable;"]; 
+    B127 [label="B127:
 if (longestGrowthStreak > longestDeclineStreak)"]; 
-    B153 [label="B153:
-auditFlag[0] = 1"]; 
-    B154 [label="B154:"]; 
-    B155 [label="B155:"]; 
-    B156 [label="B156:
-if (longestGrowthStreak < longestDeclineStreak)"]; 
-    B157 [label="B157:
-auditFlag[1] = 1"]; 
-    B158 [label="B158:"]; 
-    B159 [label="B159:
-auditFlag[2] = 1"]; 
-    B160 [label="B160:
+    B128 [label="B128:
+auditFlag[0] = 1;"]; 
+    B129 [label="B129:
+auditFlag[1] = 1;"]; 
+    B130 [label="B130:
+else
+auditFlag[2] = 1;"]; 
+    B131 [label="B131:
 if (exceptionCount > 0)"]; 
-    B161 [label="B161:
-balanced = balanced - exceptionCount"]; 
-    B162 [label="B162:"]; 
-    B163 [label="B163:
-if (balancedStores > ((stores * categories) / 2))"]; 
-    B164 [label="B164:
-balanced += 1"]; 
-    B165 [label="B165:"]; 
-    B166 [label="B166:
-overStocked += 1"]; 
-    B167 [label="B167:
-if (balancedWeeks > (weeks / 2))"]; 
-    B168 [label="B168:
-trendStable += 1"]; 
-    B169 [label="B169:
-return ((((((((((((((totalStock + totalDeficit) + totalSurplus) + outOfStock) + overStocked) + balanced) + trendGrowth) + trendDecline) + trendStable) + sameTrendCount) + auditFlag[0]) + auditFlag[1]) + auditFlag[2]) + reorderCount[0]) + reorderCount[1]) + reorderCount[2];"]; 
-    B170 [label="B170:
-trendDecline += 1"]; 
+    B132 [label="B132:
+balanced = balanced - exceptionCount;"]; 
+    B133 [label="B133:"]; 
+    B134 [label="B134:
+if (balancedStores > stores * categories / 2)"]; 
+    B135 [label="B135:
+balanced += 1;"]; 
+    B136 [label="B136:
+overStocked += 1;"]; 
+    B137 [label="B137:"]; 
+    B138 [label="B138:
+if (balancedWeeks > weeks / 2)"]; 
+    B139 [label="B139:
+trendStable += 1;"]; 
+    B140 [label="B140:
+trendDecline += 1;"]; 
+    B141 [label="B141:
+return totalStock + totalDeficit + totalSurplus + outOfStock + overStocked + balanced + trendGrowth + trendDecline + trendStable + sameTrendCount + auditFlag[0] + auditFlag[1] + auditFlag[2] + reorderCount[0] + reorderCount[1] + reorderCount[2];"]; 
     B0 -> B1;
     B1 -> B4 [label="true"];
     B1 -> B2 [label="false"];
@@ -371,7 +339,7 @@ trendDecline += 1"];
     B4 -> B3;
     B5 -> B8 [label="true"];
     B5 -> B6 [label="false"];
-    B6 -> B24;
+    B6 -> B21;
     B7 -> B5;
     B8 -> B9;
     B9 -> B12 [label="true"];
@@ -385,28 +353,28 @@ trendDecline += 1"];
     B15 -> B13;
     B16 -> B17;
     B17 -> B18 [label="true"];
-    B17 -> B20 [label="false"];
-    B18 -> B19;
-    B19 -> B15;
-    B20 -> B21;
-    B21 -> B22 [label="true"];
-    B21 -> B23 [label="false"];
-    B22 -> B23;
-    B23 -> B19;
-    B24 -> B27 [label="true"];
-    B24 -> B25 [label="false"];
-    B25 -> B92;
-    B26 -> B24;
-    B27 -> B28;
-    B28 -> B31 [label="true"];
-    B28 -> B29 [label="false"];
-    B29 -> B76;
-    B30 -> B28;
-    B31 -> B32;
-    B32 -> B35 [label="true"];
-    B32 -> B33 [label="false"];
-    B33 -> B73;
-    B34 -> B32;
+    B17 -> B19 [label="false"];
+    B18 -> B20;
+    B19 -> B20;
+    B20 -> B15;
+    B21 -> B24 [label="true"];
+    B21 -> B22 [label="false"];
+    B22 -> B79;
+    B23 -> B21;
+    B24 -> B25;
+    B25 -> B28 [label="true"];
+    B25 -> B26 [label="false"];
+    B26 -> B66;
+    B27 -> B25;
+    B28 -> B29;
+    B29 -> B32 [label="true"];
+    B29 -> B30 [label="false"];
+    B30 -> B63;
+    B31 -> B29;
+    B32 -> B33;
+    B33 -> B34 [label="true"];
+    B33 -> B35 [label="false"];
+    B34 -> B35;
     B35 -> B36;
     B36 -> B37 [label="true"];
     B36 -> B38 [label="false"];
@@ -417,167 +385,130 @@ trendDecline += 1"];
     B40 -> B41;
     B41 -> B42;
     B42 -> B43 [label="true"];
-    B42 -> B44 [label="false"];
+    B42 -> B62 [label="false"];
     B43 -> B44;
-    B44 -> B45;
-    B45 -> B46 [label="true"];
-    B45 -> B72 [label="false"];
+    B44 -> B45 [label="true"];
+    B44 -> B46 [label="false"];
+    B45 -> B47;
     B46 -> B47;
-    B47 -> B48 [label="true"];
-    B47 -> B50 [label="false"];
-    B48 -> B49;
-    B49 -> B54;
+    B47 -> B48;
+    B48 -> B49 [label="true"];
+    B48 -> B50 [label="false"];
+    B49 -> B51;
     B50 -> B51;
-    B51 -> B52 [label="true"];
-    B51 -> B53 [label="false"];
-    B52 -> B53;
-    B53 -> B49;
-    B54 -> B55 [label="true"];
-    B54 -> B57 [label="false"];
+    B51 -> B52;
+    B52 -> B53 [label="true"];
+    B52 -> B54 [label="false"];
+    B53 -> B55;
+    B54 -> B55;
     B55 -> B56;
-    B56 -> B62;
+    B56 -> B57 [label="true"];
+    B56 -> B58 [label="false"];
     B57 -> B58;
-    B58 -> B59 [label="true"];
-    B58 -> B61 [label="false"];
-    B59 -> B60;
-    B60 -> B56;
-    B61 -> B60;
-    B62 -> B63 [label="true"];
-    B62 -> B65 [label="false"];
-    B63 -> B64;
-    B64 -> B66;
-    B65 -> B64;
+    B58 -> B59;
+    B59 -> B60 [label="true"];
+    B59 -> B61 [label="false"];
+    B60 -> B61;
+    B61 -> B62;
+    B62 -> B31;
+    B63 -> B64 [label="true"];
+    B63 -> B65 [label="false"];
+    B64 -> B65;
+    B65 -> B27;
     B66 -> B67 [label="true"];
     B66 -> B68 [label="false"];
-    B67 -> B68;
+    B67 -> B69;
     B68 -> B69;
-    B69 -> B70 [label="true"];
-    B69 -> B71 [label="false"];
-    B70 -> B71;
+    B69 -> B70;
+    B70 -> B71 [label="true"];
+    B70 -> B72 [label="false"];
     B71 -> B72;
-    B72 -> B34;
+    B72 -> B73;
     B73 -> B74 [label="true"];
     B73 -> B75 [label="false"];
     B74 -> B75;
-    B75 -> B30;
+    B75 -> B76;
     B76 -> B77 [label="true"];
-    B76 -> B79 [label="false"];
+    B76 -> B78 [label="false"];
     B77 -> B78;
-    B78 -> B83;
-    B79 -> B80;
-    B80 -> B81 [label="true"];
-    B80 -> B82 [label="false"];
-    B81 -> B82;
-    B82 -> B78;
-    B83 -> B84 [label="true"];
-    B83 -> B85 [label="false"];
-    B84 -> B85;
-    B85 -> B86;
-    B86 -> B87 [label="true"];
-    B86 -> B88 [label="false"];
-    B87 -> B88;
-    B88 -> B89;
-    B89 -> B90 [label="true"];
-    B89 -> B91 [label="false"];
-    B90 -> B91;
-    B91 -> B26;
-    B92 -> B95 [label="true"];
-    B92 -> B93 [label="false"];
-    B93 -> B110;
-    B94 -> B92;
+    B78 -> B23;
+    B79 -> B82 [label="true"];
+    B79 -> B80 [label="false"];
+    B80 -> B97;
+    B81 -> B79;
+    B82 -> B83;
+    B83 -> B86 [label="true"];
+    B83 -> B84 [label="false"];
+    B84 -> B94;
+    B85 -> B83;
+    B86 -> B87;
+    B87 -> B90 [label="true"];
+    B87 -> B88 [label="false"];
+    B88 -> B91;
+    B89 -> B87;
+    B90 -> B89;
+    B91 -> B92 [label="true"];
+    B91 -> B93 [label="false"];
+    B92 -> B93;
+    B93 -> B85;
+    B94 -> B95 [label="true"];
+    B94 -> B96 [label="false"];
     B95 -> B96;
-    B96 -> B99 [label="true"];
-    B96 -> B97 [label="false"];
-    B97 -> B107;
-    B98 -> B96;
-    B99 -> B100;
-    B100 -> B103 [label="true"];
-    B100 -> B101 [label="false"];
-    B101 -> B104;
-    B102 -> B100;
-    B103 -> B102;
-    B104 -> B105 [label="true"];
-    B104 -> B106 [label="false"];
-    B105 -> B106;
-    B106 -> B98;
-    B107 -> B108 [label="true"];
-    B107 -> B109 [label="false"];
+    B96 -> B81;
+    B97 -> B100 [label="true"];
+    B97 -> B98 [label="false"];
+    B98 -> B123;
+    B99 -> B97;
+    B100 -> B101;
+    B101 -> B104 [label="true"];
+    B101 -> B102 [label="false"];
+    B102 -> B115;
+    B103 -> B101;
+    B104 -> B105;
+    B105 -> B108 [label="true"];
+    B105 -> B106 [label="false"];
+    B106 -> B103;
+    B107 -> B105;
     B108 -> B109;
-    B109 -> B94;
-    B110 -> B113 [label="true"];
-    B110 -> B111 [label="false"];
-    B111 -> B144;
-    B112 -> B110;
+    B109 -> B110 [label="true"];
+    B109 -> B111 [label="false"];
+    B110 -> B111;
+    B111 -> B112;
+    B112 -> B113 [label="true"];
+    B112 -> B114 [label="false"];
     B113 -> B114;
-    B114 -> B117 [label="true"];
-    B114 -> B115 [label="false"];
-    B115 -> B128;
-    B116 -> B114;
+    B114 -> B107;
+    B115 -> B116 [label="true"];
+    B115 -> B117 [label="false"];
+    B116 -> B118;
     B117 -> B118;
-    B118 -> B121 [label="true"];
-    B118 -> B119 [label="false"];
-    B119 -> B116;
-    B120 -> B118;
+    B118 -> B119;
+    B119 -> B120 [label="true"];
+    B119 -> B121 [label="false"];
+    B120 -> B122;
     B121 -> B122;
-    B122 -> B123 [label="true"];
-    B122 -> B124 [label="false"];
-    B123 -> B124;
-    B124 -> B125;
-    B125 -> B126 [label="true"];
-    B125 -> B127 [label="false"];
+    B122 -> B99;
+    B123 -> B124 [label="true"];
+    B123 -> B125 [label="false"];
+    B124 -> B126;
+    B125 -> B126;
     B126 -> B127;
-    B127 -> B120;
-    B128 -> B129 [label="true"];
-    B128 -> B131 [label="false"];
+    B127 -> B128 [label="true"];
+    B127 -> B129 [label="false"];
+    B128 -> B130;
     B129 -> B130;
-    B130 -> B136;
-    B131 -> B132;
-    B132 -> B133 [label="true"];
-    B132 -> B135 [label="false"];
+    B130 -> B131;
+    B131 -> B132 [label="true"];
+    B131 -> B133 [label="false"];
+    B132 -> B133;
     B133 -> B134;
-    B134 -> B130;
-    B135 -> B134;
-    B136 -> B137 [label="true"];
-    B136 -> B139 [label="false"];
+    B134 -> B135 [label="true"];
+    B134 -> B136 [label="false"];
+    B135 -> B137;
+    B136 -> B137;
     B137 -> B138;
-    B138 -> B112;
-    B139 -> B140;
-    B140 -> B141 [label="true"];
-    B140 -> B143 [label="false"];
-    B141 -> B142;
-    B142 -> B138;
-    B143 -> B142;
-    B144 -> B145 [label="true"];
-    B144 -> B147 [label="false"];
-    B145 -> B146;
-    B146 -> B152;
-    B147 -> B148;
-    B148 -> B149 [label="true"];
-    B148 -> B151 [label="false"];
-    B149 -> B150;
-    B150 -> B146;
-    B151 -> B150;
-    B152 -> B153 [label="true"];
-    B152 -> B155 [label="false"];
-    B153 -> B154;
-    B154 -> B160;
-    B155 -> B156;
-    B156 -> B157 [label="true"];
-    B156 -> B159 [label="false"];
-    B157 -> B158;
-    B158 -> B154;
-    B159 -> B158;
-    B160 -> B161 [label="true"];
-    B160 -> B162 [label="false"];
-    B161 -> B162;
-    B162 -> B163;
-    B163 -> B164 [label="true"];
-    B163 -> B166 [label="false"];
-    B164 -> B165;
-    B165 -> B167;
-    B166 -> B165;
-    B167 -> B168 [label="true"];
-    B167 -> B170 [label="false"];
-    B168 -> B169;
-    B170 -> B169;
+    B138 -> B139 [label="true"];
+    B138 -> B140 [label="false"];
+    B139 -> B141;
+    B140 -> B141;
 }

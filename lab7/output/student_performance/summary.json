@@ -1,8 +1,8 @@
 {
   "program": "student_performance",
   "metrics": {
-    "nodes": 137,
-    "edges": 173,
-    "cc": 38
+    "nodes": 111,
+    "edges": 140,
+    "cc": 31
   }
 }

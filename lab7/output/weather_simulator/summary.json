@@ -1,8 +1,8 @@
 {
   "program": "weather_simulator",
   "metrics": {
-    "nodes": 184,
-    "edges": 233,
-    "cc": 51
+    "nodes": 138,
+    "edges": 175,
+    "cc": 39
   }
 }
