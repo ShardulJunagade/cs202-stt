@@ -1,0 +1,483 @@
+digraph CFG {
+    node [shape=box];
+    B0 [label="B0:
+int students = 120
+int subjects = 6
+int assessments = 5
+int scores[120][6][5]
+int weights[6][5]
+int gradeThresholds[6]
+int passCount = 0
+int failCount = 0
+int distinctionCount = 0
+int auditFlag = 0
+int studentIndex = 0
+int subjectIndex = 0
+int assessmentIndex = 0
+int totalScore = 0
+int totalWeightedScore = 0
+int highestScore = 0
+int lowestScore = 0
+int subjectTopper[6]
+int subjectLowest[6]
+int improvementStreak[120]
+int declineStreak[120]
+int consistentStreak[120]
+int bestImprovement = 0
+int bestDecline = 0
+int consistentPerformers = 0
+int irregularPerformers = 0
+int gradeDistribution[6]
+int warningIssued[120]
+int excellenceAward[120]
+int remedialPlan[120]
+int classAverage[6]
+int classVariance[6]
+int deviationAccumulator = 0
+int subjectDeviation = 0
+int attendance[120]
+int attendanceWarning = 0
+int extraCredits[120]
+int projectScores[120]
+int participation[120]
+subjectIndex = 0"]; 
+    B1 [label="B1:
+for-cond (subjectIndex < subjects)"]; 
+    B2 [label="B2:
+studentIndex = 0"]; 
+    B3 [label="B3:
+subjectIndex++"]; 
+    B4 [label="B4:
+gradeThresholds[subjectIndex] = 200
+gradeDistribution[subjectIndex] = 0
+subjectTopper[subjectIndex] = 0
+subjectLowest[subjectIndex] = 10000
+classAverage[subjectIndex] = 0
+classVariance[subjectIndex] = 0
+assessmentIndex = 0"]; 
+    B5 [label="B5:
+for-cond (assessmentIndex < assessments)"]; 
+    B6 [label="B6:"]; 
+    B7 [label="B7:
+assessmentIndex++"]; 
+    B8 [label="B8:
+weights[subjectIndex][assessmentIndex] = 20 + (assessmentIndex * 5)"]; 
+    B9 [label="B9:
+for-cond (studentIndex < students)"]; 
+    B10 [label="B10:
+studentIndex = 0"]; 
+    B11 [label="B11:
+studentIndex++"]; 
+    B12 [label="B12:
+improvementStreak[studentIndex] = 0
+declineStreak[studentIndex] = 0
+consistentStreak[studentIndex] = 0
+warningIssued[studentIndex] = 0
+excellenceAward[studentIndex] = 0
+remedialPlan[studentIndex] = 0
+attendance[studentIndex] = 80 + (studentIndex % 20)
+extraCredits[studentIndex] = studentIndex % 5
+projectScores[studentIndex] = 70 + (studentIndex % 30)
+participation[studentIndex] = 50 + (studentIndex % 40)"]; 
+    B13 [label="B13:
+for-cond (studentIndex < students)"]; 
+    B14 [label="B14:
+subjectIndex = 0"]; 
+    B15 [label="B15:
+studentIndex++"]; 
+    B16 [label="B16:
+subjectIndex = 0"]; 
+    B17 [label="B17:
+for-cond (subjectIndex < subjects)"]; 
+    B18 [label="B18:"]; 
+    B19 [label="B19:
+subjectIndex++"]; 
+    B20 [label="B20:
+totalScore = 0
+totalWeightedScore = 0
+assessmentIndex = 0"]; 
+    B21 [label="B21:
+for-cond (assessmentIndex < assessments)"]; 
+    B22 [label="B22:"]; 
+    B23 [label="B23:
+assessmentIndex++"]; 
+    B24 [label="B24:
+scores[studentIndex][subjectIndex][assessmentIndex] = (((studentIndex * 7) + (subjectIndex * 9)) + (assessmentIndex * 11)) % 101
+totalScore += scores[studentIndex][subjectIndex][assessmentIndex]
+totalWeightedScore += scores[studentIndex][subjectIndex][assessmentIndex] * weights[subjectIndex][assessmentIndex]"]; 
+    B25 [label="B25:
+if (totalScore > subjectTopper[subjectIndex])"]; 
+    B26 [label="B26:
+subjectTopper[subjectIndex] = totalScore"]; 
+    B27 [label="B27:"]; 
+    B28 [label="B28:
+if (totalScore < subjectLowest[subjectIndex])"]; 
+    B29 [label="B29:
+subjectLowest[subjectIndex] = totalScore"]; 
+    B30 [label="B30:
+classAverage[subjectIndex] += totalScore"]; 
+    B31 [label="B31:
+if (totalScore >= gradeThresholds[subjectIndex])"]; 
+    B32 [label="B32:
+passCount += 1
+gradeDistribution[subjectIndex] += 1"]; 
+    B33 [label="B33:
+if (totalScore >= (gradeThresholds[subjectIndex] + 60))"]; 
+    B34 [label="B34:
+distinctionCount += 1
+excellenceAward[studentIndex] += 1"]; 
+    B35 [label="B35:"]; 
+    B36 [label="B36:"]; 
+    B37 [label="B37:
+failCount += 1
+remedialPlan[studentIndex] += 1"]; 
+    B38 [label="B38:
+if (totalScore >= (subjectTopper[subjectIndex] - 5))"]; 
+    B39 [label="B39:
+improvementStreak[studentIndex] += 1
+declineStreak[studentIndex] = 0"]; 
+    B40 [label="B40:"]; 
+    B41 [label="B41:"]; 
+    B42 [label="B42:
+if (totalScore <= (subjectLowest[subjectIndex] + 5))"]; 
+    B43 [label="B43:
+declineStreak[studentIndex] += 1
+improvementStreak[studentIndex] = 0"]; 
+    B44 [label="B44:"]; 
+    B45 [label="B45:
+consistentStreak[studentIndex] += 1"]; 
+    B46 [label="B46:
+if (improvementStreak[studentIndex] > bestImprovement)"]; 
+    B47 [label="B47:
+bestImprovement = improvementStreak[studentIndex]"]; 
+    B48 [label="B48:"]; 
+    B49 [label="B49:
+if (declineStreak[studentIndex] > bestDecline)"]; 
+    B50 [label="B50:
+bestDecline = declineStreak[studentIndex]"]; 
+    B51 [label="B51:
+deviationAccumulator = totalScore - gradeThresholds[subjectIndex]
+subjectDeviation += deviationAccumulator * deviationAccumulator"]; 
+    B52 [label="B52:
+if (attendance[studentIndex] < 90)"]; 
+    B53 [label="B53:
+attendanceWarning += 1
+warningIssued[studentIndex] += 1"]; 
+    B54 [label="B54:"]; 
+    B55 [label="B55:
+if (improvementStreak[studentIndex] > declineStreak[studentIndex])"]; 
+    B56 [label="B56:
+excellenceAward[studentIndex] += extraCredits[studentIndex]"]; 
+    B57 [label="B57:"]; 
+    B58 [label="B58:"]; 
+    B59 [label="B59:
+if (improvementStreak[studentIndex] < declineStreak[studentIndex])"]; 
+    B60 [label="B60:
+remedialPlan[studentIndex] += projectScores[studentIndex] / 10"]; 
+    B61 [label="B61:"]; 
+    B62 [label="B62:
+consistentStreak[studentIndex] += participation[studentIndex] / 10"]; 
+    B63 [label="B63:
+if ((improvementStreak[studentIndex] >= 3) && (attendance[studentIndex] >= 95))"]; 
+    B64 [label="B64:
+consistentPerformers += 1"]; 
+    B65 [label="B65:"]; 
+    B66 [label="B66:"]; 
+    B67 [label="B67:
+if ((declineStreak[studentIndex] >= 3) || (attendance[studentIndex] < 85))"]; 
+    B68 [label="B68:
+irregularPerformers += 1"]; 
+    B69 [label="B69:"]; 
+    B70 [label="B70:
+if (excellenceAward[studentIndex] > 5)"]; 
+    B71 [label="B71:
+auditFlag += 1"]; 
+    B72 [label="B72:"]; 
+    B73 [label="B73:
+for-cond (subjectIndex < subjects)"]; 
+    B74 [label="B74:
+subjectIndex = 0"]; 
+    B75 [label="B75:
+subjectIndex++"]; 
+    B76 [label="B76:
+classAverage[subjectIndex] = classAverage[subjectIndex] / students"]; 
+    B77 [label="B77:
+for-cond (subjectIndex < subjects)"]; 
+    B78 [label="B78:
+studentIndex = 0"]; 
+    B79 [label="B79:
+subjectIndex++"]; 
+    B80 [label="B80:
+int varianceAccumulator = 0
+studentIndex = 0"]; 
+    B81 [label="B81:
+for-cond (studentIndex < students)"]; 
+    B82 [label="B82:
+classVariance[subjectIndex] = varianceAccumulator / students"]; 
+    B83 [label="B83:
+studentIndex++"]; 
+    B84 [label="B84:
+int totalSubjectScore = 0
+assessmentIndex = 0"]; 
+    B85 [label="B85:
+for-cond (assessmentIndex < assessments)"]; 
+    B86 [label="B86:
+int diff = totalSubjectScore - classAverage[subjectIndex]
+varianceAccumulator += diff * diff"]; 
+    B87 [label="B87:
+assessmentIndex++"]; 
+    B88 [label="B88:
+totalSubjectScore += scores[studentIndex][subjectIndex][assessmentIndex]"]; 
+    B89 [label="B89:
+if (totalSubjectScore >= (classAverage[subjectIndex] + 30))"]; 
+    B90 [label="B90:
+excellenceAward[studentIndex] += 1"]; 
+    B91 [label="B91:"]; 
+    B92 [label="B92:"]; 
+    B93 [label="B93:
+if (totalSubjectScore <= (classAverage[subjectIndex] - 30))"]; 
+    B94 [label="B94:
+remedialPlan[studentIndex] += 1"]; 
+    B95 [label="B95:"]; 
+    B96 [label="B96:
+if (classVariance[subjectIndex] > subjectDeviation)"]; 
+    B97 [label="B97:
+auditFlag += 1"]; 
+    B98 [label="B98:"]; 
+    B99 [label="B99:
+for-cond (studentIndex < students)"]; 
+    B100 [label="B100:"]; 
+    B101 [label="B101:
+studentIndex++"]; 
+    B102 [label="B102:"]; 
+    B103 [label="B103:
+if (warningIssued[studentIndex] > 2)"]; 
+    B104 [label="B104:
+attendanceWarning += 1"]; 
+    B105 [label="B105:"]; 
+    B106 [label="B106:
+if (excellenceAward[studentIndex] > remedialPlan[studentIndex])"]; 
+    B107 [label="B107:
+distinctionCount += 1"]; 
+    B108 [label="B108:"]; 
+    B109 [label="B109:"]; 
+    B110 [label="B110:
+if (excellenceAward[studentIndex] < remedialPlan[studentIndex])"]; 
+    B111 [label="B111:
+failCount += 1"]; 
+    B112 [label="B112:"]; 
+    B113 [label="B113:
+passCount += 1"]; 
+    B114 [label="B114:
+if (consistentPerformers > irregularPerformers)"]; 
+    B115 [label="B115:
+gradeDistribution[0] += consistentPerformers"]; 
+    B116 [label="B116:"]; 
+    B117 [label="B117:"]; 
+    B118 [label="B118:
+if (consistentPerformers < irregularPerformers)"]; 
+    B119 [label="B119:
+gradeDistribution[1] += irregularPerformers"]; 
+    B120 [label="B120:"]; 
+    B121 [label="B121:
+gradeDistribution[2] += consistentPerformers"]; 
+    B122 [label="B122:
+if (bestImprovement > bestDecline)"]; 
+    B123 [label="B123:
+gradeDistribution[3] += bestImprovement"]; 
+    B124 [label="B124:"]; 
+    B125 [label="B125:"]; 
+    B126 [label="B126:
+if (bestImprovement < bestDecline)"]; 
+    B127 [label="B127:
+gradeDistribution[4] += bestDecline"]; 
+    B128 [label="B128:"]; 
+    B129 [label="B129:
+gradeDistribution[5] += bestImprovement"]; 
+    B130 [label="B130:
+if (attendanceWarning > (students / 4))"]; 
+    B131 [label="B131:
+auditFlag += 1"]; 
+    B132 [label="B132:"]; 
+    B133 [label="B133:
+if (auditFlag > subjects)"]; 
+    B134 [label="B134:
+failCount += auditFlag"]; 
+    B135 [label="B135:
+return (((((((((((passCount + failCount) + distinctionCount) + auditFlag) + consistentPerformers) + irregularPerformers) + attendanceWarning) + gradeDistribution[0]) + gradeDistribution[1]) + gradeDistribution[2]) + gradeDistribution[3]) + gradeDistribution[4]) + gradeDistribution[5];"]; 
+    B136 [label="B136:
+passCount += auditFlag"]; 
+    B0 -> B1;
+    B1 -> B4 [label="true"];
+    B1 -> B2 [label="false"];
+    B2 -> B9;
+    B3 -> B1;
+    B4 -> B5;
+    B5 -> B8 [label="true"];
+    B5 -> B6 [label="false"];
+    B6 -> B3;
+    B7 -> B5;
+    B8 -> B7;
+    B9 -> B12 [label="true"];
+    B9 -> B10 [label="false"];
+    B10 -> B13;
+    B11 -> B9;
+    B12 -> B11;
+    B13 -> B16 [label="true"];
+    B13 -> B14 [label="false"];
+    B14 -> B73;
+    B15 -> B13;
+    B16 -> B17;
+    B17 -> B20 [label="true"];
+    B17 -> B18 [label="false"];
+    B18 -> B52;
+    B19 -> B17;
+    B20 -> B21;
+    B21 -> B24 [label="true"];
+    B21 -> B22 [label="false"];
+    B22 -> B25;
+    B23 -> B21;
+    B24 -> B23;
+    B25 -> B26 [label="true"];
+    B25 -> B27 [label="false"];
+    B26 -> B27;
+    B27 -> B28;
+    B28 -> B29 [label="true"];
+    B28 -> B30 [label="false"];
+    B29 -> B30;
+    B30 -> B31;
+    B31 -> B32 [label="true"];
+    B31 -> B37 [label="false"];
+    B32 -> B33;
+    B33 -> B34 [label="true"];
+    B33 -> B35 [label="false"];
+    B34 -> B35;
+    B35 -> B36;
+    B36 -> B38;
+    B37 -> B36;
+    B38 -> B39 [label="true"];
+    B38 -> B41 [label="false"];
+    B39 -> B40;
+    B40 -> B46;
+    B41 -> B42;
+    B42 -> B43 [label="true"];
+    B42 -> B45 [label="false"];
+    B43 -> B44;
+    B44 -> B40;
+    B45 -> B44;
+    B46 -> B47 [label="true"];
+    B46 -> B48 [label="false"];
+    B47 -> B48;
+    B48 -> B49;
+    B49 -> B50 [label="true"];
+    B49 -> B51 [label="false"];
+    B50 -> B51;
+    B51 -> B19;
+    B52 -> B53 [label="true"];
+    B52 -> B54 [label="false"];
+    B53 -> B54;
+    B54 -> B55;
+    B55 -> B56 [label="true"];
+    B55 -> B58 [label="false"];
+    B56 -> B57;
+    B57 -> B63;
+    B58 -> B59;
+    B59 -> B60 [label="true"];
+    B59 -> B62 [label="false"];
+    B60 -> B61;
+    B61 -> B57;
+    B62 -> B61;
+    B63 -> B64 [label="true"];
+    B63 -> B66 [label="false"];
+    B64 -> B65;
+    B65 -> B70;
+    B66 -> B67;
+    B67 -> B68 [label="true"];
+    B67 -> B69 [label="false"];
+    B68 -> B69;
+    B69 -> B65;
+    B70 -> B71 [label="true"];
+    B70 -> B72 [label="false"];
+    B71 -> B72;
+    B72 -> B15;
+    B73 -> B76 [label="true"];
+    B73 -> B74 [label="false"];
+    B74 -> B77;
+    B75 -> B73;
+    B76 -> B75;
+    B77 -> B80 [label="true"];
+    B77 -> B78 [label="false"];
+    B78 -> B99;
+    B79 -> B77;
+    B80 -> B81;
+    B81 -> B84 [label="true"];
+    B81 -> B82 [label="false"];
+    B82 -> B96;
+    B83 -> B81;
+    B84 -> B85;
+    B85 -> B88 [label="true"];
+    B85 -> B86 [label="false"];
+    B86 -> B89;
+    B87 -> B85;
+    B88 -> B87;
+    B89 -> B90 [label="true"];
+    B89 -> B92 [label="false"];
+    B90 -> B91;
+    B91 -> B83;
+    B92 -> B93;
+    B93 -> B94 [label="true"];
+    B93 -> B95 [label="false"];
+    B94 -> B95;
+    B95 -> B91;
+    B96 -> B97 [label="true"];
+    B96 -> B98 [label="false"];
+    B97 -> B98;
+    B98 -> B79;
+    B99 -> B102 [label="true"];
+    B99 -> B100 [label="false"];
+    B100 -> B114;
+    B101 -> B99;
+    B102 -> B103;
+    B103 -> B104 [label="true"];
+    B103 -> B105 [label="false"];
+    B104 -> B105;
+    B105 -> B106;
+    B106 -> B107 [label="true"];
+    B106 -> B109 [label="false"];
+    B107 -> B108;
+    B108 -> B101;
+    B109 -> B110;
+    B110 -> B111 [label="true"];
+    B110 -> B113 [label="false"];
+    B111 -> B112;
+    B112 -> B108;
+    B113 -> B112;
+    B114 -> B115 [label="true"];
+    B114 -> B117 [label="false"];
+    B115 -> B116;
+    B116 -> B122;
+    B117 -> B118;
+    B118 -> B119 [label="true"];
+    B118 -> B121 [label="false"];
+    B119 -> B120;
+    B120 -> B116;
+    B121 -> B120;
+    B122 -> B123 [label="true"];
+    B122 -> B125 [label="false"];
+    B123 -> B124;
+    B124 -> B130;
+    B125 -> B126;
+    B126 -> B127 [label="true"];
+    B126 -> B129 [label="false"];
+    B127 -> B128;
+    B128 -> B124;
+    B129 -> B128;
+    B130 -> B131 [label="true"];
+    B130 -> B132 [label="false"];
+    B131 -> B132;
+    B132 -> B133;
+    B133 -> B134 [label="true"];
+    B133 -> B136 [label="false"];
+    B134 -> B135;
+    B136 -> B135;
+}

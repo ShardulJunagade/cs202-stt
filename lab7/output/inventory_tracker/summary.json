@@ -1,0 +1,8 @@
+{
+  "program": "inventory_tracker",
+  "metrics": {
+    "nodes": 171,
+    "edges": 217,
+    "cc": 48
+  }
+}
