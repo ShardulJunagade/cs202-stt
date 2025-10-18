@@ -39,53 +39,31 @@
 | D37 | extraCredits | B0 | 38 | `int extraCredits[120];` |
 | D38 | projectScores | B0 | 39 | `int projectScores[120];` |
 | D39 | participation | B0 | 40 | `int participation[120];` |
-| D40 | subjectIndex | B0 | 42 | `subjectIndex = 0;` |
-| D41 | assessmentIndex | B4 | 49 | `assessmentIndex = 0;` |
-| D42 | assessmentIndex | B7 | 49 | `assessmentIndex++;` |
-| D43 | subjectIndex | B3 | 42 | `subjectIndex++;` |
-| D44 | studentIndex | B2 | 54 | `studentIndex = 0;` |
-| D45 | studentIndex | B11 | 54 | `studentIndex++;` |
-| D46 | studentIndex | B10 | 67 | `studentIndex = 0;` |
-| D47 | subjectIndex | B16 | 68 | `subjectIndex = 0;` |
-| D48 | totalScore | B20 | 69 | `totalScore = 0;` |
-| D49 | totalWeightedScore | B20 | 70 | `totalWeightedScore = 0;` |
-| D50 | assessmentIndex | B20 | 71 | `assessmentIndex = 0;` |
-| D51 | totalScore | B24 | 73 | `totalScore += scores[studentIndex][subjectIndex][assessmentIndex];` |
-| D52 | totalWeightedScore | B24 | 74 | `totalWeightedScore += scores[studentIndex][subjectIndex][assessmentIndex] * weights[subjectIndex][assessmentIndex];` |
-| D53 | assessmentIndex | B23 | 71 | `assessmentIndex++;` |
-| D54 | passCount | B32 | 86 | `passCount += 1;` |
-| D55 | distinctionCount | B34 | 89 | `distinctionCount += 1;` |
-| D56 | failCount | B36 | 93 | `failCount += 1;` |
-| D57 | bestImprovement | B43 | 108 | `bestImprovement = improvementStreak[studentIndex];` |
-| D58 | bestDecline | B46 | 111 | `bestDecline = declineStreak[studentIndex];` |
-| D59 | deviationAccumulator | B47 | 114 | `deviationAccumulator = totalScore - gradeThresholds[subjectIndex];` |
-| D60 | subjectDeviation | B47 | 115 | `subjectDeviation += deviationAccumulator * deviationAccumulator;` |
-| D61 | subjectIndex | B19 | 68 | `subjectIndex++;` |
-| D62 | attendanceWarning | B49 | 119 | `attendanceWarning += 1;` |
-| D63 | consistentPerformers | B56 | 132 | `consistentPerformers += 1;` |
-| D64 | irregularPerformers | B57 | 134 | `irregularPerformers += 1;` |
-| D65 | auditFlag | B60 | 138 | `auditFlag += 1;` |
-| D66 | studentIndex | B15 | 67 | `studentIndex++;` |
-| D67 | subjectIndex | B14 | 142 | `subjectIndex = 0;` |
-| D68 | subjectIndex | B64 | 142 | `subjectIndex++;` |
-| D69 | subjectIndex | B63 | 146 | `subjectIndex = 0;` |
-| D70 | varianceAccumulator | B69 | 147 | `int varianceAccumulator = 0;` |
-| D71 | studentIndex | B69 | 148 | `studentIndex = 0;` |
-| D72 | totalSubjectScore | B73 | 149 | `int totalSubjectScore = 0;` |
-| D73 | assessmentIndex | B73 | 150 | `assessmentIndex = 0;` |
-| D74 | totalSubjectScore | B77 | 151 | `totalSubjectScore += scores[studentIndex][subjectIndex][assessmentIndex];` |
-| D75 | assessmentIndex | B76 | 150 | `assessmentIndex++;` |
-| D76 | diff | B75 | 153 | `int diff = totalSubjectScore - classAverage[subjectIndex];` |
-| D77 | varianceAccumulator | B75 | 154 | `varianceAccumulator += diff * diff;` |
-| D78 | studentIndex | B72 | 148 | `studentIndex++;` |
-| D79 | auditFlag | B83 | 163 | `auditFlag += 1;` |
-| D80 | subjectIndex | B68 | 146 | `subjectIndex++;` |
-| D81 | studentIndex | B67 | 167 | `studentIndex = 0;` |
-| D82 | attendanceWarning | B90 | 169 | `attendanceWarning += 1;` |
-| D83 | distinctionCount | B93 | 172 | `distinctionCount += 1;` |
-| D84 | failCount | B94 | 174 | `failCount += 1;` |
-| D85 | passCount | B95 | 176 | `passCount += 1;` |
-| D86 | studentIndex | B87 | 167 | `studentIndex++;` |
-| D87 | auditFlag | B105 | 197 | `auditFlag += 1;` |
-| D88 | failCount | B108 | 201 | `failCount += auditFlag;` |
-| D89 | passCount | B109 | 203 | `passCount += auditFlag;` |
+| D40 | totalScore | B9 | 69 | `totalScore = 0;` |
+| D41 | totalWeightedScore | B9 | 70 | `totalWeightedScore = 0;` |
+| D42 | totalScore | B11 | 73 | `totalScore += scores[studentIndex][subjectIndex][assessmentIndex];` |
+| D43 | totalWeightedScore | B11 | 74 | `totalWeightedScore += scores[studentIndex][subjectIndex][assessmentIndex] * weights[subjectIndex][assessmentIndex];` |
+| D44 | passCount | B17 | 86 | `passCount += 1;` |
+| D45 | distinctionCount | B19 | 89 | `distinctionCount += 1;` |
+| D46 | failCount | B19 | 93 | `failCount += 1;` |
+| D47 | bestImprovement | B23 | 108 | `bestImprovement = improvementStreak[studentIndex];` |
+| D48 | bestDecline | B25 | 111 | `bestDecline = declineStreak[studentIndex];` |
+| D49 | deviationAccumulator | B25 | 114 | `deviationAccumulator = totalScore - gradeThresholds[subjectIndex];` |
+| D50 | subjectDeviation | B25 | 115 | `subjectDeviation += deviationAccumulator * deviationAccumulator;` |
+| D51 | attendanceWarning | B27 | 119 | `attendanceWarning += 1;` |
+| D52 | consistentPerformers | B31 | 132 | `consistentPerformers += 1;` |
+| D53 | irregularPerformers | B31 | 134 | `irregularPerformers += 1;` |
+| D54 | auditFlag | B33 | 138 | `auditFlag += 1;` |
+| D55 | varianceAccumulator | B37 | 147 | `int varianceAccumulator = 0;` |
+| D56 | totalSubjectScore | B39 | 149 | `int totalSubjectScore = 0;` |
+| D57 | totalSubjectScore | B41 | 151 | `totalSubjectScore += scores[studentIndex][subjectIndex][assessmentIndex];` |
+| D58 | diff | B41 | 153 | `int diff = totalSubjectScore - classAverage[subjectIndex];` |
+| D59 | varianceAccumulator | B41 | 154 | `varianceAccumulator += diff * diff;` |
+| D60 | auditFlag | B45 | 163 | `auditFlag += 1;` |
+| D61 | attendanceWarning | B48 | 169 | `attendanceWarning += 1;` |
+| D62 | distinctionCount | B50 | 172 | `distinctionCount += 1;` |
+| D63 | failCount | B50 | 174 | `failCount += 1;` |
+| D64 | passCount | B50 | 176 | `passCount += 1;` |
+| D65 | auditFlag | B56 | 197 | `auditFlag += 1;` |
+| D66 | failCount | B58 | 201 | `failCount += auditFlag;` |
+| D67 | passCount | B58 | 203 | `passCount += auditFlag;` |

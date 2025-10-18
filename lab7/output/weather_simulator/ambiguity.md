@@ -1,5352 +1,2443 @@
-### Block B1
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| dayGroup | D56, D57 | `dayGroup = 0;`<br>`dayGroup++;` |
-
-### Block B2
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| dayGroup | D56, D57 | `dayGroup = 0;`<br>`dayGroup++;` |
-
 ### Block B3
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| dayGroup | D56, D57 | `dayGroup = 0;`<br>`dayGroup++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
 
 ### Block B4
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| dayGroup | D56, D57 | `dayGroup = 0;`<br>`dayGroup++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
 
 ### Block B5
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D7, D61, D105 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B6
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D7, D61, D105 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
 
 ### Block B7
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B8
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D7, D61, D105 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
 
 ### Block B9
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B10
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
 
 ### Block B11
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D73, D83 | `stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B12
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
 
 ### Block B13
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B14
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
 
 ### Block B15
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B16
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B17
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B18
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B19
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B20
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B21
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69 | `int stableHours = 0;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B22
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69 | `int stableHours = 0;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B23
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69 | `int stableHours = 0;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| calmHours | D22, D72 | `int calmHours = 0;`<br>`calmHours += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B24
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69 | `int stableHours = 0;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| calmHours | D22, D72 | `int calmHours = 0;`<br>`calmHours += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B25
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69 | `int stableHours = 0;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B26
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69 | `int stableHours = 0;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B27
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69 | `int stableHours = 0;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B28
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69 | `int stableHours = 0;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B29
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B30
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B31
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B32
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B33
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B34
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B35
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B36
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B37
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B38
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B39
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B40
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B41
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B42
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B43
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B44
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B45
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B46
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B47
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| spikeEvents | D26, D76 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B48
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B49
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B50
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120 | `int trendUp = 0;`<br>`trendUp += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B51
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| trendUp | D23, D120 | `int trendUp = 0;`<br>`trendUp += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B52
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| sequentialDrop | D86, D90 | `sequentialDrop = 0;`<br>`sequentialDrop += 1;` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| currentHotStreak | D87, D93 | `currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| sequentialRise | D85, D91 | `sequentialRise += 1;`<br>`sequentialRise = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D84, D89 | `currentTrend = 1;`<br>`currentTrend = -1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| trendDown | D24, D121 | `int trendDown = 0;`<br>`trendDown += 1;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120 | `int trendUp = 0;`<br>`trendUp += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B53
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D87, D93 | `currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| trendDown | D24, D121 | `int trendDown = 0;`<br>`trendDown += 1;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| trendUp | D23, D120 | `int trendUp = 0;`<br>`trendUp += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B54
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D87, D93 | `currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| trendDown | D24, D121 | `int trendDown = 0;`<br>`trendDown += 1;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120 | `int trendUp = 0;`<br>`trendUp += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B55
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D87, D93 | `currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| trendDown | D24, D121 | `int trendDown = 0;`<br>`trendDown += 1;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| trendUp | D23, D120 | `int trendUp = 0;`<br>`trendUp += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B56
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| sameTrendStreak | D98, D99 | `sameTrendStreak += 1;`<br>`sameTrendStreak = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| currentHotStreak | D87, D93 | `currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| trendDown | D24, D121 | `int trendDown = 0;`<br>`trendDown += 1;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120 | `int trendUp = 0;`<br>`trendUp += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B57
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D73, D83 | `stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| trendDown | D24, D121 | `int trendDown = 0;`<br>`trendDown += 1;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| trendUp | D23, D120 | `int trendUp = 0;`<br>`trendUp += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B58
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D73, D83 | `stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B59
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D73, D83 | `stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| calmHours | D22, D72, D74 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B60
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D73, D83 | `stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B61
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D73, D83 | `stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73, D135 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| calmHours | D22, D72, D74, D134 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B62
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D73, D83 | `stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B63
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D76, D78 | `calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D73, D83 | `stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73, D135 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| calmHours | D22, D72, D74, D134 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| belowAverageCount | D41, D116 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| aboveAverageCount | D40, D115 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B64
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B65
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| dryDays | D20, D71 | `int dryDays = 0;`<br>`dryDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| stormWarnings | D21, D73, D135 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| calmHours | D22, D72, D74, D134 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| wetDays | D19, D70 | `int wetDays = 0;`<br>`wetDays += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
 
 ### Block B66
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| wetDays | D19, D70, D141 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| dryDays | D20, D71, D142 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B67
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| wetDays | D19, D70, D141 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| dryDays | D20, D71, D142 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B68
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| wetDays | D19, D70, D141 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| dryDays | D20, D71, D142 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134, D144 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135, D143 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B69
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| dropEvents | D27, D81 | `int dropEvents = 0;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| day | D58, D108 | `day = 0;`<br>`day++;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D60, D88, D92 | `currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D59, D87, D93 | `currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| spikeEvents | D26, D80 | `int spikeEvents = 0;`<br>`spikeEvents += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| hour | D61, D105 | `hour = 0;`<br>`hour++;` |
+| trendDown | D24, D121, D132 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| wetDays | D19, D70, D141 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| dryDays | D20, D71, D142 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120, D131 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134, D144 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135, D143 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| stableHours | D25, D69, D79, D133 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B70
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
+| trendDown | D24, D121, D132, D146 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| wetDays | D19, D70, D141 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| dryDays | D20, D71, D142 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120, D131, D145 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69, D79, D133, D147 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134, D144 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135, D143 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B71
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
+| trendDown | D24, D121, D132, D146 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| wetDays | D19, D70, D141 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| dryDays | D20, D71, D142 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120, D131, D145 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69, D79, D133, D147 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134, D144 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135, D143 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B72
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
+| trendDown | D24, D121, D132, D146 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117, D148 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| wetDays | D19, D70, D141 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| dryDays | D20, D71, D142 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120, D131, D145 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69, D79, D133, D147 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134, D144 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119, D150 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135, D143 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118, D149 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B73
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
+| trendDown | D24, D121, D132, D146 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117, D148 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| wetDays | D19, D70, D141 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| dryDays | D20, D71, D142 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120, D131, D145 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69, D79, D133, D147 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134, D144 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119, D150 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135, D143 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118, D149 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B74
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
+| trendDown | D24, D121, D132, D146 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117, D148 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| wetDays | D19, D70, D141 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| dryDays | D20, D71, D142 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120, D131, D145 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69, D79, D133, D147 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134, D144 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119, D150 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135, D143, D151 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118, D149 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
 
 ### Block B75
 | Variable | Definition IDs | Statements |
 |----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-
-### Block B76
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-
-### Block B77
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-
-### Block B78
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-
-### Block B79
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-
-### Block B80
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-
-### Block B81
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B82
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-
-### Block B83
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-
-### Block B84
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-
-### Block B85
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B86
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-
-### Block B87
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-
-### Block B88
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B89
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-
-### Block B90
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-
-### Block B91
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| hour | D113, D130 | `hour = 0;`<br>`hour++;` |
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| trendDown | D24, D129 | `int trendDown = 0;`<br>`trendDown += 1;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128 | `int trendUp = 0;`<br>`trendUp += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| day | D112, D131 | `day = 0;`<br>`day++;` |
-| stormWarnings | D21, D77 | `int stormWarnings = 0;`<br>`stormWarnings += 1;` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B92
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B93
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B94
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B95
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B96
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| midTemp | D133, D137 | `int midTemp = 0;`<br>`midTemp += temp[day][hourGroup];` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| midWind | D135, D139 | `int midWind = 0;`<br>`midWind += wind[day][hourGroup];` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| midHumidity | D134, D138 | `int midHumidity = 0;`<br>`midHumidity += humidity[day][hourGroup];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B97
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| midWind | D135, D139 | `int midWind = 0;`<br>`midWind += wind[day][hourGroup];` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| midHumidity | D134, D138 | `int midHumidity = 0;`<br>`midHumidity += humidity[day][hourGroup];` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| midTemp | D133, D137 | `int midTemp = 0;`<br>`midTemp += temp[day][hourGroup];` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B98
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B99
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| midWind | D135, D139 | `int midWind = 0;`<br>`midWind += wind[day][hourGroup];` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| midHumidity | D134, D138 | `int midHumidity = 0;`<br>`midHumidity += humidity[day][hourGroup];` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| midTemp | D133, D137 | `int midTemp = 0;`<br>`midTemp += temp[day][hourGroup];` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B100
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B101
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B102
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B103
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B104
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B105
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B106
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-
-### Block B107
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74 | `int wetDays = 0;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| dayGroup | D56, D57, D104 | `dayGroup = 0;`<br>`dayGroup++;`<br>`dayGroup = day / 5;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D136, D140 | `day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| calmHours | D22, D76, D78, D147 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75 | `int dryDays = 0;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| aboveAverageCount | D40, D123 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B108
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B109
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B110
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B111
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B112
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B113
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B114
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B115
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B116
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B117
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B118
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B119
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B120
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B121
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B122
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B123
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B124
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B125
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B126
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B127
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145, D162 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| stableHours | D25, D73, D83, D146 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144, D161 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B128
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145, D162 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144, D161 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B129
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145, D162 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144, D161 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B130
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145, D162 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| spikeEvents | D26, D80, D125 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144, D161 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B131
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126, D165 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| fluctuationEvents | D28, D82, D127 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145, D162 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| spikeEvents | D26, D80, D125, D164 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144, D161 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B132
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126, D165 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145, D162 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| spikeEvents | D26, D80, D125, D164 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144, D161 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B133
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126, D165 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145, D162 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| spikeEvents | D26, D80, D125, D164 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144, D161 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B134
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126, D165 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158, D167 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145, D162 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| spikeEvents | D26, D80, D125, D164 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144, D161 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B135
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126, D165 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158, D167 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145, D162 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| spikeEvents | D26, D80, D125, D164 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144, D161 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B136
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| wetDays | D19, D74, D156 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126, D165 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158, D167 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145, D162 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| spikeEvents | D26, D80, D125, D164 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144, D161 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
-
-### Block B137
-| Variable | Definition IDs | Statements |
-|----------|----------------|------------|
-| previousTrend | D32, D101 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
-| hour | D7, D61, D105, D113, D130 | `int hour = 0;`<br>`hour = 0;`<br>`hour++;`<br>`hour = 0;`<br>`hour++;` |
-| wetDays | D19, D74, D156, D168 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
-| longestHotStreak | D36, D102 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
-| totalTemp | D8, D62 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |
-| totalHumidity | D9, D63 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
-| aboveAverageCount | D40, D123, D154 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
-| calmHours | D22, D76, D78, D147, D159 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
-| windVarianceAccumulator | D47, D119 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
-| dropEvents | D27, D81, D126, D165 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
-| maxTemp | D11, D65 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
-| stormWarnings | D21, D77, D148, D158, D167 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
-| minTemp | D12, D66 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
-| dayGroup | D150, D160 | `dayGroup = 0;`<br>`dayGroup++;` |
-| minWind | D16, D70 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
-| longHotStreak | D34, D106 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
-| normalizedWind | D50, D122 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
-| hourGroup | D132, D149 | `hourGroup = 0;`<br>`hourGroup++;` |
-| trendDown | D24, D129, D145, D162 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
-| varianceAccumulator | D45, D117 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
-| totalWind | D10, D64 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
-| day | D112, D131, D136, D140 | `day = 0;`<br>`day++;`<br>`day = 0;`<br>`day++;` |
-| currentColdStreak | D39, D60, D88, D92 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
-| minHumidity | D14, D68 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
-| currentHotStreak | D38, D59, D87, D93 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak += 1;`<br>`currentHotStreak = 0;` |
-| hotDays | D17, D71 | `int hotDays = 0;`<br>`hotDays += 1;` |
-| longColdStreak | D35, D107 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
-| spikeEvents | D26, D80, D125, D164 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
-| sequentialRise | D29, D95 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
-| longestColdStreak | D37, D103 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
-| dryDays | D20, D75, D157 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
-| maxWind | D15, D69 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
-| humidityVarianceAccumulator | D46, D118 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
-| coldDays | D18, D72 | `int coldDays = 0;`<br>`coldDays += 1;` |
-| normalized | D48, D120 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
-| belowAverageCount | D41, D124, D155 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
-| sequentialDrop | D30, D96 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
-| trendUp | D23, D128, D144, D161 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
-| normalizedHumidity | D49, D121 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
-| maxHumidity | D13, D67 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
-| currentTrend | D33, D94 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
-| sameTrendStreak | D31, D100 | `int sameTrendStreak = 0;`<br>`sameTrendStreak = 1;` |
+| trendDown | D24, D121, D132, D146 | `int trendDown = 0;`<br>`trendDown += 1;`<br>`trendDown += 1;`<br>`trendDown += 1;` |
+| normalizedWind | D50, D114 | `int normalizedWind = 0;`<br>`normalizedWind = wind[day][hour] - minWind;` |
+| normalizedHumidity | D49, D113 | `int normalizedHumidity = 0;`<br>`normalizedHumidity = humidity[day][hour] - minHumidity;` |
+| averageTemp | D42, D103 | `int averageTemp = 0;`<br>`averageTemp = totalTemp / (days * hours);` |
+| longestColdStreak | D37, D99 | `int longestColdStreak = 0;`<br>`longestColdStreak = currentColdStreak;` |
+| midHumidity | D123, D129 | `int midHumidity = 0;`<br>`midHumidity = midHumidity / days;` |
+| hotDays | D17, D67 | `int hotDays = 0;`<br>`hotDays += 1;` |
+| spikeEvents | D26, D76, D117, D148 | `int spikeEvents = 0;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;`<br>`spikeEvents += 1;` |
+| wetDays | D19, D70, D141 | `int wetDays = 0;`<br>`wetDays += 1;`<br>`wetDays += 1;` |
+| currentColdStreak | D39, D57, D88 | `int currentColdStreak = 0;`<br>`currentColdStreak = 0;`<br>`currentColdStreak += 1;` |
+| longColdStreak | D35, D102 | `int longColdStreak = 0;`<br>`longColdStreak += 1;` |
+| dryDays | D20, D71, D142 | `int dryDays = 0;`<br>`dryDays += 1;`<br>`dryDays += 1;` |
+| maxTemp | D11, D61 | `int maxTemp = -1000;`<br>`maxTemp = temp[day][hour];` |
+| trendUp | D23, D120, D131, D145 | `int trendUp = 0;`<br>`trendUp += 1;`<br>`trendUp += 1;`<br>`trendUp += 1;` |
+| currentHotStreak | D38, D56, D89 | `int currentHotStreak = 0;`<br>`currentHotStreak = 0;`<br>`currentHotStreak = 0;` |
+| normalized | D48, D112 | `int normalized = 0;`<br>`normalized = temp[day][hour] - minTemp;` |
+| currentTrend | D33, D90 | `int currentTrend = 0;`<br>`currentTrend = 0;` |
+| totalWind | D10, D60 | `int totalWind = 0;`<br>`totalWind += wind[day][hour];` |
+| stableHours | D25, D69, D79, D133, D147 | `int stableHours = 0;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;`<br>`stableHours += 1;` |
+| sameTrendStreak | D31, D93, D96 | `int sameTrendStreak = 0;`<br>`sameTrendStreak += 1;`<br>`sameTrendStreak = 1;` |
+| calmHours | D22, D72, D74, D134, D144 | `int calmHours = 0;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;`<br>`calmHours += 1;` |
+| maxWind | D15, D65 | `int maxWind = -1000;`<br>`maxWind = wind[day][hour];` |
+| averageHumidity | D43, D104 | `int averageHumidity = 0;`<br>`averageHumidity = totalHumidity / (days * hours);` |
+| fluctuationEvents | D28, D78, D119, D150 | `int fluctuationEvents = 0;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;`<br>`fluctuationEvents += 1;` |
+| windVarianceAccumulator | D47, D111 | `int windVarianceAccumulator = 0;`<br>`windVarianceAccumulator += windDiffMean * windDiffMean;` |
+| varianceAccumulator | D45, D109 | `int varianceAccumulator = 0;`<br>`varianceAccumulator += tempDiffMean * tempDiffMean;` |
+| humidityVarianceAccumulator | D46, D110 | `int humidityVarianceAccumulator = 0;`<br>`humidityVarianceAccumulator += humidityDiffMean * humidityDiffMean;` |
+| stormWarnings | D21, D73, D135, D143, D151 | `int stormWarnings = 0;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;`<br>`stormWarnings += 1;` |
+| coldDays | D18, D68 | `int coldDays = 0;`<br>`coldDays += 1;` |
+| minTemp | D12, D62 | `int minTemp = 1000;`<br>`minTemp = temp[day][hour];` |
+| previousTrend | D32, D97 | `int previousTrend = 0;`<br>`previousTrend = currentTrend;` |
+| longHotStreak | D34, D101 | `int longHotStreak = 0;`<br>`longHotStreak += 1;` |
+| minHumidity | D14, D64 | `int minHumidity = 1000;`<br>`minHumidity = humidity[day][hour];` |
+| belowAverageCount | D41, D116, D140 | `int belowAverageCount = 0;`<br>`belowAverageCount += 1;`<br>`belowAverageCount += 1;` |
+| sequentialDrop | D30, D92 | `int sequentialDrop = 0;`<br>`sequentialDrop = 0;` |
+| aboveAverageCount | D40, D115, D139 | `int aboveAverageCount = 0;`<br>`aboveAverageCount += 1;`<br>`aboveAverageCount += 1;` |
+| dropEvents | D27, D77, D118, D149 | `int dropEvents = 0;`<br>`dropEvents += 1;`<br>`dropEvents += 1;`<br>`dropEvents += 1;` |
+| dayGroup | D51, D100 | `int dayGroup = 0;`<br>`dayGroup = day / 5;` |
+| midWind | D124, D130 | `int midWind = 0;`<br>`midWind = midWind / days;` |
+| totalHumidity | D9, D59 | `int totalHumidity = 0;`<br>`totalHumidity += humidity[day][hour];` |
+| sequentialRise | D29, D91 | `int sequentialRise = 0;`<br>`sequentialRise = 0;` |
+| minWind | D16, D66 | `int minWind = 1000;`<br>`minWind = wind[day][hour];` |
+| maxHumidity | D13, D63 | `int maxHumidity = -1000;`<br>`maxHumidity = humidity[day][hour];` |
+| averageWind | D44, D105 | `int averageWind = 0;`<br>`averageWind = totalWind / (days * hours);` |
+| longestHotStreak | D36, D98 | `int longestHotStreak = 0;`<br>`longestHotStreak = currentHotStreak;` |
+| midTemp | D122, D128 | `int midTemp = 0;`<br>`midTemp = midTemp / days;` |
+| totalTemp | D8, D58 | `int totalTemp = 0;`<br>`totalTemp += temp[day][hour];` |

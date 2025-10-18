@@ -55,182 +55,143 @@ int dayGroup = 0;
 int hourGroup = 0;
 int bucketTemp[6];
 int bucketHumidity[6];
-int bucketWind[6];
-dayGroup = 0;"]; 
+int bucketWind[6];"]; 
     B1 [label="B1:
-for-cond (dayGroup < 6)"]; 
+for (dayGroup = 0; dayGroup < 6; dayGroup++) {"]; 
     B2 [label="B2:
-day = 0;"]; 
-    B3 [label="B3:
-dayGroup++;"]; 
-    B4 [label="B4:
 bucketTemp[dayGroup] = 0;
 bucketHumidity[dayGroup] = 0;
 bucketWind[dayGroup] = 0;"]; 
-    B5 [label="B5:
-for-cond (day < days)"]; 
-    B6 [label="B6:
-averageTemp = totalTemp / (days * hours);
-averageHumidity = totalHumidity / (days * hours);
-averageWind = totalWind / (days * hours);
-day = 0;"]; 
-    B7 [label="B7:
-day++;"]; 
-    B8 [label="B8:
+    B3 [label="B3:
+for (day = 0; day < days; day++) {"]; 
+    B4 [label="B4:
 currentHotStreak = 0;
-currentColdStreak = 0;
-hour = 0;"]; 
-    B9 [label="B9:
-for-cond (hour < hours)"]; 
-    B10 [label="B10:"]; 
-    B11 [label="B11:
-hour++;"]; 
-    B12 [label="B12:
+currentColdStreak = 0;"]; 
+    B5 [label="B5:
+for (hour = 0; hour < hours; hour++) {"]; 
+    B6 [label="B6:
 temp[day][hour] = (day * 3 + hour * 2) % 45 + 10;
 humidity[day][hour] = (day * 5 + hour) % 70 + 20;
 wind[day][hour] = (day * 4 + hour * 3) % 35 + 5;
 totalTemp += temp[day][hour];
 totalHumidity += humidity[day][hour];
 totalWind += wind[day][hour];"]; 
-    B13 [label="B13:
-if (temp[day][hour] > maxTemp)"]; 
-    B14 [label="B14:
+    B7 [label="B7:
+if (temp[day][hour] > maxTemp) {"]; 
+    B8 [label="B8:
 maxTemp = temp[day][hour];"]; 
-    B15 [label="B15:"]; 
-    B16 [label="B16:
-if (temp[day][hour] < minTemp)"]; 
-    B17 [label="B17:
+    B9 [label="B9:
+if (temp[day][hour] < minTemp) {"]; 
+    B10 [label="B10:
 minTemp = temp[day][hour];"]; 
-    B18 [label="B18:"]; 
-    B19 [label="B19:
-if (humidity[day][hour] > maxHumidity)"]; 
-    B20 [label="B20:
+    B11 [label="B11:
+if (humidity[day][hour] > maxHumidity) {"]; 
+    B12 [label="B12:
 maxHumidity = humidity[day][hour];"]; 
-    B21 [label="B21:"]; 
-    B22 [label="B22:
-if (humidity[day][hour] < minHumidity)"]; 
-    B23 [label="B23:
+    B13 [label="B13:
+if (humidity[day][hour] < minHumidity) {"]; 
+    B14 [label="B14:
 minHumidity = humidity[day][hour];"]; 
-    B24 [label="B24:"]; 
-    B25 [label="B25:
-if (wind[day][hour] > maxWind)"]; 
-    B26 [label="B26:
+    B15 [label="B15:
+if (wind[day][hour] > maxWind) {"]; 
+    B16 [label="B16:
 maxWind = wind[day][hour];"]; 
-    B27 [label="B27:"]; 
-    B28 [label="B28:
-if (wind[day][hour] < minWind)"]; 
-    B29 [label="B29:
+    B17 [label="B17:
+if (wind[day][hour] < minWind) {"]; 
+    B18 [label="B18:
 minWind = wind[day][hour];"]; 
-    B30 [label="B30:"]; 
-    B31 [label="B31:
-if (temp[day][hour] >= 35)"]; 
-    B32 [label="B32:
-hotDays += 1;"]; 
-    B33 [label="B33:
-coldDays += 1;"]; 
-    B34 [label="B34:
-else
+    B19 [label="B19:
+if (temp[day][hour] >= 35) {"]; 
+    B20 [label="B20:
+hotDays += 1;
+} else if (temp[day][hour] <= 15) {
+coldDays += 1;
+} else {
 stableHours += 1;"]; 
-    B35 [label="B35:
-if (humidity[day][hour] >= 75)"]; 
-    B36 [label="B36:
-wetDays += 1;"]; 
-    B37 [label="B37:
-dryDays += 1;"]; 
-    B38 [label="B38:
-else
+    B21 [label="B21:
+if (humidity[day][hour] >= 75) {"]; 
+    B22 [label="B22:
+wetDays += 1;
+} else if (humidity[day][hour] <= 25) {
+dryDays += 1;
+} else {
 calmHours += 1;"]; 
-    B39 [label="B39:
-if (wind[day][hour] >= 30)"]; 
-    B40 [label="B40:
-stormWarnings += 1;"]; 
-    B41 [label="B41:
+    B23 [label="B23:
+if (wind[day][hour] >= 30) {"]; 
+    B24 [label="B24:
+stormWarnings += 1;
+} else if (wind[day][hour] <= 10) {
 calmHours += 1;"]; 
-    B42 [label="B42:"]; 
-    B43 [label="B43:
-if (hour > 0)"]; 
-    B44 [label="B44:
+    B25 [label="B25:
+if (hour > 0) {"]; 
+    B26 [label="B26:
 int tempDiff = temp[day][hour] - temp[day][hour - 1];"]; 
-    B45 [label="B45:
-if (tempDiff > 4)"]; 
-    B46 [label="B46:
-spikeEvents += 1;"]; 
-    B47 [label="B47:
-dropEvents += 1;"]; 
-    B48 [label="B48:
-else if (tempDiff != 0)
+    B27 [label="B27:
+if (tempDiff > 4) {"]; 
+    B28 [label="B28:
+spikeEvents += 1;
+} else if (tempDiff < -4) {
+dropEvents += 1;
+} else if (tempDiff != 0) {
 fluctuationEvents += 1;
-else
+} else {
 stableHours += 1;"]; 
-    B49 [label="B49:
-if (tempDiff > 0)"]; 
-    B50 [label="B50:
+    B29 [label="B29:
+if (tempDiff > 0) {"]; 
+    B30 [label="B30:
 currentTrend = 1;
 sequentialRise += 1;
 sequentialDrop = 0;
 currentHotStreak += 1;
-currentColdStreak = 0;"]; 
-    B51 [label="B51:
+currentColdStreak = 0;
+} else if (tempDiff < 0) {
 currentTrend = -1;
 sequentialDrop += 1;
 sequentialRise = 0;
 currentColdStreak += 1;
-currentHotStreak = 0;"]; 
-    B52 [label="B52:
-else
+currentHotStreak = 0;
+} else {
 currentTrend = 0;
 sequentialRise = 0;
 sequentialDrop = 0;
 sameTrendStreak += 1;"]; 
-    B53 [label="B53:
-if (previousTrend == currentTrend && currentTrend != 0)"]; 
-    B54 [label="B54:
-sameTrendStreak += 1;"]; 
-    B55 [label="B55:
-sameTrendStreak = 0;"]; 
-    B56 [label="B56:
-else
+    B31 [label="B31:
+if (previousTrend == currentTrend && currentTrend != 0) {"]; 
+    B32 [label="B32:
+sameTrendStreak += 1;
+} else if (currentTrend == 0) {
+sameTrendStreak = 0;
+} else {
 sameTrendStreak = 1;
 previousTrend = currentTrend;"]; 
-    B57 [label="B57:"]; 
-    B58 [label="B58:
-if (currentHotStreak > longestHotStreak)"]; 
-    B59 [label="B59:
+    B33 [label="B33:
+if (currentHotStreak > longestHotStreak) {"]; 
+    B34 [label="B34:
 longestHotStreak = currentHotStreak;"]; 
-    B60 [label="B60:"]; 
-    B61 [label="B61:
-if (currentColdStreak > longestColdStreak)"]; 
-    B62 [label="B62:
-longestColdStreak = currentColdStreak;"]; 
-    B63 [label="B63:
+    B35 [label="B35:
+if (currentColdStreak > longestColdStreak) {"]; 
+    B36 [label="B36:
+longestColdStreak = currentColdStreak;
 dayGroup = day / 5;
 bucketTemp[dayGroup] += temp[day][hour];
 bucketHumidity[dayGroup] += humidity[day][hour];
 bucketWind[dayGroup] += wind[day][hour];"]; 
-    B64 [label="B64:
-if (currentHotStreak >= 5)"]; 
-    B65 [label="B65:
+    B37 [label="B37:
+if (currentHotStreak >= 5) {"]; 
+    B38 [label="B38:
 longHotStreak += 1;"]; 
-    B66 [label="B66:"]; 
-    B67 [label="B67:
-if (currentColdStreak >= 5)"]; 
-    B68 [label="B68:
-longColdStreak += 1;"]; 
-    B69 [label="B69:"]; 
-    B70 [label="B70:
-for-cond (day < days)"]; 
-    B71 [label="B71:
-hourGroup = 0;"]; 
-    B72 [label="B72:
-day++;"]; 
-    B73 [label="B73:
-hour = 0;"]; 
-    B74 [label="B74:
-for-cond (hour < hours)"]; 
-    B75 [label="B75:"]; 
-    B76 [label="B76:
-hour++;"]; 
-    B77 [label="B77:
+    B39 [label="B39:
+if (currentColdStreak >= 5) {"]; 
+    B40 [label="B40:
+longColdStreak += 1;
+averageTemp = totalTemp / (days * hours);
+averageHumidity = totalHumidity / (days * hours);
+averageWind = totalWind / (days * hours);"]; 
+    B41 [label="B41:
+for (day = 0; day < days; day++) {"]; 
+    B42 [label="B42:
+for (hour = 0; hour < hours; hour++) {"]; 
+    B43 [label="B43:
 int tempDiffMean = temp[day][hour] - averageTemp;
 int humidityDiffMean = humidity[day][hour] - averageHumidity;
 int windDiffMean = wind[day][hour] - averageWind;
@@ -240,303 +201,224 @@ windVarianceAccumulator += windDiffMean * windDiffMean;
 normalized = temp[day][hour] - minTemp;
 normalizedHumidity = humidity[day][hour] - minHumidity;
 normalizedWind = wind[day][hour] - minWind;"]; 
-    B78 [label="B78:
-if (normalized > averageTemp)"]; 
-    B79 [label="B79:
-aboveAverageCount += 1;"]; 
-    B80 [label="B80:
+    B44 [label="B44:
+if (normalized > averageTemp) {"]; 
+    B45 [label="B45:
+aboveAverageCount += 1;
+} else if (normalized < averageTemp) {
 belowAverageCount += 1;"]; 
-    B81 [label="B81:"]; 
-    B82 [label="B82:
-if (normalizedHumidity > averageHumidity && normalizedWind > averageWind)"]; 
-    B83 [label="B83:
-spikeEvents += 1;"]; 
-    B84 [label="B84:
-dropEvents += 1;"]; 
-    B85 [label="B85:
-else
+    B46 [label="B46:
+if (normalizedHumidity > averageHumidity && normalizedWind > averageWind) {"]; 
+    B47 [label="B47:
+spikeEvents += 1;
+} else if (normalizedHumidity < averageHumidity && normalizedWind < averageWind) {
+dropEvents += 1;
+} else {
 fluctuationEvents += 1;"]; 
-    B86 [label="B86:
-if (temp[day][hour] > 30 && humidity[day][hour] > 60 && wind[day][hour] < 15)"]; 
-    B87 [label="B87:
+    B48 [label="B48:
+if (temp[day][hour] > 30 && humidity[day][hour] > 60 && wind[day][hour] < 15) {"]; 
+    B49 [label="B49:
 trendUp += 1;"]; 
-    B88 [label="B88:"]; 
-    B89 [label="B89:
-if (temp[day][hour] < 20 && humidity[day][hour] < 40 && wind[day][hour] > 20)"]; 
-    B90 [label="B90:
+    B50 [label="B50:
+if (temp[day][hour] < 20 && humidity[day][hour] < 40 && wind[day][hour] > 20) {"]; 
+    B51 [label="B51:
 trendDown += 1;"]; 
-    B91 [label="B91:"]; 
-    B92 [label="B92:
-for-cond (hourGroup < hours)"]; 
-    B93 [label="B93:
-dayGroup = 0;"]; 
-    B94 [label="B94:
-hourGroup++;"]; 
-    B95 [label="B95:
+    B52 [label="B52:
+for (hourGroup = 0; hourGroup < hours; hourGroup++) {"]; 
+    B53 [label="B53:
 int midTemp = 0;
 int midHumidity = 0;
-int midWind = 0;
-day = 0;"]; 
-    B96 [label="B96:
-for-cond (day < days)"]; 
-    B97 [label="B97:
+int midWind = 0;"]; 
+    B54 [label="B54:
+for (day = 0; day < days; day++) {"]; 
+    B55 [label="B55:
+midTemp += temp[day][hourGroup];
+midHumidity += humidity[day][hourGroup];
+midWind += wind[day][hourGroup];
 midTemp = midTemp / days;
 midHumidity = midHumidity / days;
 midWind = midWind / days;"]; 
-    B98 [label="B98:
-day++;"]; 
-    B99 [label="B99:
-midTemp += temp[day][hourGroup];
-midHumidity += humidity[day][hourGroup];
-midWind += wind[day][hourGroup];"]; 
-    B100 [label="B100:
-if (midTemp > averageTemp && midHumidity > averageHumidity)"]; 
-    B101 [label="B101:
-trendUp += 1;"]; 
-    B102 [label="B102:
-trendDown += 1;"]; 
-    B103 [label="B103:
-else
+    B56 [label="B56:
+if (midTemp > averageTemp && midHumidity > averageHumidity) {"]; 
+    B57 [label="B57:
+trendUp += 1;
+} else if (midTemp < averageTemp && midHumidity < averageHumidity) {
+trendDown += 1;
+} else {
 stableHours += 1;"]; 
-    B104 [label="B104:
-if (midWind < averageWind)"]; 
-    B105 [label="B105:
-calmHours += 1;"]; 
-    B106 [label="B106:
+    B58 [label="B58:
+if (midWind < averageWind) {"]; 
+    B59 [label="B59:
+calmHours += 1;
+} else {
 stormWarnings += 1;"]; 
-    B107 [label="B107:"]; 
-    B108 [label="B108:
-for-cond (dayGroup < 6)"]; 
-    B109 [label="B109:"]; 
-    B110 [label="B110:
-dayGroup++;"]; 
-    B111 [label="B111:
+    B60 [label="B60:
+for (dayGroup = 0; dayGroup < 6; dayGroup++) {"]; 
+    B61 [label="B61:
 int groupTemp = bucketTemp[dayGroup] / (hours * 5);
 int groupHumidity = bucketHumidity[dayGroup] / (hours * 5);
 int groupWind = bucketWind[dayGroup] / (hours * 5);"]; 
-    B112 [label="B112:
-if (groupTemp > averageTemp)"]; 
-    B113 [label="B113:
-aboveAverageCount += 1;"]; 
-    B114 [label="B114:
+    B62 [label="B62:
+if (groupTemp > averageTemp) {"]; 
+    B63 [label="B63:
+aboveAverageCount += 1;
+} else {
 belowAverageCount += 1;"]; 
-    B115 [label="B115:"]; 
-    B116 [label="B116:
-if (groupHumidity > averageHumidity)"]; 
-    B117 [label="B117:
-wetDays += 1;"]; 
-    B118 [label="B118:
+    B64 [label="B64:
+if (groupHumidity > averageHumidity) {"]; 
+    B65 [label="B65:
+wetDays += 1;
+} else {
 dryDays += 1;"]; 
-    B119 [label="B119:"]; 
-    B120 [label="B120:
-if (groupWind > averageWind)"]; 
-    B121 [label="B121:
-stormWarnings += 1;"]; 
-    B122 [label="B122:
+    B66 [label="B66:
+if (groupWind > averageWind) {"]; 
+    B67 [label="B67:
+stormWarnings += 1;
+} else {
 calmHours += 1;"]; 
-    B123 [label="B123:"]; 
-    B124 [label="B124:
-if (aboveAverageCount > belowAverageCount)"]; 
-    B125 [label="B125:
-trendUp += 1;"]; 
-    B126 [label="B126:
-trendDown += 1;"]; 
-    B127 [label="B127:
-else
+    B68 [label="B68:
+if (aboveAverageCount > belowAverageCount) {"]; 
+    B69 [label="B69:
+trendUp += 1;
+} else if (aboveAverageCount < belowAverageCount) {
+trendDown += 1;
+} else {
 stableHours += 1;"]; 
-    B128 [label="B128:
-if (longHotStreak > longColdStreak)"]; 
-    B129 [label="B129:
-spikeEvents += 1;"]; 
-    B130 [label="B130:
-dropEvents += 1;"]; 
-    B131 [label="B131:
-else
+    B70 [label="B70:
+if (longHotStreak > longColdStreak) {"]; 
+    B71 [label="B71:
+spikeEvents += 1;
+} else if (longHotStreak < longColdStreak) {
+dropEvents += 1;
+} else {
 fluctuationEvents += 1;"]; 
-    B132 [label="B132:
-if (longestHotStreak > 10)"]; 
-    B133 [label="B133:
+    B72 [label="B72:
+if (longestHotStreak > 10) {"]; 
+    B73 [label="B73:
 stormWarnings += 1;"]; 
-    B134 [label="B134:"]; 
-    B135 [label="B135:
-if (longestColdStreak > 10)"]; 
-    B136 [label="B136:
-wetDays += 1;"]; 
-    B137 [label="B137:
+    B74 [label="B74:
+if (longestColdStreak > 10) {"]; 
+    B75 [label="B75:
+wetDays += 1;
 return trendUp + trendDown + stableHours + spikeEvents + dropEvents + fluctuationEvents + calmHours + stormWarnings + wetDays + dryDays + hotDays + coldDays + aboveAverageCount + belowAverageCount;"]; 
     B0 -> B1;
-    B1 -> B4 [label="true"];
-    B1 -> B2 [label="false"];
-    B2 -> B5;
-    B3 -> B1;
-    B4 -> B3;
-    B5 -> B8 [label="true"];
-    B5 -> B6 [label="false"];
-    B6 -> B70;
-    B7 -> B5;
+    B1 -> B2 [label="true"];
+    B1 -> B3 [label="false"];
+    B2 -> B1 [label="back"];
+    B2 -> B3;
+    B3 -> B4 [label="true"];
+    B3 -> B5 [label="false"];
+    B4 -> B3 [label="back"];
+    B4 -> B5;
+    B5 -> B6 [label="true"];
+    B5 -> B7 [label="false"];
+    B6 -> B5 [label="back"];
+    B6 -> B7;
+    B7 -> B8 [label="true"];
+    B7 -> B9 [label="false"];
     B8 -> B9;
-    B9 -> B12 [label="true"];
-    B9 -> B10 [label="false"];
-    B10 -> B64;
-    B11 -> B9;
+    B9 -> B10 [label="true"];
+    B9 -> B11 [label="false"];
+    B10 -> B11;
+    B11 -> B12 [label="true"];
+    B11 -> B13 [label="false"];
     B12 -> B13;
     B13 -> B14 [label="true"];
     B13 -> B15 [label="false"];
     B14 -> B15;
-    B15 -> B16;
-    B16 -> B17 [label="true"];
-    B16 -> B18 [label="false"];
-    B17 -> B18;
+    B15 -> B16 [label="true"];
+    B15 -> B17 [label="false"];
+    B16 -> B17;
+    B17 -> B18 [label="true"];
+    B17 -> B19 [label="false"];
     B18 -> B19;
     B19 -> B20 [label="true"];
     B19 -> B21 [label="false"];
     B20 -> B21;
-    B21 -> B22;
-    B22 -> B23 [label="true"];
-    B22 -> B24 [label="false"];
-    B23 -> B24;
+    B21 -> B22 [label="true"];
+    B21 -> B23 [label="false"];
+    B22 -> B23;
+    B23 -> B24 [label="true"];
+    B23 -> B25 [label="false"];
     B24 -> B25;
     B25 -> B26 [label="true"];
     B25 -> B27 [label="false"];
     B26 -> B27;
-    B27 -> B28;
-    B28 -> B29 [label="true"];
-    B28 -> B30 [label="false"];
-    B29 -> B30;
+    B27 -> B28 [label="true"];
+    B27 -> B29 [label="false"];
+    B28 -> B29;
+    B29 -> B30 [label="true"];
+    B29 -> B31 [label="false"];
     B30 -> B31;
     B31 -> B32 [label="true"];
     B31 -> B33 [label="false"];
-    B32 -> B34;
-    B33 -> B34;
+    B32 -> B33;
+    B33 -> B34 [label="true"];
+    B33 -> B35 [label="false"];
     B34 -> B35;
     B35 -> B36 [label="true"];
     B35 -> B37 [label="false"];
-    B36 -> B38;
-    B37 -> B38;
+    B36 -> B37;
+    B37 -> B38 [label="true"];
+    B37 -> B39 [label="false"];
     B38 -> B39;
     B39 -> B40 [label="true"];
     B39 -> B41 [label="false"];
-    B40 -> B42;
-    B41 -> B42;
-    B42 -> B43;
-    B43 -> B44 [label="true"];
-    B43 -> B57 [label="false"];
-    B44 -> B45;
-    B45 -> B46 [label="true"];
-    B45 -> B47 [label="false"];
-    B46 -> B48;
+    B40 -> B41;
+    B41 -> B42 [label="true"];
+    B41 -> B43 [label="false"];
+    B42 -> B41 [label="back"];
+    B42 -> B43 [label="true"];
+    B42 -> B44 [label="false"];
+    B43 -> B42 [label="back"];
+    B43 -> B44;
+    B44 -> B45 [label="true"];
+    B44 -> B46 [label="false"];
+    B45 -> B46;
+    B46 -> B47 [label="true"];
+    B46 -> B48 [label="false"];
     B47 -> B48;
-    B48 -> B49;
-    B49 -> B50 [label="true"];
-    B49 -> B51 [label="false"];
-    B50 -> B52;
+    B48 -> B49 [label="true"];
+    B48 -> B50 [label="false"];
+    B49 -> B50;
+    B50 -> B51 [label="true"];
+    B50 -> B52 [label="false"];
     B51 -> B52;
-    B52 -> B53;
-    B53 -> B54 [label="true"];
-    B53 -> B55 [label="false"];
-    B54 -> B56;
+    B52 -> B53 [label="true"];
+    B52 -> B54 [label="false"];
+    B53 -> B52 [label="back"];
+    B53 -> B54;
+    B54 -> B55 [label="true"];
+    B54 -> B56 [label="false"];
+    B55 -> B54 [label="back"];
     B55 -> B56;
-    B56 -> B57;
+    B56 -> B57 [label="true"];
+    B56 -> B58 [label="false"];
     B57 -> B58;
     B58 -> B59 [label="true"];
     B58 -> B60 [label="false"];
     B59 -> B60;
-    B60 -> B61;
-    B61 -> B62 [label="true"];
-    B61 -> B63 [label="false"];
-    B62 -> B63;
-    B63 -> B11;
+    B60 -> B61 [label="true"];
+    B60 -> B62 [label="false"];
+    B61 -> B60 [label="back"];
+    B61 -> B62;
+    B62 -> B63 [label="true"];
+    B62 -> B64 [label="false"];
+    B63 -> B64;
     B64 -> B65 [label="true"];
     B64 -> B66 [label="false"];
     B65 -> B66;
-    B66 -> B67;
-    B67 -> B68 [label="true"];
-    B67 -> B69 [label="false"];
-    B68 -> B69;
-    B69 -> B7;
-    B70 -> B73 [label="true"];
-    B70 -> B71 [label="false"];
-    B71 -> B92;
-    B72 -> B70;
+    B66 -> B67 [label="true"];
+    B66 -> B68 [label="false"];
+    B67 -> B68;
+    B68 -> B69 [label="true"];
+    B68 -> B70 [label="false"];
+    B69 -> B70;
+    B70 -> B71 [label="true"];
+    B70 -> B72 [label="false"];
+    B71 -> B72;
+    B72 -> B73 [label="true"];
+    B72 -> B74 [label="false"];
     B73 -> B74;
-    B74 -> B77 [label="true"];
-    B74 -> B75 [label="false"];
-    B75 -> B72;
-    B76 -> B74;
-    B77 -> B78;
-    B78 -> B79 [label="true"];
-    B78 -> B80 [label="false"];
-    B79 -> B81;
-    B80 -> B81;
-    B81 -> B82;
-    B82 -> B83 [label="true"];
-    B82 -> B84 [label="false"];
-    B83 -> B85;
-    B84 -> B85;
-    B85 -> B86;
-    B86 -> B87 [label="true"];
-    B86 -> B88 [label="false"];
-    B87 -> B88;
-    B88 -> B89;
-    B89 -> B90 [label="true"];
-    B89 -> B91 [label="false"];
-    B90 -> B91;
-    B91 -> B76;
-    B92 -> B95 [label="true"];
-    B92 -> B93 [label="false"];
-    B93 -> B108;
-    B94 -> B92;
-    B95 -> B96;
-    B96 -> B99 [label="true"];
-    B96 -> B97 [label="false"];
-    B97 -> B100;
-    B98 -> B96;
-    B99 -> B98;
-    B100 -> B101 [label="true"];
-    B100 -> B102 [label="false"];
-    B101 -> B103;
-    B102 -> B103;
-    B103 -> B104;
-    B104 -> B105 [label="true"];
-    B104 -> B106 [label="false"];
-    B105 -> B107;
-    B106 -> B107;
-    B107 -> B94;
-    B108 -> B111 [label="true"];
-    B108 -> B109 [label="false"];
-    B109 -> B124;
-    B110 -> B108;
-    B111 -> B112;
-    B112 -> B113 [label="true"];
-    B112 -> B114 [label="false"];
-    B113 -> B115;
-    B114 -> B115;
-    B115 -> B116;
-    B116 -> B117 [label="true"];
-    B116 -> B118 [label="false"];
-    B117 -> B119;
-    B118 -> B119;
-    B119 -> B120;
-    B120 -> B121 [label="true"];
-    B120 -> B122 [label="false"];
-    B121 -> B123;
-    B122 -> B123;
-    B123 -> B110;
-    B124 -> B125 [label="true"];
-    B124 -> B126 [label="false"];
-    B125 -> B127;
-    B126 -> B127;
-    B127 -> B128;
-    B128 -> B129 [label="true"];
-    B128 -> B130 [label="false"];
-    B129 -> B131;
-    B130 -> B131;
-    B131 -> B132;
-    B132 -> B133 [label="true"];
-    B132 -> B134 [label="false"];
-    B133 -> B134;
-    B134 -> B135;
-    B135 -> B136 [label="true"];
-    B135 -> B137 [label="false"];
-    B136 -> B137;
+    B74 -> B75 [label="true"];
 }
