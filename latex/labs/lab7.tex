@@ -17,6 +17,7 @@
 \fancyfoot[C]{\thepage}
 \usepackage{xcolor}
 \newcommand{\command}[1]{\texttt{\textcolor{blue}{#1}}}
+\usepackage{float} % put this in the preamble
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.6em}
@@ -120,7 +121,14 @@ I exported a DOT graph for each program, and rendered it to PNG if \texttt{dot} 
 
 \insertimage[0.8\textwidth]{../images/lab7/6_dot.png}[Code snippet -- DOT export and PNG rendering]
 
+% \insertimage[0.7\textwidth]{../images/lab7/cfg.png}[Sample CFG (Preview)]
+\noindent
+\includegraphics[width=0.33\textwidth]{../images/lab7/cfg1.png}%
+\includegraphics[width=0.33\textwidth]{../images/lab7/cfg2.png}%
+\includegraphics[width=0.33\textwidth]{../images/lab7/cfg3.png}
+
 Link to sample CFG: \href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab7/output/inventory_tracker/cfg.png}{inventory\_tracker CFG PNG} \space (too big to embed here)
+
 
 \subsection{Definition Extraction -- \href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab7/analyzer/cfg_builder.py}{\texttt{analyzer/cfg\_builder.py}}}
 For each statement, I extracted defined variables and created unique definition IDs (\texttt{D1}, \texttt{D2}, \ldots):
@@ -182,7 +190,7 @@ The runner (\href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab7/ru
 
 \insertimage[0.8\textwidth]{../images/lab7/15.png}[Terminal Output]
 
-I also wrote code to generate an overall \texttt{metrics\_summary.md} and, if Matplotlib was available, a bar chart \texttt{cyclomatic\_complexity.png} at \texttt{lab7/output/}.
+I also wrote code to generate an overall \href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab7/output/metrics_summary.md}{\texttt{metrics\_summary.md}} and, if Matplotlib was available, a bar chart \href{https://github.com/ShardulJunagade/cs202-stt/tree/main/lab7/output/cyclomatic_complexity.png}{\texttt{cyclomatic\_complexity.png}} at \texttt{lab7/output/}.
 
 \insertimage[0.8\textwidth]{../images/lab7/16.png}[Code snippet -- Metrics summary generation]
 
@@ -207,7 +215,7 @@ For each program, I reported the number of nodes (basic blocks), edges, and cycl
 
 Actual metrics from my run (\texttt{lab7/output/metrics\_summary.md}):
 
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -259,9 +267,10 @@ This assignment gave me a hands-on understanding of how control-flow and data-fl
 \section{References}
 \begin{itemize}[itemsep=0em, topsep=0pt]
     \item Lecture 7 slides: \href{https://drive.google.com/file/d/1cMLqFTzRJcpvq8iTEL4XV0K9BclsALzE/view}{here}
+    \item Lab Assignment 7 document: \href{https://drive.google.com/file/d/1x6MDZ6e2PJ0MFn6u2U8NPzMxtcuhOy2t/view}{here}
     \item Data-flow analysis: \url{https://en.wikipedia.org/wiki/Data-flow_analysis}
     \item Graphviz: \url{https://graphviz.org/}
-    \item PyGraphviz (optional): \url{https://pygraphviz.github.io/}
+    \item PyGraphviz: \url{https://pygraphviz.github.io/}
 \end{itemize}
 
 
