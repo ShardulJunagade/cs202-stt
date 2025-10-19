@@ -41,7 +41,7 @@ class BasicBlock:
     terminated: bool = False
 
     # Allow blocks to be placed in sets by hashing on stable identifier
-    def __hash__(self) -> int:  # type: ignore[override]
+    def __hash__(self) -> int:
         return hash(self.identifier)
 
     def add_statement(self, statement: Statement) -> None:
@@ -269,5 +269,4 @@ class CFGBuilder:
 
 def build_cfg_from_main_source(body_source: str, start_line: int = 1) -> CFG:
     builder = CFGBuilder()
-    # Use leader-based method per README instructions
     return builder.build_from_source_leaders(body_source, start_line)

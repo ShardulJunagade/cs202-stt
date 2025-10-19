@@ -7,14 +7,10 @@ def read_c_file(path: str) -> str:
 
 
 def strip_preprocessor_and_comments(source: str) -> str:
-    """Remove preprocessor lines and C/C++ style comments.
-
-    This is a lightweight cleaner adequate for lab programs; it does not handle
-    strings with comment-like content rigorously but works for typical inputs.
-    """
+    """Remove preprocessor lines and C/C++ style comments."""
     import re
 
-    # Remove /* ... */ block comments (non-greedy, across lines)
+    # Remove /* ... */ block comments
     source = re.sub(r"/\*.*?\*/", "", source, flags=re.S)
     # Remove // line comments
     source = re.sub(r"//.*", "", source)
@@ -37,7 +33,7 @@ def find_main_function_bounds(source: str) -> Tuple[int, int]:
     """
     import re
 
-    # Find 'main' function signature roughly
+    # Find 'main' function signature
     match = re.search(r"\bint\s+main\s*\([^)]*\)\s*\{", source)
     if not match:
         # Try without assuming return type strictly

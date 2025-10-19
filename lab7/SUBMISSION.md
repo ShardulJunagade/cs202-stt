@@ -54,5 +54,3 @@ Graphviz: if `dot` isn’t in PATH, the script still writes the `.dot` file; PNG
 - Ran the analysis on the three programs and generated outputs in `lab7/output_leaders`.
 - Verified node/edge counts and that the DOT files render (when Graphviz is available).
 - Confirmed the iteration tables converge.
-
-If you want me to tweak anything (e.g., else-if chains, more variable patterns, or extra visual styling), I can update quickly. 
