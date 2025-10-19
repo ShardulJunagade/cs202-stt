@@ -1,0 +1,4 @@
+tool,unique_cwes,top25_covered,top25_over_25_pct,top25_fraction_of_tool_pct
+bandit,4,2,8.0,50.0
+dlint,1,1,4.0,100.0
+semgrep,3,3,12.0,100.0
