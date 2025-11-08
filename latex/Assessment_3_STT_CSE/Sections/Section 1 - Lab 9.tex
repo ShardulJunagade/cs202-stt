@@ -1,0 +1,245 @@
+\section{Lab 9: Development of C\# Console Applications}
+
+\subsection*{Metadata}
+\begin{itemize}
+	\item Course: CS202 -- Software Tools and Techniques for CSE
+	\item Lab Topic: Development of C\# Console Applications
+	\item Name: Shardul Junagade (23110297)
+	\item Date: 13th October 2025
+\end{itemize}
+
+Repository path: \texttt{lab9/}
+
+\subsection{Introduction}
+This lab was a gentle, hands-on tour of C\# and .NET using small console programs. I split the work into four focused projects to keep each idea clear: a quick environment check, arithmetic with a simple class, a few loop patterns plus a factorial function, and a set of array/matrix tasks. I also reasoned through the output of the snippets in Tasks 5--7 so the ``why'' behind each output was explicit.
+
+\subsection{Tools}
+\begin{itemize}[itemsep=0pt]
+	\item OS: Windows 11; Shell: PowerShell 7
+	\item .NET SDK: .NET 8 (meets the ``.NET 6 or later'' requirement)
+	\item IDE/Editor: Visual Studio 2022 Community and/or VS Code
+	\item Git: for version control (optional but handy)
+\end{itemize}
+
+Project layout used in this lab:
+\begin{itemize}[itemsep=0pt]
+	\item \texttt{lab9/src/Task1HelloWorld/}
+	\item \texttt{lab9/src/Task2Arithmetic/}
+	\item \texttt{lab9/src/Task3LoopsFunctions/}
+	\item \texttt{lab9/src/Task4ArraysMatrices/}
+\end{itemize}
+
+\insertimage{./images/env.png}[Environment Details]
+
+\insertimage{./images/proj.png}[Project Structure]
+
+\subsection{Setup}
+I set up a fresh .NET environment on Windows and validated it with a tiny console app before working on the lab projects.
+
+\subsubsection*{Visual Studio path (recommended by the lab)}
+\begin{enumerate}
+	\item Install Visual Studio 2022 (Community Edition) with the ``.NET desktop development'' workload selected.
+
+\insertimage{./images/workload.png}[Workload Selection]
+
+	\item Confirm the SDK is on PATH:
+\begin{verbatim}
+dotnet --version
+\end{verbatim}
+	\item Create a new C\# Console App in Visual Studio and set the Target Framework to .NET 8.0 in project properties.
+
+\insertimage{./images/1.png}[New Project Wizard]
+
+\insertimage{./images/2.png}[Project Target Framework]
+
+\insertimage{./images/4.png}[.NET Version Selection]
+\end{enumerate}
+
+\subsubsection*{CLI alternative (works well from VS Code)}
+\begin{verbatim}
+# Create and run a throwaway test app
+dotnet new console -f net8.0 -o sandbox-console
+dotnet run --project sandbox-console/sandbox-console.csproj
+\end{verbatim}
+
+\subsection{Methodology and Results}
+
+\subsubsection{Task 1 -- Environment check and basic I/O}
+Code intent: confirm console I/O and runtime. Reads a name via \texttt{Console.ReadLine()} and prints a greeting.\\
+Path: \texttt{lab9/src/Task1HelloWorld/Program.cs}
+
+Run:
+\begin{verbatim}
+dotnet run --project lab9/src/Task1HelloWorld/Task1HelloWorld.csproj
+\end{verbatim}
+
+Result: Prompts for a name and echoes a greeting; verifies SDK and terminal interaction.
+
+\insertimage{./images/5.png}[Task1 code snippet]
+
+\insertimage{./images/6.png}[Task1 console output]
+
+\subsubsection{Task 2 -- Arithmetic + even/odd}
+Design: Small \texttt{Calculator} class with explicit methods (\texttt{Add}, \texttt{Subtract}, \texttt{Multiply}, \texttt{Divide}). Division guarded against zero with an exception caught at call site.\\
+Path: \texttt{lab9/src/Task2Arithmetic/Program.cs}
+
+Run:
+\begin{verbatim}
+dotnet run --project lab9/src/Task2Arithmetic/Task2Arithmetic.csproj
+\end{verbatim}
+
+Result: Prints four operation results and states whether the sum is even or odd. Division by zero produces a clear message.
+
+\insertimage{./images/7.png}[Task2 code (Calculator class)]
+
+\insertimage{./images/8.png}[Task2 sample output]
+
+\subsubsection{Task 3 -- Loops and factorial}
+Design: Demonstrates \texttt{for}, \texttt{foreach}, and a \texttt{do-while} loop. Factorial provided by \texttt{MathUtils.Factorial(int)} returning \texttt{BigInteger} to avoid premature overflow.\\
+Path: \texttt{lab9/src/Task3LoopsFunctions/Program.cs}
+
+Run:
+\begin{verbatim}
+dotnet run --project lab9/src/Task3LoopsFunctions/Task3LoopsFunctions.csproj
+\end{verbatim}
+
+Result: Two sequences 1..10 printed; interactive loop ends cleanly on \texttt{exit}; factorial results shown for valid integers, error for negatives.
+
+\insertimage{./images/9.1.png}[Task3 code snippet]
+
+\insertimage{./images/9.2.png}[Task3 code snippet]
+
+\insertimage{./images/10.png}[Task3 interactive session output]
+
+\subsubsection{Task 4 -- Arrays and matrices}
+Design: Manual bubble sort with shrinking pass; row-major and column-major flattening; matrix multiply with dimension check and aligned printer.\\
+Path: \texttt{lab9/src/Task4ArraysMatrices/Program.cs}
+
+Run:
+\begin{verbatim}
+dotnet run --project lab9/src/Task4ArraysMatrices/Task4ArraysMatrices.csproj
+\end{verbatim}
+
+Result: Sorted list echoed back; flattening shows differing orders; multiplication prints a 2x2 matrix from 2x3 and 3x2 inputs.
+
+\insertimage{./images/11.1.png}[Task4 Array Algorithms snippet]
+
+\insertimage{./images/11.2.png}[Task4 Matrix Algorithms snippet]
+
+\insertimage{./images/11.3.png}[Task4 Program snippet]
+
+\insertimage{./images/12.png}[Task4 interactive session output]
+
+\paragraph{Aggregate Run Commands}
+\begin{verbatim}
+dotnet run --project lab9/src/Task1HelloWorld/Task1HelloWorld.csproj
+dotnet run --project lab9/src/Task2Arithmetic/Task2Arithmetic.csproj
+dotnet run --project lab9/src/Task3LoopsFunctions/Task3LoopsFunctions.csproj
+dotnet run --project lab9/src/Task4ArraysMatrices/Task4ArraysMatrices.csproj
+\end{verbatim}
+
+\subsection{Output Reasoning (Tasks 5--7)}
+
+\subsubsection{Task 5 -- Level 0 (Code A)}
+Explanation: I ran the program containing a single post-increment expression inside \texttt{Console.WriteLine}. The post-increment operator returned the current value of \texttt{a} before performing the increment, so the console displayed \texttt{0}. Immediately after evaluation, \texttt{a} became \texttt{1}, but that new value was not part of the printed output. This confirmed the standard right-to-left evaluation of the post-increment without any hidden side effects.
+
+Output I observed:
+\begin{verbatim}
+0
+\end{verbatim}
+
+\insertimage{./images/13.png}[L0A -- code]
+
+\insertimage{./images/14.png}[L0A -- output]
+
+\subsubsection{Task 5 -- Level 0 (Code B)}
+Explanation: I attempted to build the second variant where \texttt{Main} was defined as an instance method (\texttt{public void Main}). The C\# compiler emitted error CS5001 because the runtime entry point must be a static method with a valid signature (e.g., \texttt{static void Main(string[] args)}). Since that requirement was not met, the assembly did not produce any executable output and the program never started.
+
+Compiler behavior I observed:
+\begin{verbatim}
+error CS5001: Program does not contain a static 'Main' method suitable for an entry point
+\end{verbatim}
+
+\insertimage{./images/15.png}[L0B -- build error]
+
+\subsubsection{Task 6 -- Level 1 (Code A)}
+Explanation: I evaluated the sequence of increments carefully. First \texttt{b = a++} captured \texttt{0} then advanced \texttt{a} to \texttt{1}. In \texttt{Console.WriteLine(a++.ToString(), ++a, -a++)}, the first argument became the format string ``1'' (after \texttt{a++} advanced \texttt{a} to \texttt{2}), so the remaining evaluated arguments (\texttt{++a} making \texttt{a = 3}, and \texttt{-a++} yielding \texttt{-3} then \texttt{a = 4}) were ignored for printing but still executed. The second line concatenated the string versions of \texttt{4} and \texttt{-5} (with \texttt{a} moving from \texttt{4} to \texttt{6}), yielding \texttt{4-5}. Finally, \texttt{~b} computed the bitwise complement of \texttt{0}, producing \texttt{-1}.
+
+Output I observed:
+\begin{verbatim}
+1
+4-5
+-1
+\end{verbatim}
+
+\insertimage{./images/16.png}[L1A -- code]
+
+\insertimage{./images/17.png}[L1A -- output]
+
+\subsubsection{Task 6 -- Level 1 (Code B: Top-level statements)}
+Explanation: I used top-level statements so the compiler generated an implicit \texttt{Main}. The pre-increment \texttt{++x} raised \texttt{x} from \texttt{3} to \texttt{4} before the addition, making \texttt{y = 2 + 4 = 6}. Left shift \texttt{3 << 2} multiplied the value by 4 yielding \texttt{12}; right shift \texttt{10 >> 1} divided by 2 yielding \texttt{5}. The bitwise complement operator applied two's-complement inversion, so \texttt{~12} became \texttt{-13} and \texttt{~5} became \texttt{-6}.
+
+Output I observed:
+\begin{verbatim}
+int x = 3;
+int y = 2 + ++x;
+x = 4 and y = 6
+x = 3 << 2;
+y = 10 >> 1;
+x = 12 and y = 5
+x = -13 and y = -6
+\end{verbatim}
+
+\insertimage{./images/18.png}[L1B -- code]
+
+\insertimage{./images/19.png}[L1B -- output]
+
+\subsubsection{Task 7 -- Level 2 (Code A)}
+Explanation: I initialized \texttt{i} to \texttt{int.MaxValue} and evaluated \texttt{-(i+1)-i} under the default unchecked arithmetic. The expression \texttt{i + 1} overflowed to \texttt{int.MinValue}; negating \texttt{int.MinValue} left it unchanged due to range asymmetry, and subtracting \texttt{i} yielded the wrapped result \texttt{1}. The \texttt{for} loop's trailing semicolon created an empty loop body that repeatedly overflowed \texttt{i} and never allowed execution to reach the ``Program ended!'' line.
+
+Output I observed:
+\begin{verbatim}
+1
+\end{verbatim}
+
+(The program did not print ``Program ended!'' and did not terminate in a reasonable time.)
+
+\insertimage{./images/20.png}[L2A -- code]
+
+\insertimage{./images/21.png}[L2A -- output]
+
+\subsubsection{Task 7 -- Level 2 (Code B)}
+Explanation: I ran the recursive program where \texttt{Main(["CS202"])} invoked itself without a termination condition. Each invocation consumed another stack frame until the process exhausted stack space. The console printed a long stack trace repeating the same frame many times, which is why it appeared to run for a while; after dumping the trace, the runtime terminated the process due to a stack overflow.
+
+Behavior I observed:
+\begin{verbatim}
+...
+...
+...
+at Program.Main(System.String[])
+at Program.Main(System.String[])
+at Program.Main(System.String[])
+at Program.Main(System.String[])
+at Program.Main(System.String[])
+...
+C:\Users\shardul\source\repos\stt-lab9\stt-lab9\bin\Debug\net8.0\stt-lab9.exe (process 24320) exited with code -1073744151
+\end{verbatim}
+
+\insertimage{./images/22.png}[L2B -- code]
+
+\insertimage{./images/23.png}[L2B -- runtime termination]
+
+\subsection{Conclusion}
+In this lab I implemented four focused C\# console projects and verified core language features: input/output, arithmetic with simple classes, looping constructs, factorial computation, and array/matrix algorithms including bubble sort and multiplication. I also analyzed seven reasoning snippets, confirming operator semantics, overflow behavior, format string handling, and recursion limits. The work strengthened my practical understanding of evaluation order and memory effects while keeping the implementations minimal and explicit.
+
+\subsection{References}
+\begin{itemize}[itemsep=0pt]
+	\item Lab handout: \texttt{lab9/TASK.md}
+	\item Microsoft C\# docs: \url{https://learn.microsoft.com/en-us/dotnet/csharp}
+	\item Arrays: \url{https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/arrays}
+	\item Access modifiers: \url{https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers}
+	\item Top-level statements: \url{https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements}
+	\item Exceptions and overflow: \url{https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling}
+	\item Collection expressions: \url{https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/collection-expressions}
+\end{itemize}
+

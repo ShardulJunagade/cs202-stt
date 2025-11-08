@@ -1,0 +1,879 @@
+\section{Lab 10: Object Lifecycle and Polymorphism in C\#}
+
+\subsection{Introduction}
+This lab focuses on object lifecycle management and class relationships in C\#. 
+The first part deals with constructors, destructors, and tracking active objects. 
+The second part explores inheritance and runtime polymorphism using virtual and overridden methods.
+
+\subsection{Setup and Environment}
+
+All programs in this lab were implemented and executed on a Windows environment using the .NET 8 runtime and Visual Studio IDE. The development setup ensured that C\# features such as constructors, destructors, inheritance, and runtime polymorphism were properly compiled and observed during execution.
+
+\subsection*{Software and System Configuration}
+
+\begin{itemize}
+    \item \textbf{Operating System:} Windows 10 / 11 (64-bit)
+    \item \textbf{IDE Used:} Visual Studio 2022 (Community Edition)
+    \item \textbf{Programming Language:} C\# (Object-Oriented Programming)
+    \item \textbf{Target Framework / Runtime:} \texttt{Microsoft.NETCore.App 8.0.21}
+    \item \textbf{Compiler:} Roslyn C\# Compiler (default in .NET SDK)
+\end{itemize}
+
+\subsection*{Project Configuration}
+\begin{itemize}
+    \item Project Type: Console Application
+    \item Build Configuration: \texttt{Debug} (for destructor visibility during execution)
+    \item Garbage Collection: Default .NET automatic GC (with manual invocation using 
+    \texttt{GC.Collect()} for demonstration)
+\end{itemize}
+
+\subsection*{Pre-Lab Preparation}
+Before beginning the implementation, the following prerequisites were ensured:
+\begin{itemize}
+    \item Visual Studio was installed with the `.NET Desktop Development` workload enabled.
+    \item The .NET 8 SDK was properly configured in system environment variables.
+    \item Basic understanding of class structure, fields, access modifiers, constructors, and destructors in C\#.
+\end{itemize}
+
+This setup provided a stable environment for observing object lifecycle behavior (constructor invocation and garbage-collected destructor invocation), as well as supporting inheritance and dynamic method dispatch (virtual and override mechanisms).
+
+% \section{Constructors, Destructors, and Data Control}
+% We first define a class \texttt{Program} containing:
+% \begin{itemize}
+%     \item A private integer data field.
+%     \item A static counter to track number of active objects.
+%     \item A constructor that increments the counter and prints a message.
+%     \item A destructor that decrements the counter when the object is collected.
+%     \item Methods to set and show the value of the data variable.
+% \end{itemize}
+
+% \subsection*{Code Snippet}
+% \begin{lstlisting}
+% class Program
+% {
+%     private int data;
+%     private static int liveCount = 0;
+
+%     public Program()
+%     {
+%         liveCount++;
+%         Console.WriteLine("Constructor Called");
+%         Console.WriteLine($"Active objects: {liveCount}");
+%     }
+
+%     ~Program()
+%     {
+%         liveCount--;
+%         Console.WriteLine("Object Destroyed");
+%         Console.WriteLine($"Active objects: {liveCount}");
+%     }
+
+%     public void set_data(int x) => data = x;
+
+%     public void show_data() =>
+%         Console.WriteLine($"data = {data}");
+% }
+% \end{lstlisting}
+
+% \subsection{Explanation}
+% The constructor is called when a new object is created and is responsible for initializing its internal data.  
+% The destructor runs when the object is removed from memory by the garbage collector.  
+% Since destructors do not run at predictable times in C\#, the statement \texttt{GC.Collect()} is used to force collection for demonstration purposes.
+
+% The static variable \texttt{liveCount} keeps track of how many instances are currently alive.  
+% Because it is static, all objects share this single variable.
+
+% \subsection{Object Creation and Usage}
+% \begin{lstlisting}
+% static void CreateAndUseProgramObjects()
+% {
+%     Program p1 = new Program();
+%     Program p2 = new Program();
+%     Program p3 = new Program();
+
+%     p1.set_data(10);
+%     p2.set_data(20);
+%     p3.set_data(30);
+
+%     p1.show_data();
+%     p2.show_data();
+%     p3.show_data();
+% }
+% \end{lstlisting}
+
+% \subsection{Observed Output}
+% \begin{verbatim}
+% Constructor Called
+% Active objects: 1
+% Constructor Called
+% Active objects: 2
+% Constructor Called
+% Active objects: 3
+% data = 10
+% data = 20
+% data = 30
+% Object Destroyed
+% Active objects: 2
+% Object Destroyed
+% Active objects: 1
+% Object Destroyed
+% Active objects: 0
+% \end{verbatim}
+
+% \subsection{Discussion}
+% The destructor messages appear only after the method scope ends and garbage collection is forced.  
+% This demonstrates that object destruction is not deterministic in C\#.  
+% The static counter clearly shows how many objects are alive at any point in time.
+
+% \section{Inheritance and Method Overriding}
+% We now create a base class \texttt{Vehicle} and derive \texttt{Car} and \texttt{Truck} from it.  
+% Each subclass overrides the \texttt{Drive()} and \texttt{ShowInfo()} methods to display different behaviors.
+
+% \subsection*{Vehicle Base Class}
+% \begin{lstlisting}
+% public class Vehicle
+% {
+%     protected int speed, fuel;
+%     public Vehicle(int speed = 0, int fuel = 0)
+%     {
+%         this.speed = speed;
+%         this.fuel = fuel;
+%     }
+%     public virtual void Drive()
+%     {
+%         fuel -= 5;
+%         Console.WriteLine("Vehicle is moving...");
+%     }
+%     public virtual void ShowInfo()
+%     {
+%         Console.WriteLine($"Vehicle Info - Speed: {speed}, Fuel: {fuel}");
+%     }
+% }
+% \end{lstlisting}
+
+% \subsection*{Derived Classes}
+% \begin{lstlisting}
+% public class Car : Vehicle
+% {
+%     public int passengers;
+%     public Car(int speed=0,int fuel=0,int passengers=0):base(speed,fuel)
+%     { this.passengers = passengers; }
+
+%     public override void Drive()
+%     {
+%         fuel -= 10;
+%         Console.WriteLine("Car is moving with passenger");
+%     }
+%     public override void ShowInfo()
+%     {
+%         Console.WriteLine($"Car Info - Speed: {speed}, Fuel: {fuel}, Passengers: {passengers}");
+%     }
+% }
+
+% public class Truck : Vehicle
+% {
+%     public int cargoWeight;
+%     public Truck(int speed=0,int fuel=0,int cargoWeight=0):base(speed,fuel)
+%     { this.cargoWeight = cargoWeight; }
+
+%     public override void Drive()
+%     {
+%         fuel -= 15;
+%         Console.WriteLine("Truck is moving with cargo");
+%     }
+%     public override void ShowInfo()
+%     {
+%         Console.WriteLine($"Truck Info - Speed: {speed}, Fuel: {fuel}, CargoWeight: {cargoWeight}");
+%     }
+% }
+% \end{lstlisting}
+
+% \subsection{Polymorphism Demonstration}
+% \begin{lstlisting}
+% Vehicle[] vehicles = new Vehicle[3];
+% vehicles[0] = new Vehicle(50,100);
+% vehicles[1] = new Car(80,60,4);
+% vehicles[2] = new Truck(40,200,1500);
+
+% foreach (var veh in vehicles)
+% {
+%     veh.Drive();
+%     veh.ShowInfo();
+% }
+% \end{lstlisting}
+
+% \subsection{Explanation of Runtime Polymorphism}
+% Although the array is of type \texttt{Vehicle}, the method calls executed are those of the actual object type stored in each index.  
+% This is due to the \texttt{virtual} and \texttt{override} keywords, which enable dynamic method dispatch.
+
+% \section{Conclusion}
+% This lab demonstrated the lifecycle of objects in C\#, including construction and destruction, and showed how a static counter can track active objects.  
+% It also showed how inheritance and polymorphism allow different classes to respond differently to the same method call, depending on their specific implementation.
+
+
+\subsection{Constructors and Data Control}
+
+\subsubsection{Objective}
+The objective of this part of the lab was to understand how objects are created and destroyed in C\#, how constructors and destructors function, and how a static variable can be used to keep track of the number of active objects in memory. Additionally, this part demonstrates assigning and displaying data stored inside objects.
+
+\subsubsection{Class Design}
+We define a class \texttt{Program} with:
+\begin{itemize}
+    \item A private integer field \texttt{data}.
+    \item A constructor that prints \texttt{"Constructor Called"} and increments a static counter to show how many objects are currently alive.
+    \item A destructor that prints \texttt{"Object Destroyed"} and decrements the same static counter.
+    \item A method \texttt{set\_data(int x)} to assign a value to \texttt{data}.
+    \item A method \texttt{show\_data()} to display the stored value.
+\end{itemize}
+
+\subsection*{Code Implementation}
+\begin{lstlisting}
+class Program
+{
+    private int data;
+    private static int liveCount = 0;
+
+    public Program()
+    {
+        liveCount++;
+        Console.WriteLine("Constructor Called");
+        Console.WriteLine($"Active objects: {liveCount}");
+    }
+
+    ~Program()
+    {
+        liveCount--;
+        Console.WriteLine("Object Destroyed");
+        Console.WriteLine($"Active objects: {liveCount}");
+    }
+
+    public void set_data(int x)
+    {
+        data = x;
+    }
+
+    public void show_data()
+    {
+        Console.WriteLine($"data = {data}");
+    }
+}
+\end{lstlisting}
+
+\subsubsection{Creating and Using Objects}
+In the \texttt{Main()} method, we dynamically created three objects, assigned values, and printed them. 
+To ensure destructors run visibly, garbage collection was manually triggered after the objects went out of scope.
+
+\begin{lstlisting}
+static void CreateAndUseProgramObjects()
+{
+    Program p1 = new Program();
+    Program p2 = new Program();
+    Program p3 = new Program();
+
+    p1.set_data(10);
+    p2.set_data(20);
+    p3.set_data(30);
+
+    p1.show_data();
+    p2.show_data();
+    p3.show_data();
+}
+
+// Call the method and force garbage collection in Main()
+CreateAndUseProgramObjects();
+GC.Collect();
+GC.WaitForPendingFinalizers();
+\end{lstlisting}
+
+\subsubsection{Observed Output}
+\begin{verbatim}
+-- Constructors, Data Control and Destructors Demo --
+Constructor Called
+Active objects: 1
+Constructor Called
+Active objects: 2
+Constructor Called
+Active objects: 3
+data = 10
+data = 20
+data = 30
+Object Destroyed
+Active objects: 2
+Object Destroyed
+Active objects: 1
+Object Destroyed
+Active objects: 0
+\end{verbatim}
+
+\subsubsection{Explanation of Output}
+\begin{itemize}
+    \item Each time a new object is created, the constructor runs and increases the \texttt{liveCount}. 
+    This confirms that the constructor is automatically invoked when an object instance is allocated.
+    \item Each time an object is destroyed (after garbage collection), the destructor runs and decrements the counter. 
+    \item The destructor does \textbf{not} run immediately when the object goes out of scope. In C\#, 
+    destructors are called by the garbage collector, which works asynchronously. Therefore, we forced destruction using:
+    \[
+    \texttt{GC.Collect(); \quad GC.WaitForPendingFinalizers();}
+    \]
+    \item The output clearly shows the object lifecycle: creation $\rightarrow$ usage $\rightarrow$ destruction.
+\end{itemize}
+
+
+\subsection{Inheritance and Method Overriding}
+
+\subsubsection{Objective}
+The objective of this part of the lab was to demonstrate how inheritance allows classes to reuse and extend functionality from base classes, and how method overriding enables derived classes to modify behavior. This part also illustrates runtime polymorphism using a base-class reference to invoke overridden methods.
+
+\subsubsection{Base Class: Vehicle}
+We begin by defining a base class \texttt{Vehicle} that contains shared properties and functionality for all vehicles.
+
+\begin{itemize}
+    \item Protected fields \texttt{speed} and \texttt{fuel} allow derived classes to directly access these values.
+    \item A virtual method \texttt{Drive()} reduces fuel by 5 and prints a general driving message.
+    \item A virtual method \texttt{ShowInfo()} displays the current speed and fuel.
+\end{itemize}
+
+\subsection*{Code Implementation}
+\begin{lstlisting}
+public class Vehicle
+{
+    protected int speed;
+    protected int fuel;
+
+    public Vehicle(int speed = 0, int fuel = 0)
+    {
+        this.speed = speed;
+        this.fuel = fuel;
+    }
+
+    public virtual void Drive()
+    {
+        fuel -= 5;
+        Console.WriteLine("Vehicle is moving...");
+    }
+
+    public virtual void ShowInfo()
+    {
+        Console.WriteLine($"Vehicle Info - Speed: {speed}, Fuel: {fuel}");
+    }
+}
+\end{lstlisting}
+
+\subsubsection{Derived Class: Car}
+The class \texttt{Car} extends \texttt{Vehicle} and introduces a new field \texttt{passengers}.  
+It overrides:
+\begin{itemize}
+    \item \texttt{Drive()} to reduce fuel by 10 and print a message specific to cars.
+    \item \texttt{ShowInfo()} to also display number of passengers.
+\end{itemize}
+
+\subsection*{Code Implementation}
+\begin{lstlisting}
+public class Car : Vehicle
+{
+    public int passengers;
+
+    public Car(int speed = 0, int fuel = 0, int passengers = 0) : base(speed, fuel)
+    {
+        this.passengers = passengers;
+    }
+
+    public override void Drive()
+    {
+        fuel -= 10;
+        Console.WriteLine("Car is moving with passenger");
+    }
+
+    public override void ShowInfo()
+    {
+        Console.WriteLine($"Car Info - Speed: {speed}, Fuel: {fuel}, Passengers: {passengers}");
+    }
+}
+\end{lstlisting}
+
+\subsubsection{Derived Class: Truck}
+Similarly, the \texttt{Truck} class adds a new field \texttt{cargoWeight}, and overrides both methods to reflect heavier fuel usage and additional cargo data.
+
+\subsection*{Code Implementation}
+\begin{lstlisting}
+public class Truck : Vehicle
+{
+    public int cargoWeight;
+
+    public Truck(int speed = 0, int fuel = 0, int cargoWeight = 0) : base(speed, fuel)
+    {
+        this.cargoWeight = cargoWeight;
+    }
+
+    public override void Drive()
+    {
+        fuel -= 15;
+        Console.WriteLine("Truck is moving with cargo");
+    }
+
+    public override void ShowInfo()
+    {
+        Console.WriteLine($"Truck Info - Speed: {speed}, Fuel: {fuel}, CargoWeight: {cargoWeight}");
+    }
+}
+\end{lstlisting}
+
+\subsubsection{Demonstration of Runtime Polymorphism}
+To observe overriding behavior, we store one object of each class in a \texttt{Vehicle[]} array and call 
+\texttt{Drive()} and \texttt{ShowInfo()} through the base-class reference.
+
+\begin{lstlisting}
+Vehicle[] vehicles = new Vehicle[3];
+vehicles[0] = new Vehicle(50, 100);
+vehicles[1] = new Car(80, 60, 4);
+vehicles[2] = new Truck(40, 200, 1500);
+
+foreach (var veh in vehicles)
+{
+    veh.Drive();
+    veh.ShowInfo();
+    Console.WriteLine();
+}
+\end{lstlisting}
+
+\subsubsection{Observed Output}
+\begin{verbatim}
+Vehicle is moving...
+Vehicle Info - Speed: 50, Fuel: 95
+
+Car is moving with passenger
+Car Info - Speed: 80, Fuel: 50, Passengers: 4
+
+Truck is moving with cargo
+Truck Info - Speed: 40, Fuel: 185, CargoWeight: 1500
+\end{verbatim}
+
+\subsubsection{Explanation of Output}
+\begin{itemize}
+    \item Although the array type is \texttt{Vehicle[]}, the actual methods executed are determined by the 
+    \textbf{runtime type} of each object.
+    \item This behavior is known as \textbf{runtime polymorphism}.
+    \item The \texttt{virtual} keyword in the base class and the \texttt{override} keyword in derived 
+    classes enable dynamic dispatch.
+    \item Because of this, \texttt{veh.Drive()} calls the appropriate version depending on whether 
+    \texttt{veh} refers to a \texttt{Vehicle}, \texttt{Car}, or \texttt{Truck}.
+\end{itemize}
+
+\subsection{Output Reasoning (Level 0)}
+
+\subsubsection*{Expression Snippet 1}
+\begin{verbatim}
+int a = 3;
+int b = a++;
+Console.WriteLine($"a is {+a++}, b is {-++b}");
+int c = 3;
+int d = ++c;
+Console.WriteLine($"c is {-c--}, d is {~d}");
+\end{verbatim}
+
+\textbf{Output:}
+\begin{verbatim}
+a is 4, b is -4
+c is -4, d is -5
+Final values -> a=5, b=4, c=3, d=4
+\end{verbatim}
+
+\textbf{Reasoning:}
+\begin{itemize}
+    \item \texttt{a++} returns the old value first, then increments.
+    \item \texttt{++b} increments first, then returns the value.
+    \item The unary \texttt{+} and \texttt{-} before variables apply sign.
+    \item Bitwise complement \texttt{~d} flips all bits, which changes positive to negative value by: \(\texttt{~x} = -x - 1\).
+\end{itemize}
+
+\subsection*{Expression Snippet 2}
+\begin{verbatim}
+[16][0][1][1]
+\end{verbatim}
+
+% \textbf{Reasoning:}
+% \begin{itemize}
+%     \item \texttt{"010%".Replace('0','%')} becomes \texttt{"%%1%"} which has length 4.
+%     \item Shifting left: \(4 << 2 = 16\).
+%     \item \texttt{"010%".Split('1')[1][0]} selects the \texttt{'0'} after '1'.
+%     \item \texttt{"010%".Split('0')[1][0]} selects the \texttt{'1'} after the first '0'.
+%     \item \texttt{"123".ToCharArray()[~-1]} computes index -2 which gives '1'.
+% \end{itemize}
+\textbf{Reasoning:}
+\begin{itemize}
+  \item \verb|"010%".Replace('0','%')| becomes \verb|"%%1%"| which has length 4.
+  \item Left shift: \(\mathtt{4 \ll 2 = 16}\).
+  \item \verb|"010%".Split('1')[1][0]| selects the \verb|'0'| after \verb|'1'|.
+  \item \verb|"010%".Split('0')[1][0]| selects the \verb|'1'| after the first \verb|'0'|.
+  \item \verb|"123".ToCharArray()[~-1]| uses \verb|~-1| (bitwise NOT of 1, i.e., \(-2\)) as the index, giving \verb|'1'|.
+\end{itemize}
+
+
+\subsection*{Expression Snippet 3}
+\begin{verbatim}
+1, 3, 12, 0, 0
+\end{verbatim}
+
+\textbf{Reasoning:}
+\begin{itemize}
+    \item The loop moves all non-zero numbers to the front while maintaining their order.
+    \item Zero elements are moved to the end.
+    \item Final arrangement becomes: non-zero values first (\texttt{1, 3, 12}), followed by zeros.
+\end{itemize}
+
+\subsection{Output Reasoning (Level 1)}
+
+\subsubsection*{Expression Snippet 1 — Strings, Indexing, and Bit Shifts}
+\textbf{Observed output:} \verb|[16][0][1][1]|
+
+\textbf{Reasoning:}
+\begin{enumerate}
+  \item \verb|"010%".Replace('0','%')| $\Rightarrow$ \verb|"%%1%"|, so \verb|k = 4|.
+  \item \verb|new Program().age| starts at \verb|0|; the constructor executes \verb|age = (age==0 ? age+1 : age-1)|, so \verb|age = 1|; then \verb|++new Program().age| makes it \verb|2|.
+  \item Left shift: \(\mathtt{4 \ll 2 = 16}\) $\Rightarrow$ first bracket \verb|[16]|.
+  \item \verb|"010%".Split('1')[1][0]|: splitting on \verb|'1'| gives \verb|["0", "0%"]|, index \verb|[1][0]| is \verb|'0'| $\Rightarrow$ \verb|[0]|.
+  \item \verb|"010%".Split('0')[1][0]|: splitting on \verb|'0'| gives \verb|["", "1", "%"]|, index \verb|[1][0]| is \verb|'1'| $\Rightarrow$ \verb|[1]|.
+  \item \verb|"123".ToCharArray()[~-1]|: \verb|~-1| is bitwise \texttt{NOT} of \(-1\), i.e., \(0\); index \(0\) is \verb|'1'|; converting/ parsing yields \verb|1| $\Rightarrow$ \verb|[1]|.
+\end{enumerate}
+
+\subsection*{Expression Snippet 2 — For-loop Tricks and Side Effects}
+\textbf{Observed output:}
+\begin{verbatim}
+run 1
+2
+4
+6
+8
+10
+11
+
+run 2
+11
+
+run 3
+0
+\end{verbatim}
+
+\textbf{Reasoning (key lines):}
+\begin{enumerate}
+  \item Construction: \verb|new int()| is \verb|0|; \verb|"0".Length| is \verb|1|; hence \verb|new Program(0+1)| sets \verb|p.f = 1|.
+  \item The for-header has an \emph{empty body} (note the semicolon):\\
+        \verb|for (int i=0,_=i; i<5 && ++p.f >=0; i++, Console.WriteLine(p.f++));|\\
+        Each iteration does:
+        \begin{itemize}
+          \item Pre-increment \verb|++p.f| (used in the condition), then
+          \item Post-increment print \verb|p.f++|.
+        \end{itemize}
+        Step-by-step with initial \verb|p.f=1|: prints \(2,4,6,8,10\) and ends with \verb|p.f=11|.
+  \item Next block:
+\begin{verbatim}
+for (; p.f == 0;);  // condition false (11), so skip
+{
+    Console.WriteLine(p.f);   // prints 11
+}
+\end{verbatim}
+        Hence the trailing \verb|11| after ``run 1''.
+  \item \textbf{run 2:} \verb|p = new Program(p.f)| $\Rightarrow$ \verb|p.f = 11|, prints \verb|11|.
+  \item \textbf{run 3:} default ctor \verb|Program() => f = 0|, prints \verb|0|.
+\end{enumerate}
+
+\subsection*{Expression Snippet 3 — Events, Delegate Removal, and Null-conditional Calls}
+\textbf{Observed output:}
+\begin{verbatim}
+f1
+f2
+0
+1
+2
+3
+4
+5
+-6
+-5
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+\end{verbatim}
+
+\textbf{Reasoning:}
+\begin{enumerate}
+  \item Two handlers are added: \verb|A.f1| then \verb|B.f1|; invoking \verb|p.handler()| prints \verb|f1| then \verb|f2| in subscription order.
+  \item The code tries to remove handlers using \emph{new} \verb|A|/\verb|B| instances: 
+  
+  \verb|p.handler -= new B().f1; p.handler -= new A().f1;|.  
+        In .NET, instance-method delegates are equal only if \emph{both} the target instance and method match.  
+        Using fresh instances means removal fails—handlers remain subscribed.
+  \item \verb|destroy()| recursively prints \verb|i| then increments until \verb|i == 6|.  
+        With static \verb|i = 0|, \verb|p?.destroy()| prints \verb|0 1 2 3 4 5|.
+  \item After \verb|p = null; i = -6; p?.destroy();| does nothing because \verb|p| is null.
+  \item \verb|(new Program())?.destroy();| runs with the shared static \verb|i = -6|, so it prints from \verb|-6| up to \verb|5|.
+\end{enumerate}
+
+\subsection{Output Reasoning (Level 2)}
+
+\subsubsection*{Expression Snippet 1 — Inheritance, Constructor Chaining, Field Hiding, Bitwise Complement}
+\textbf{Observed output:}
+\begin{verbatim}
+61214135
+8
+-8
+\end{verbatim}
+
+\textbf{Relevant structure (paraphrased):}
+\begin{verbatim}
+class Institute { internal int i = 7; Institute(){ Console.Write("1"); } 
+  public virtual void info(){ Console.Write("2"); } }
+class IITGN : Institute { public int i = 8; 
+  IITGN(){ Console.Write("3"); } 
+  IITGN(int _){ Console.Write("4"); } 
+  public override void info(){ Console.Write("5"); } }
+Main(){
+  Console.Write("6");
+  Institute ins1 = new Institute(); ins1.info();
+  IITGN ab101 = new IITGN(3);
+  ab101 = new IITGN(); ab101.info(); Console.WriteLine();
+  Console.WriteLine(ab101.i);
+  Console.WriteLine(~(((Institute)ab101).i));
+}
+\end{verbatim}
+
+\textbf{Why it prints \texttt{61214135}:}
+\begin{enumerate}
+  \item \verb|Console.Write("6")| $\Rightarrow$ prints \verb|6|.
+  \item \verb|new Institute()| runs its ctor \(\Rightarrow\) prints \verb|1|.
+  \item \verb|ins1.info()| uses dynamic dispatch, but object is \verb|Institute| \(\Rightarrow\) prints \verb|2|.
+  \item \verb|new IITGN(3)|: ctor chaining first calls base \verb|Institute()| (\verb|1|), then \verb|IITGN(int)| (\verb|4|) \(\Rightarrow\) prints \verb|14|.
+  \item \verb|new IITGN()|: base \verb|Institute()| (\verb|1|), then \verb|IITGN()| (\verb|3|) \(\Rightarrow\) prints \verb|13|.
+  \item \verb|ab101.info()| is overridden \(\Rightarrow\) prints \verb|5|.
+\end{enumerate}
+Concatenating: \verb|6 1 2 1 4 1 3 5| \(\to\) \verb|61214135|.
+
+\textbf{Why the lines \texttt{8} and \texttt{-8}:}
+\begin{itemize}
+  \item \verb|ab101.i| accesses the \emph{derived} field \verb|IITGN.i| (field hiding), value \verb|8| \(\Rightarrow\) prints \verb|8|.
+  \item Casting \verb|(Institute)ab101| switches field binding to base \verb|Institute.i| (value \verb|7|). Bitwise complement rule: \(\sim x = -x - 1\), so \(\sim 7 = -8\) \(\Rightarrow\) prints \verb|-8|.
+\end{itemize}
+
+\subsection*{Expression Snippet 2 — Multicast Delegates: Order and Removal}
+\textbf{Observed output:}
+\begin{verbatim}
+run 1
+fun1()
+fun2()
+run 2
+fun2()
+fun1()
+run 3
+fun1()
+\end{verbatim}
+
+\textbf{Relevant structure (paraphrased):}
+\begin{verbatim}
+public delegate void mydel();
+mydel obj1 = new mydel(p.fun1); obj1 += new mydel(p.fun2);
+mydel obj2 = new mydel(p.fun2); obj2 += new mydel(p.fun1);
+obj2 -= p.fun2;
+\end{verbatim}
+
+\textbf{Why it prints this way:}
+\begin{enumerate}
+  \item \textbf{Run 1:} Multicast invocation preserves subscription order. \verb|obj1| has \verb|fun1| then \verb|fun2| \(\Rightarrow\) prints \verb|fun1()| then \verb|fun2()|.
+  \item \textbf{Run 2:} \verb|obj2| subscribed \verb|fun2| then \verb|fun1| \(\Rightarrow\) prints \verb|fun2()| then \verb|fun1()|.
+  \item \textbf{Run 3:} \verb|obj2 -= p.fun2;| removes the \emph{matching} invocation (same target instance and method), leaving only \verb|fun1| \(\Rightarrow\) prints \verb|fun1()|.
+\end{enumerate}
+\textit{Note:} For instance methods, delegate removal succeeds only if both the target object and method match the one in the invocation list.
+
+\subsection*{Expression Snippet 3 — \texttt{ArrayList}, Aliasing, and Side Effects}
+\textbf{Observed output:}
+\begin{verbatim}
+1
+1
+202
+202
+1
+111
+\end{verbatim}
+
+\textbf{Relevant structure (paraphrased):}
+\begin{verbatim}
+ArrayList L = new ArrayList();
+L.Add(new Program()); L.Add(new Program()); // Program has int x;
+for (i=0;i<L.Count;i++) Console.WriteLine(++((Program)L[i]).x);
+
+L[0] = L[1];
+((Program)L[0]).x = 202;
+
+for (i=0;i<L.Count;i++) Console.WriteLine(((Program)L[i]).x);
+
+((Program)L[0]).x = 111;
+L.RemoveAt(0);
+Console.WriteLine(L.Count);
+Console.WriteLine(((Program)L[0]).x);
+\end{verbatim}
+
+\textbf{Step-by-step reasoning:}
+\begin{enumerate}
+  \item Two distinct \verb|Program| instances with default \verb|x=0|.
+  \item First loop uses pre-increment: prints \verb|1| then \verb|1|; now objects are \((x_0{=}1, x_1{=}1)\).
+  \item \verb|L[0] = L[1];| makes both entries reference the \emph{same} second object (aliasing).
+  \item Setting \verb|((Program)L[0]).x = 202;| updates the shared object. Next loop prints \verb|202|, \verb|202|.
+  \item Then \verb|((Program)L[0]).x = 111;| updates the same shared object to \verb|111|.
+  \item \verb|L.RemoveAt(0);| removes the first reference; list now has one element (the former second), so \verb|L.Count| is \verb|1|.
+  \item The remaining element is the shared object with \verb|x=111|, so the last line prints \verb|111|.
+\end{enumerate}
+\textit{Key idea:} \verb|ArrayList| stores \emph{references}; assigning \verb|L[0] = L[1]| does not clone objects, it aliases them.
+
+\subsection{Output Reasoning (Level 3)}
+
+\subsubsection*{Expression Snippet 1 — Constructor chaining, overriding, field hiding, and bitwise complement}
+\textbf{Observed output:}
+\begin{verbatim}
+61214135
+8
+-8
+\end{verbatim}
+
+\textbf{Relevant code sketch:}
+\begin{verbatim}
+public class Institute {
+    internal int i = 7;
+    public Institute() { Console.Write("1"); }
+    public virtual void info() { Console.Write("2"); }
+}
+public class IITGN : Institute {
+    public int i = 8;  // hides Institute.i
+    public IITGN() { Console.Write("3"); }
+    public IITGN(int _) { Console.Write("4"); }
+    public override void info() { Console.Write("5"); }
+}
+static void Main() {
+    Console.Write("6");
+    Institute ins1 = new Institute(); ins1.info();
+    IITGN ab101 = new IITGN(3);   // base() is implicit
+    ab101 = new IITGN();          // base() is implicit
+    ab101.info();
+    Console.WriteLine();
+    Console.WriteLine(ab101.i);
+    Console.WriteLine(~(((Institute)ab101).i));
+}
+\end{verbatim}
+
+\textbf{Why this prints exactly that:}
+\begin{enumerate}
+  \item \verb|Console.Write("6")| $\Rightarrow$ prints \verb|6|.
+  \item \verb|new Institute()| calls \emph{its} ctor $\Rightarrow$ prints \verb|1|.
+  \item \verb|ins1.info()| calls \verb|Institute.info| (no override on \verb|ins1|) $\Rightarrow$ prints \verb|2|.
+  \item \verb|new IITGN(3)|: in C\#, a derived ctor implicitly calls \verb|base()| first, then its own body. Hence prints \verb|1| (base) then \verb|4| (derived) $\Rightarrow$ \verb|14|.
+  \item \verb|new IITGN()| similarly prints \verb|1| (base) then \verb|3| (derived) $\Rightarrow$ \verb|13|.
+  \item \verb|ab101.info()| dispatches virtually to the override in \verb|IITGN| $\Rightarrow$ prints \verb|5|.
+  \item Putting the pieces together (no spaces): \verb|6 1 2 1 4 1 3 5| $\Rightarrow$ \verb|61214135|.
+  \item \verb|ab101.i| accesses \emph{IITGN}'s public field (hides the base field) $\Rightarrow$ prints \verb|8|.
+  \item \verb|((Institute)ab101).i| accesses the \emph{base} field (\verb|internal int i = 7|). Bitwise complement obeys \(\sim x = -x - 1\), so \(\sim 7 = -8\) $\Rightarrow$ prints \verb|-8|.
+\end{enumerate}
+
+\subsection*{Expression Snippet 2 — Multicast delegates: combination, order, and removal}
+\textbf{Observed output:}
+\begin{verbatim}
+run 1
+fun1()
+fun2()
+run 2
+fun2()
+fun1()
+run 3
+fun1()
+\end{verbatim}
+
+\textbf{Relevant code sketch:}
+\begin{verbatim}
+public delegate void mydel();
+public void fun1() { Console.WriteLine("fun1()"); }
+public void fun2() { Console.WriteLine("fun2()"); }
+static void Main() {
+    Program p = new Program();
+    mydel obj1 = new mydel(p.fun1);
+    obj1 += new mydel(p.fun2);
+    Console.WriteLine("run 1"); obj1();
+
+    mydel obj2 = new mydel(p.fun2);
+    obj2 += new mydel(p.fun1);
+    Console.WriteLine("run 2"); obj2();
+
+    obj2 -= p.fun2;
+    Console.WriteLine("run 3"); obj2();
+}
+\end{verbatim}
+
+\textbf{Why this prints exactly that:}
+\begin{enumerate}
+  \item Delegate invocation preserves \emph{subscription order}.
+        \begin{itemize}
+          \item \verb|obj1| list: \verb|[fun1, fun2]| $\Rightarrow$ prints \verb|fun1()| then \verb|fun2()|.
+          \item \verb|obj2| list: \verb|[fun2, fun1]| $\Rightarrow$ prints \verb|fun2()| then \verb|fun1()|.
+        \end{itemize}
+  \item \verb|obj2 -= p.fun2;| removes the first matching occurrence of \verb|fun2| from \verb|obj2|'s invocation list, leaving \verb|[fun1]|. Hence ``run 3'' prints only \verb|fun1()|.
+\end{enumerate}
+
+\subsection*{Expression Snippet 3 — Reference aliasing with \texttt{ArrayList} and field mutation}
+\textbf{Observed output:}
+\begin{verbatim}
+1
+1
+202
+202
+1
+111
+\end{verbatim}
+
+\textbf{Relevant code sketch:}
+\begin{verbatim}
+using System.Collections;
+class Program { public int x; 
+  public static void Main() {
+    ArrayList L = new ArrayList();
+    L.Add(new Program());   // L[0]
+    L.Add(new Program());   // L[1]
+    for (int i=0; i<L.Count; i++) Console.WriteLine(++((Program)L[i]).x);
+
+    L[0] = L[1];            // now both slots reference the same object
+    ((Program)L[0]).x = 202;
+    for (int i=0; i<L.Count; i++) Console.WriteLine(((Program)L[i]).x);
+
+    ((Program)L[0]).x = 111;
+    L.RemoveAt(0);
+    Console.WriteLine(L.Count);
+    Console.WriteLine(((Program)L[0]).x);
+  }
+}
+\end{verbatim}
+
+\textbf{Why this prints exactly that:}
+\begin{enumerate}
+  \item Initially, two distinct \verb|Program| objects with \verb|x = 0|.
+        The prefix increment loop prints:
+        \begin{itemize}
+          \item For \verb|L[0]|: \verb|++x| $\Rightarrow$ prints \verb|1|.
+          \item For \verb|L[1]|: \verb|++x| $\Rightarrow$ prints \verb|1|.
+        \end{itemize}
+  \item \verb|L[0] = L[1];| makes both \verb|L[0]| and \verb|L[1]| refer to the \emph{same} second object (aliasing).  
+        Setting \verb|((Program)L[0]).x = 202;| therefore affects \emph{both} slots. Printing both elements now yields:
+        \verb|202| then \verb|202|.
+  \item Next, mutate through the shared reference: \verb|((Program)L[0]).x = 111;|.  
+        \verb|L.RemoveAt(0);| drops the first slot; the remaining \verb|L[0]| still refers to that same (only) object.  
+        Thus, \verb|L.Count| prints \verb|1| and \verb|((Program)L[0]).x| prints \verb|111|.
+\end{enumerate}
+
+
+
+% \subsection{Conclusion}
+% This part of the lab demonstrates how inheritance promotes code reusability and how method overriding allows derived classes to modify inherited behavior. The experiment confirms runtime polymorphism in C\#, where method resolution occurs based on the actual object type rather than the reference type.
+
+% \subsection{Conclusion}
+% This exercise demonstrates how constructors initialize objects and how destructors clean up memory-managed objects in C\#. The static counter effectively tracks the number of currently active objects, allowing us to observe object lifecycle behavior clearly.
