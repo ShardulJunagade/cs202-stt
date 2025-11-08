@@ -3,6 +3,10 @@ lab4/results/diff_analysis.csv
 latex/umang
 umang/
 
+**/bin/
+**/obj/
+
+
 # LATEX TEMPLATE.GITIGNORE
 # Ignore LaTeX auxiliary and temporary files
 *.aux
