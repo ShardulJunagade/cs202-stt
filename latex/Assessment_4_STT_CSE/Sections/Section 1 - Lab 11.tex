@@ -1,0 +1,229 @@
+\section{Lab 11: Events and Delegates in C\#}
+
+\subsection*{Metadata}
+\begin{itemize}
+	\item Course: CS202 - Software Tools and Techniques for CSE
+	\item Lab Topic: Events and Delegates in C\# Windows Forms Applications
+	\item Name: Shardul Junagade (23110297)
+	\item Date: 3rd November 2025
+\end{itemize}
+
+Repository path: \texttt{lab11/}
+
+\subsection{Introduction}
+I completed Laboratory Session 11 on events and delegates in C\# Windows Forms. The session centered on building a small interactive form and then reasoning through several delegate/event code snippets to understand chaining, thresholds, and nested invocation. In this lab I focused on wiring custom events between UI controls, extending a basic event with a custom \texttt{EventArgs} payload, and demonstrating multicast behavior. After that I manually traced five embedded C\# code snippets (Tasks 3--5) and wrote out their outputs with reasoning. I kept the implementation compact and readable rather than over-engineered.
+
+\subsection{Tools}
+\begin{itemize}[itemsep=0pt]
+	\item OS: Windows 11; Shell: PowerShell 7
+	\item .NET SDK: .NET 8 (meets the ``.NET 6 or later'' requirement)
+	\item IDE/Editor: Visual Studio 2022 Community
+	\item Git: for version control
+\end{itemize}
+
+\insertimage{./images/env.png}[Environment Details]
+
+\subsection{Setup}
+I reused the same .NET setup as in earlier labs and verified it before working on the Windows Forms app.
+
+\subsubsection*{Visual Studio path}
+\begin{enumerate}
+	\item Install Visual Studio 2022 (Community Edition) with the ``.NET desktop development'' workload selected.
+
+	\insertimage{./images/workload.png}[Workload Selection]
+
+	\item Confirm the SDK is on PATH:
+\begin{verbatim}
+dotnet --version
+\end{verbatim}
+	\item Create a new C\# Windows Forms App in Visual Studio and set the Target Framework to .NET 8.0 in project properties.
+
+	\insertimage{./images/1.png}[Project Target Framework]
+
+	\insertimage{./images/net8.png}[.NET Version Selection]
+\end{enumerate}
+
+
+\subsection{Methodology and Execution}
+
+I then designed the form with two buttons (\texttt{btnChangeColor}, \texttt{btnChangeText}), one label (\texttt{lblMessage} initialised to ``Welcome to Events Lab''), and a ComboBox (\texttt{cmbColors}) where I added the entries Red, Green, Blue via the Properties window.
+
+\insertimage{./images/2.0.png}[Form Design]
+
+\subsubsection{Part 1 - Basic Custom Events (Color \& Text)}
+In \texttt{Form1.cs} I declared two delegates and the corresponding events:
+\begin{lstlisting}
+public delegate void ColorChangedHandler(System.Drawing.Color newColor);
+public delegate void TextChangedHandler(string newText);
+public event ColorChangedHandler ColorChangedEvent;
+public event TextChangedHandler TextChangedEvent;
+\end{lstlisting}
+
+In the form constructor I subscribed the handlers:
+\begin{lstlisting}
+ColorChangedEvent += UpdateLabelColor;
+TextChangedEvent += UpdateLabelText;
+\end{lstlisting}
+
+On the colour button click I read the selected ComboBox string, mapped it to a \texttt{System.Drawing.Color} with a \texttt{switch}, and invoked the custom event:
+\begin{lstlisting}
+ColorChangedEvent?.Invoke(selectedColor); // raises custom event
+\end{lstlisting}
+
+The text button built a timestamp string and invoked:
+\begin{lstlisting}
+TextChangedEvent?.Invoke(newText);
+\end{lstlisting}
+
+The label foreground and caption updated only through these events - the click handlers acted as publishers, and the subscriber methods performed the UI changes.
+
+\insertimage{./images/2.1.png}[Part 1 - Code Snippet of Form1.cs]
+
+\insertimage{./images/2.2.png}[Part 1 - Code Snippet of Form1.cs]
+
+\insertimage{./images/3.png}[Part 1 - GUI after colour change]
+
+\insertimage{./images/4.png}[Part 1 - GUI after text change]
+
+\subsubsection{Part 2 - EventArgs + Multicast}
+For the second part I extended the colour change event to carry structured information. I added a \texttt{ColorEventArgs} class:
+\begin{lstlisting}
+public class ColorEventArgs : EventArgs
+{
+	public string ColorName { get; }
+
+	public ColorEventArgs(string colorName)
+	{
+		ColorName = colorName;
+	}
+}
+\end{lstlisting}
+
+\insertimage{./images/5.png}[ColorEventArgs class]
+
+Then in \texttt{Form1.cs} I adopted the conventional sender + args pattern for the event:
+\begin{lstlisting}
+public delegate void ColorChangedHandler(object sender, ColorEventArgs e);
+public event ColorChangedHandler ColorChangedEvent;
+\end{lstlisting}
+
+In the constructor I wired two subscribers to demonstrate multicast behaviour:
+\begin{lstlisting}
+ColorChangedEvent += UpdateLabelColor;
+ColorChangedEvent += ShowNotification; // second subscriber
+\end{lstlisting}
+
+On the button click I created the EventArgs and invoked the event:
+\begin{lstlisting}
+var args = new ColorEventArgs(selectedColorName);
+ColorChangedEvent?.Invoke(this, args);
+\end{lstlisting}
+
+	\texttt{UpdateLabelColor} mapped the \texttt{ColorName} string to a \texttt{System.Drawing.Color}, and \texttt{ShowNotification} popped up a message box confirming the choice. Both ran in order when I clicked the button, this showed multiple subscribers on the same event.
+
+\insertimage{./images/6.0.png}[ColorEventArgs code snippet]
+
+\insertimage{./images/6.1.png}[Part 2 - Code Snippet of Form1.cs]
+
+\insertimage{./images/6.2.png}[Part 2 - Code Snippet of Form1.cs]
+
+\insertimage{./images/6.3.png}[Part 2 - GUI and message box after colour change]
+
+\subsubsection{Task 3 - Output Reasoning (Level 0)}
+
+\paragraph{Q1.} Final output: 
+\begin{lstlisting}
+MS:-1
+\end{lstlisting}
+
+\insertimage{./images/7.png}[Task 3 Q1 - code and output]
+
+Reasoning: the delegate started with \texttt{Add}, then had \texttt{Mul} and \texttt{Sub} added, and finally \texttt{Add} was removed. That left the invocation list as \texttt{[Mul, Sub]}. Calling \texttt{Mul(2,3)} printed \texttt{M} and returned 6; calling \texttt{Sub(2,3)} printed \texttt{S} and returned --1. For multicast delegates with a return type, only the value from the last method is used, so the printed result became \texttt{:-1}.
+
+\newpage
+
+\paragraph{Q2.} Final output: 
+\begin{lstlisting}
+I5 D4 F4
+\end{lstlisting}
+
+\insertimage{./images/8.png}[Task 3 Q2 - code and output]
+
+Reasoning: with \texttt{val = 3}, the invocation list was \texttt{[Inc, Dec]}. \texttt{Inc(ref val)} increased it to 5 and printed \texttt{I5 }. Then \texttt{Dec(ref val)} dropped it to 4 and printed \texttt{D4 }. After the multicast call the variable held 4, so the final print produced \texttt{F4}.
+
+\newpage
+
+\subsubsection{Task 4 - Output Reasoning (Level 1)}
+
+\paragraph{Q1.} Final output:
+\begin{lstlisting}
+>1>2[M2]>3[L3](Reset)>4[M4{Alert}]>5>6[M6][L6](Reset)
+\end{lstlisting}
+
+\insertimage{./images/9.png}[Task 4 Q1 - code and output]
+
+Reasoning: the \texttt{Increment()} method first increases the internal counter and immediately prints the current value in the form \texttt{>value}. After that, two conditional checks determine whether additional text is printed.
+
+If the value is even (\texttt{value \% 2 == 0}), the \texttt{MilestoneReached} event is raised, and its subscriber prints \texttt{[Mvalue]}. For the special case where the value is 4, the same subscriber also appends \texttt{\{Alert\}}. If the value is a multiple of 3 (\texttt{value \% 3 == 0}), the \texttt{LimitReached} event is raised, and two subscribers print \texttt{[Lvalue]} and \texttt{(Reset)} in that order.
+
+The loop in \texttt{Main} calls \texttt{Increment()} six times, so the counter takes the values 1 through 6, and the printed output for each call is as follows:
+\begin{itemize}[itemsep=0pt]
+	\item Value 1: only \texttt{>1} (no event conditions satisfied).
+	\item Value 2: \texttt{>2} and \texttt{[M2]} (even, milestone only).
+	\item Value 3: \texttt{>3[L3](Reset)} (multiple of 3, limit reached only).
+	\item Value 4: \texttt{>4[M4\{Alert\}]} (even, milestone with alert; not a multiple of 3).
+	\item Value 5: only \texttt{>5} (no event conditions satisfied).
+	\item Value 6: \texttt{>6[M6][L6](Reset)} (both even and multiple of 3, so milestone and limit events fire).
+\end{itemize}
+
+Concatenating these pieces in order produces the final output:
+\begin{lstlisting}
+>1>2[M2]>3[L3](Reset)>4[M4{Alert}]>5>6[M6][L6](Reset)
+\end{lstlisting}
+
+\newpage
+
+\paragraph{Q2.} Final output:
+\begin{lstlisting}
+Temperature changed from 30 C to 46 C
+ Warning: Sudden change detected!
+Temperature changed from 46 C to 52 C
+\end{lstlisting}
+
+\insertimage{./images/10.png}[Task 4 Q2 - code and output]
+
+Reasoning: the event fired only when the absolute temperature change was greater than 5. The changes 25→28 and 28→30 were ignored. The jump 30→46 (difference 16) triggered both the main message and the warning because the difference exceeded 10. The jump 46→52 (difference 6) triggered only the main message.
+
+\newpage
+
+\subsubsection{Task 5 - Output Reasoning (Level 2)}
+
+\paragraph{Q1.} Final output:
+\begin{lstlisting}
+[Start]{Ping}(Nested)[Start]{Pong}(Nested)[End][End]
+\end{lstlisting}
+
+\insertimage{./images/11.png}[Task 5 Q1 - code and output]
+
+Reasoning: calling \texttt{Trigger("Ping")} first printed \texttt{[Start]}. The first subscriber printed \texttt{\{Ping\}}, and the second printed \texttt{(Nested)} and then invoked \texttt{Trigger("Pong")} because the message was ``Ping''. The nested trigger printed another \texttt{[Start]}, then the two subscribers printed \texttt{\{Pong\}} and \texttt{(Nested)}. Since the message was now ``Pong'', there was no further recursion. Each \texttt{Trigger} call ended by printing \texttt{[End]}, so two \texttt{[End]} markers appeared at the end.
+
+\newpage
+
+\paragraph{Q2.} Final output: 
+\begin{lstlisting}
+[Check]{High}[Check][Done](Alert)[Done]
+\end{lstlisting}
+
+\insertimage{./images/12.png}[Task 5 Q2 - code and output]
+
+Reasoning: \texttt{Check(80)} printed \texttt{[Check]} and then fired the threshold event because 80 was greater than 50. The first subscriber printed \texttt{\{High\}} and called \texttt{Check(30)} on the same sensor, which printed \texttt{[Check][Done]} but did not raise the event again because 30 $\leq$ 50. The second subscriber then printed \texttt{(Alert)}. After both subscribers finished, the original \texttt{Check(80)} call printed its final \texttt{[Done]}.
+
+\subsection{Conclusion}
+In this lab I built a Windows Forms example that used custom delegates and events to drive UI updates rather than direct control manipulation inside button handlers. I then extended the design using a custom \texttt{ColorEventArgs} and demonstrated multicast events by wiring both a label update and a message box to the same publisher. Overall the exercise strengthened my comfort with the publisher--subscriber pattern in C\# and clarified practical details like passing \texttt{ref} parameters through multicast delegates, and composing EventArgs for extensibility without changing event signatures.
+
+\subsection{References}
+\begin{itemize}[itemsep=0pt]
+	\item Microsoft C\# docs: \url{https://learn.microsoft.com/en-us/dotnet/csharp}
+	\item Delegates and events: \url{https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates-and-events}
+	\item Windows Forms events: \url{https://learn.microsoft.com/en-us/dotnet/desktop/winforms/}
+\end{itemize}

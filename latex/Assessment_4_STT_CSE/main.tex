@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\graphicspath{images}
+\usepackage[style=apa]{biblatex}
+\addbibresource{bib.bib}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption, subcaption}
+\usepackage{algorithm} 
+\usepackage{algorithmic}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{CS202 Assessment 2 Report}
+\fancyhead[R]{Ridham Patel, Shardul Junagade}
+\fancyfoot[C]{\thepage}
+\usepackage{float} % put this in the preamble
+
+% Configure listings for code highlighting
+\definecolor{codebg}{RGB}{245,245,245}
+\lstset{
+  language=[Sharp]C,
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\small,
+  frame=single,
+  breaklines=true,
+  showstringspaces=false
+}
+
+% Define custom command for images with optional caption
+\usepackage{xparse}
+\NewDocumentCommand{\insertimage}{O{0.8\textwidth} m o}{%
+    \begin{center}
+        \includegraphics[width=#1]{#2}%
+        \IfValueT{#3}{\\\captionof{figure}{#3}}%
+    \end{center}
+}
+
+% Replace (Title), (Name), and (Count) with relevant information
+% Individual sections can be found in the Sections folder
+% Insert images into the images folder
+% Insert references to the bib.bib file
+
+
+\title{Software Tools and Techniques for CSE: Assessment 4 \\[1ex] \large Project Report}
+\author{Ridham Patel (23110238), Shardul Junagade (23110297)}
+\date{20 November 2025}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+    Computer Science \& Engineering\\
+    Indian Institute of Technology Gandhinagar\\
+    India
+
+    % \vspace{0.8cm}
+
+    % Word Count: (Count)
+\end{center}
+
+\begin{center}
+{\large Repository Link: \href{https://github.com/ShardulJunagade/cs202-stt/}{\texttt{cs202-stt}}}
+\end{center}
+
+\tableofcontents
+\pagebreak
+
+\input{Sections/Section 1 - Lab 11.tex}
+
+\newpage
+
+\input{Sections/Section 2 - Lab 12.tex}
+
+% \section{References}
+% \printbibliography[heading=none]
+
+\end{document}
