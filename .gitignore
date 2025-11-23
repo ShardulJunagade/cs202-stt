@@ -45,6 +45,7 @@ _tex2pdf.*
 
 # Ignore IDE or editor configuration files
 .vscode/
+.vs/
 .idea/
 *.DS_Store
 Thumbs.db
