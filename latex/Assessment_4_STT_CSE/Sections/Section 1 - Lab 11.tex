@@ -11,7 +11,7 @@
 Repository path: \texttt{lab11/}
 
 \subsection{Introduction}
-I completed Laboratory Session 11 on events and delegates in C\# Windows Forms. The session centered on building a small interactive form and then reasoning through several delegate/event code snippets to understand chaining, thresholds, and nested invocation. In this lab I focused on wiring custom events between UI controls, extending a basic event with a custom \texttt{EventArgs} payload, and demonstrating multicast behavior. After that I manually traced five embedded C\# code snippets (Tasks 3--5) and wrote out their outputs with reasoning. I kept the implementation compact and readable rather than over-engineered.
+I completed Laboratory Session 11 on events and delegates in C\# Windows Forms. The session centered on building a small interactive form and then reasoning through several delegate/event code snippets to understand chaining, thresholds, and nested invocation. In this lab I focused on wiring custom events between UI controls, extending a basic event with a custom \texttt{EventArgs} payload, and demonstrating multicast behavior. After that I manually traced five embedded C\# code snippets (Tasks 3 - 5) and wrote out their outputs with reasoning. I kept the implementation compact and readable rather than over-engineered.
 
 \subsection{Tools}
 \begin{itemize}[itemsep=0pt]
@@ -138,7 +138,7 @@ MS:-1
 
 \insertimage{./images/7.png}[Task 3 Q1 - code and output]
 
-Reasoning: the delegate started with \texttt{Add}, then had \texttt{Mul} and \texttt{Sub} added, and finally \texttt{Add} was removed. That left the invocation list as \texttt{[Mul, Sub]}. Calling \texttt{Mul(2,3)} printed \texttt{M} and returned 6; calling \texttt{Sub(2,3)} printed \texttt{S} and returned --1. For multicast delegates with a return type, only the value from the last method is used, so the printed result became \texttt{:-1}.
+Reasoning: the delegate started with \texttt{Add}, then had \texttt{Mul} and \texttt{Sub} added, and finally \texttt{Add} was removed. That left the invocation list as \texttt{[Mul, Sub]}. Calling \texttt{Mul(2,3)} printed \texttt{M} and returned 6; calling \texttt{Sub(2,3)} printed \texttt{S} and returned -1. For multicast delegates with a return type, only the value from the last method is used, so the printed result became \texttt{:-1}.
 
 \newpage
 
@@ -219,7 +219,7 @@ Reasoning: calling \texttt{Trigger("Ping")} first printed \texttt{[Start]}. The 
 Reasoning: \texttt{Check(80)} printed \texttt{[Check]} and then fired the threshold event because 80 was greater than 50. The first subscriber printed \texttt{\{High\}} and called \texttt{Check(30)} on the same sensor, which printed \texttt{[Check][Done]} but did not raise the event again because 30 $\leq$ 50. The second subscriber then printed \texttt{(Alert)}. After both subscribers finished, the original \texttt{Check(80)} call printed its final \texttt{[Done]}.
 
 \subsection{Conclusion}
-In this lab I built a Windows Forms example that used custom delegates and events to drive UI updates rather than direct control manipulation inside button handlers. I then extended the design using a custom \texttt{ColorEventArgs} and demonstrated multicast events by wiring both a label update and a message box to the same publisher. Overall the exercise strengthened my comfort with the publisher--subscriber pattern in C\# and clarified practical details like passing \texttt{ref} parameters through multicast delegates, and composing EventArgs for extensibility without changing event signatures.
+In this lab I built a Windows Forms example that used custom delegates and events to drive UI updates rather than direct control manipulation inside button handlers. I then extended the design using a custom \texttt{ColorEventArgs} and demonstrated multicast events by wiring both a label update and a message box to the same publisher. Overall the exercise strengthened my comfort with the publisher-subscriber pattern in C\# and clarified practical details like passing \texttt{ref} parameters through multicast delegates, and composing EventArgs for extensibility without changing event signatures.
 
 \subsection{References}
 \begin{itemize}[itemsep=0pt]

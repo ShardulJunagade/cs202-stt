@@ -1,0 +1,719 @@
+% \documentclass[a4paper,12pt]{article}
+% \usepackage{listings}
+% \usepackage{graphicx}
+% \usepackage{caption}
+% \usepackage{hyperref}
+% \usepackage{xcolor}
+
+% \definecolor{codegreen}{rgb}{0,0.6,0}
+% \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+% \definecolor{codepurple}{rgb}{0.58,0,0.82}
+% \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% \lstdefinestyle{mystyle}{
+%     backgroundcolor=\color{backcolour},   
+%     commentstyle=\color{codegreen},
+%     keywordstyle=\color{magenta},
+%     numberstyle=\tiny\color{codegray},
+%     stringstyle=\color{codepurple},
+%     basicstyle=\ttfamily\footnotesize,
+%     breakatwhitespace=false,         
+%     breaklines=true,                 
+%     captionpos=b,                    
+%     keepspaces=true,                 
+%     numbers=left,                    
+%     numbersep=5pt,                  
+%     showspaces=false,                
+%     showstringspaces=false,
+%     showtabs=false,                  
+%     tabsize=2,
+%     language=CSharp
+% }
+
+% \lstset{style=mystyle}
+
+\section{Lab-12: Advanced Event Handling and Custom EventArgs in C\# Windows Forms}
+% \author{Your Name \\ Course: CS202 Software Tools and Techniques for CSE}
+% \date{Date: 10th November 2025}
+
+% \begin{document}
+
+% \maketitle
+
+\paragraph{Introduction}
+\newline
+
+This lab aims to deepen understanding of advanced event-driven mechanisms in C\# Windows Forms applications by designing modular GUIs that demonstrate event chaining, filtered event invocation, and contextual data sharing through custom \texttt{EventArgs}.
+
+\paragraph{Learning Outcomes}
+\newline
+
+By the end of this lab, we were able to:
+\begin{itemize}
+    \item Implement custom \texttt{EventArgs} classes to exchange contextual data between publishers and subscribers.
+    \item Demonstrate event chaining where one event dynamically triggers another.
+    \item Apply conditional event firing and multicast subscription in GUI contexts.
+    \item Design reusable event-driven components that decouple logic and user interface layers.
+\end{itemize}
+
+\subsection{Lab Questions}
+
+%-----------------
+\subsubsection{Question 1: OrderPipeline -- Multi-Stage Event Chaining with Custom \texttt{EventArgs}}
+
+\paragraph{Code}
+\begin{lstlisting}[language=CSharp, caption={Complete Order Pipeline Implementation}]
+using System;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+
+namespace lab12
+{
+    public partial class Form1 : Form
+    {
+        // Custom EventArgs for order lifecycle
+        public class OrderEventArgs : EventArgs
+        {
+            public string Customer { get; }
+            public string Product { get; }
+            public int Quantity { get; }
+            public OrderEventArgs(string cust, string prod, int qty) 
+                => (Customer, Product, Quantity) = (cust, prod, qty);
+        }
+
+        // Events
+        public event EventHandler<OrderEventArgs>? OrderCreated;
+        public event EventHandler<OrderEventArgs>? OrderRejected;
+        public event EventHandler<OrderEventArgs>? OrderConfirmed;
+        public event EventHandler<ShipEventArgs>? OrderShipped;
+
+        private bool orderIsConfirmed;
+
+        public Form1()
+        {
+            InitializeComponent();
+            // Subscribe base handlers
+            OrderCreated += ValidateOrder;
+            OrderCreated += DisplayOrderInfo;
+            OrderRejected += ShowRejection;
+            OrderConfirmed += ShowConfirmation;
+            // Hook layout events
+            Load += Form1_Load;
+            Resize += Form1_Resize;
+        }
+
+        // User initiates order processing
+        private void btnProcessOrder_Click(object? sender, EventArgs e)
+        {
+            var customer = txtCustomer.Text.Trim();
+            var product = cmbProduct.SelectedItem?.ToString() ?? string.Empty;
+            int quantity = (int)numQuantity.Value;
+            var args = new OrderEventArgs(customer, product, quantity);
+            lblStatus.Text = "Status: Order Created";
+            OrderCreated?.Invoke(this, args); // multicast invokes validation + info display
+        }
+
+        // Validate then chain confirmation or rejection
+        private void ValidateOrder(object? sender, OrderEventArgs e)
+        {
+            if (e.Quantity <= 0 || string.IsNullOrWhiteSpace(e.Customer) 
+                || string.IsNullOrWhiteSpace(e.Product))
+            {
+                OrderRejected?.Invoke(this, e);
+                return;
+            }
+            lblStatus.Text = "Status: Validated";
+            OrderConfirmed?.Invoke(this, e); // event chaining
+        }
+
+        // Second subscriber to OrderCreated
+        private void DisplayOrderInfo(object? sender, OrderEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(e.Customer) || string.IsNullOrWhiteSpace(e.Product)) return;
+            MessageBox.Show($"Order Summary:\nCustomer: {e.Customer}\nProduct: {e.Product}\nQuantity: {e.Quantity}", "Order Info");
+        }
+
+        private void ShowRejection(object? sender, OrderEventArgs e)
+        {
+            orderIsConfirmed = false;
+            lblStatus.Text = "Order Invalid – Please retry";
+        }
+
+        private void ShowConfirmation(object? sender, OrderEventArgs e)
+        {
+            orderIsConfirmed = true;
+            lblStatus.Text = $"Order Processed Successfully for {e.Customer}";
+        }
+    }
+}
+\end{lstlisting}
+
+\paragraph{Explanation}
+
+The OrderPipeline application implements a comprehensive event-driven order processing system using custom EventArgs and sophisticated event chaining mechanisms. The form components form the foundation of the user interface, consisting of a TextBox for capturing customer names, a ComboBox pre-populated with product options ("Laptop", "Mouse", "Keyboard"), a NumericUpDown control for quantity selection with built-in validation, a Process Order button to initiate the workflow, and a Status Label that provides real-time feedback throughout the order lifecycle. The core functionality revolves around the custom OrderEventArgs class, which serves as a strongly-typed data container transporting customer information, product selection, and quantity between event publishers and subscribers in a type-safe manner.
+
+When users click the Process Order button, the application orchestrates a complex event-driven workflow. The btnProcessOrder\_Click method captures all user inputs, packages them into an OrderEventArgs instance, and raises the OrderCreated event through multicast invocation. This single event trigger simultaneously notifies two subscribers: ValidateOrder and DisplayOrderInfo. The ValidateOrder method performs comprehensive business rule validation, checking for positive quantities and non-empty customer and product fields. If validation fails, it immediately chains to the OrderRejected event, which updates the status label with an appropriate error message via the ShowRejection handler. For valid orders, successful validation chains to the OrderConfirmed event, displaying personalized success confirmation through the ShowConfirmation handler. Concurrently, the DisplayOrderInfo subscriber presents users with a modal MessageBox showing a complete order summary, providing immediate visual confirmation of their order details. This multi-stage event chaining creates a clean, modular workflow where each processing stage is encapsulated in separate, focused event handlers, demonstrating proper separation of concerns and enabling easy maintenance, testing, and extensibility of the order processing pipeline.
+
+%-----------------
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/q1_valid_order.png}
+    \caption{Valid order processing with order summary and success status}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/q1_invalid_order.png}
+    \caption{Invalid order rejection with error status}
+\end{figure}
+\subsubsection{Question 2: Event Filtering and Dynamic Subscriber Management}
+
+\paragraph{Code}
+\begin{lstlisting}[language=CSharp, caption={Complete Shipping and Dynamic Subscription Implementation}]
+// Custom EventArgs for shipping
+public class ShipEventArgs : EventArgs
+{
+    public string Product { get; }
+    public bool Express { get; }
+    public ShipEventArgs(string p, bool ex) => (Product, Express) = (p, ex);
+}
+
+// Shipping with dynamic filtering of subscribers
+private void btnShipOrder_Click(object? sender, EventArgs e)
+{
+    if (!orderIsConfirmed)
+    {
+        MessageBox.Show("Cannot ship. Confirm an order first.", "Warning");
+        return;
+    }
+    
+    // Ensure base dispatch subscriber present exactly once
+    OrderShipped -= ShowDispatch;
+    OrderShipped += ShowDispatch;
+    
+    // Dynamic express courier notification
+    if (chkExpress.Checked)
+    {
+        OrderShipped -= NotifyCourier; // prevent duplicates
+        OrderShipped += NotifyCourier;
+    }
+    else
+    {
+        OrderShipped -= NotifyCourier; // remove if not express
+    }
+    
+    var product = cmbProduct.SelectedItem?.ToString() ?? string.Empty;
+    var shipArgs = new ShipEventArgs(product, chkExpress.Checked);
+    OrderShipped?.Invoke(this, shipArgs);
+}
+
+private void ShowDispatch(object? sender, ShipEventArgs e)
+{
+    lblStatus.Text = $"Product dispatched: {e.Product} (Express: {e.Express})";
+}
+
+private void NotifyCourier(object? sender, ShipEventArgs e)
+{
+    if (e.Express)
+    {
+        MessageBox.Show("Express delivery initiated!", "Courier Notification");
+    }
+}
+\end{lstlisting}
+
+\paragraph{Explanation}
+The event filtering and dynamic subscriber management extension significantly enhances the OrderPipeline application by introducing sophisticated shipping capabilities through intelligent runtime event subscription control. The key modifications to the original system include the addition of a CheckBox named chkExpress that allows users to select premium express shipping options, and a new Ship Order button that initiates the shipping process after order confirmation. The system architecture is extended with a new ShipEventArgs class that enriches the event data model with Product identification and an Express boolean property, enabling context-aware shipping notifications that carry both the product being shipped and the shipping method selected by the user.
+
+A critical implementation aspect is the orderIsConfirmed boolean flag that enforces proper business workflow sequencing by preventing shipping operations until an order has been successfully validated and confirmed through the earlier order processing pipeline. The dynamic subscription management demonstrates advanced event handling patterns where the ShowDispatch handler, responsible for updating the status label with dispatch information, is guaranteed to be subscribed exactly once through careful unsubscribe-subscribe sequencing before each invocation. This pattern ensures reliable status updates while preventing duplicate handler executions. The NotifyCourier handler exhibits sophisticated conditional subscription behavior—it's dynamically added to the OrderShipped event only when the express shipping checkbox is checked, and immediately removed when unchecked. This intelligent filtering mechanism prevents unnecessary courier notifications for standard shipments while ensuring express shipments receive prompt special handling attention. When invoked, the NotifyCourier handler checks the Express property from the ShipEventArgs and displays a modal alert specifically for express deliveries, providing users with immediate confirmation of their premium service selection. This dynamic approach to event subscription management allows the application to adapt its behavior based on real-time user input, demonstrating a responsive and efficient event-driven architecture that eliminates redundant processing while maintaining clear separation between different shipping notification concerns and ensuring optimal performance.
+
+% For Question 2  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/q2_express_tick.png}
+    \caption{Checking Express shipping}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/q2_wo_confirming.png}
+    \caption{Express shipping without placing order: warning notification}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/q2_order_confirmed.png}
+    \caption{Express shipping with courier notification}
+\end{figure}
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{q2_dynamic_code.png}
+%     \caption{Code demonstrating dynamic subscriber management}
+% \end{figure}
+%-----------------
+\subsubsection{Modular Design of Event-Driven Components}
+
+\paragraph{Code}
+
+\begin{lstlisting}[language=CSharp, caption={Complete UI Layout and Enhancement Implementation}]
+private void Form1_Load(object? sender, EventArgs e)
+{
+    AdjustLayout();
+    ApplyRoundedCorners(24); // initial radius
+}
+
+private void Form1_Resize(object? sender, EventArgs e)
+{
+    AdjustLayout();
+    ApplyRoundedCorners(24); // keep radius on resize
+}
+
+private void AdjustLayout()
+{
+    int margin = 30; // outer margin
+    int gap = 20; // gap between product and quantity controls
+    int qtyWidth = 130; // fixed width for quantity control
+    
+    // Customer textbox full width
+    txtCustomer.Left = margin;
+    txtCustomer.Top = margin;
+    txtCustomer.Width = ClientSize.Width - margin * 2;
+    
+    // Product + Quantity row
+    int productTop = txtCustomer.Bottom + gap;
+    int quantityLeft = ClientSize.Width - margin - qtyWidth; // align right edge
+    numQuantity.Top = productTop;
+    numQuantity.Left = quantityLeft;
+    numQuantity.Width = qtyWidth;
+    
+    // Product width fills remaining space to left of quantity with gap
+    cmbProduct.Top = productTop;
+    cmbProduct.Left = margin;
+    cmbProduct.Width = quantityLeft - gap - margin; // leave gap before quantity
+    
+    // Process button full width
+    btnProcessOrder.Top = cmbProduct.Bottom + gap;
+    btnProcessOrder.Left = margin;
+    btnProcessOrder.Width = ClientSize.Width - margin * 2;
+    
+    // Express checkbox
+    chkExpress.Top = btnProcessOrder.Bottom + gap / 2;
+    chkExpress.Left = margin;
+    
+    // Ship button full width
+    btnShipOrder.Top = chkExpress.Bottom + gap;
+    btnShipOrder.Left = margin;
+    btnShipOrder.Width = ClientSize.Width - margin * 2;
+    
+    // Status label
+    lblStatus.Top = btnShipOrder.Bottom + gap;
+    lblStatus.Left = margin;
+    lblStatus.Width = ClientSize.Width - margin * 2;
+}
+
+private void ApplyRoundedCorners(int radius)
+{
+    if (radius <= 0) { Region = null; return; }
+    if (WindowState == FormWindowState.Maximized)
+    {
+        Region = null; // avoid visual artifacts when maximized
+        return;
+    }
+    var path = new GraphicsPath();
+    int w = Width;
+    int h = Height;
+    int d = radius * 2;
+    path.AddArc(0, 0, d, d, 180, 90);
+    path.AddArc(w - d, 0, d, d, 270, 90);
+    path.AddArc(w - d, h - d, d, d, 0, 90);
+    path.AddArc(0, h - d, d, d, 90, 90);
+    path.CloseFigure();
+    Region = new System.Drawing.Region(path);
+}
+\end{lstlisting}
+
+\paragraph{Explanation}
+The modular design of event-driven components in this application exemplifies sophisticated software architecture principles that promote reusability, maintainability, and clean separation of concerns across multiple dimensions. The UI components are managed through a comprehensive responsive layout system implemented in the AdjustLayout method, which programmatically positions all controls using consistent margin and gap values, ensuring proper visual hierarchy and seamless adaptability to form resizing. This systematic approach completely separates layout logic from control declaration, making the interface significantly more maintainable and allowing for straightforward modifications to the visual structure without affecting the underlying business logic. The layout strategy employs a logical flow where the customer TextBox spans the full available width at the top, followed by the product selection and quantity controls sharing a horizontal row with intelligent proportional spacing, while all action buttons maintain consistent full-width styling for visual coherence and intuitive user interaction.
+
+The application further enhances user experience through the sophisticated ApplyRoundedCorners method, which creates aesthetically pleasing rounded corners using advanced GraphicsPath operations that construct smooth bezier curves at each form corner. This method demonstrates intelligent context-aware UI behavior by automatically removing rounded corners when the window is maximized to avoid visual artifacts and performance issues, showcasing adaptive interface design. The event-driven architecture embodies modular design excellence through complete decoupling of publishers and subscribers—custom EventArgs classes serve as well-defined contract specifications between components, enabling type-safe data exchange without creating direct dependencies. Each event handler functions as a self-contained unit focusing on single responsibilities, whether validation, display, notification, or layout tasks. This modular approach allows individual components to be modified, extended, or replaced independently, facilitating extensive code reuse across different application sections or in future projects. The seamless integration of responsive layout management, aesthetic enhancements, and loosely-coupled event handling creates a robust foundation for scalable enterprise applications that can gracefully evolve with changing business requirements while maintaining high standards of code quality, developer productivity, and user satisfaction throughout the application lifecycle.
+
+% \end{document}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/q3_rounded_corners.png}
+    \caption{Form with rounded corners in normal window state}
+\end{figure}
+
+\subsection{Output Reasoning Questions}
+
+\subsubsection{Level 0}
+
+\textbf{Question 1}
+
+\begin{lstlisting}[language=CSharp, caption={Delegate Method Signature Mismatch}]
+public delegate void AuthCallback(bool validUser);
+public static AuthCallback loginCallback = Login;
+public static void Login()
+{
+    Console.WriteLine("Valid user!");
+}
+public static void Main(string[] args)
+{
+    loginCallback(true);
+}
+\end{lstlisting}
+
+\textbf{Answer:} No, It will not compile.
+\begin{itemize}
+    \item \textbf{Primary Error}: Method signature mismatch. Delegate \texttt{AuthCallback} requires a method with signature \texttt{void(bool)} but \texttt{Login} has signature \texttt{void()}. The assignment \texttt{loginCallback = Login} fails with compiler error CS0123.
+    \item \textbf{Additional Errors}: The code structure has issues with top-level statements. Public static fields and methods are not valid as top-level statements, producing errors like CS0106/CS0116.
+    \item \textbf{CS0106}: "The modifier 'public' is not valid for this item" occurs when using access modifiers where they are not allowed.
+    \item \textbf{CS0116}: "A namespace cannot directly contain members such as fields, methods or statements" occurs when code is placed at namespace scope instead of inside a type.
+\end{itemize}
+
+\textbf{Fix:}
+\begin{lstlisting}[language=CSharp]
+public delegate void AuthCallback(bool validUser);
+
+class Program
+{
+    public static AuthCallback loginCallback = Login;
+    public static void Login(bool validUser)
+    {
+        if (validUser)
+            Console.WriteLine("Valid user!");
+        else
+            Console.WriteLine("Invalid user!");
+    }
+    public static void Main(string[] args)
+    {
+        loginCallback(true);
+    }
+}
+\end{lstlisting}
+
+With this fix, the output would be: \texttt{Valid user!}
+
+\textbf{Question 2}
+
+\begin{lstlisting}[language=CSharp, caption={Multicast Delegate Behavior}]
+using System;
+
+delegate void Notify(string msg);
+
+class Program
+{
+    static void Main()
+    {
+        Notify handler = null;
+
+        handler += (m) => Console.WriteLine("A: " + m);
+        handler += (m) => Console.WriteLine("B: " + m.ToUpper());
+        
+        handler("hello");
+
+        handler -= (m) => Console.WriteLine("A: " + m);
+        handler("world");
+    }
+}
+\end{lstlisting}
+
+\textbf{Output:}
+\begin{verbatim}
+A: hello
+B: HELLO
+A: world
+B: WORLD
+\end{verbatim}
+
+\textbf{Explanation:}
+\begin{itemize}
+    \item Each \texttt{+=} adds a lambda to the multicast delegate's invocation list
+    \item First call \texttt{handler("hello")} invokes both lambdas in order:
+    \begin{itemize}
+        \item Prints \texttt{A: hello}
+        \item Prints \texttt{B: HELLO} (second lambda uppercases the message)
+    \end{itemize}
+    \item The \texttt{-=} tries to remove a lambda, but creates a new lambda expression \texttt{(m) => Console.WriteLine("A: " + m)} which is a different delegate instance than the one previously added, so nothing is removed
+    \item Therefore the second call still has both handlers:
+    \begin{itemize}
+        \item \texttt{A: world}
+        \item \texttt{B: WORLD}
+    \end{itemize}
+    \item To successfully remove, assign the first lambda to a variable before adding: \texttt{Notify a = m => Console.WriteLine("A: " + m); handler += a; ... handler -= a;}
+\end{itemize}
+
+\subsubsection{Level 1}
+
+\textbf{Question 1}
+\begin{lstlisting}[language=CSharp, caption={Field Initialization and Exception Handling}]
+using System;
+class Program
+{
+    static string txtAge;
+    static DateTime selectedDate;
+    static int parsedAge;
+
+    static void Main(string[] args)
+    {
+        try
+        {
+            Console.WriteLine(txtAge == null ? "txtAge is null" : txtAge);
+
+            Console.WriteLine(selectedDate == default(DateTime)
+                ? "selectedDate is default"
+                : selectedDate.ToString());
+
+            if (string.IsNullOrEmpty(txtAge))
+            {
+                Console.WriteLine("txtAge is null or empty, cannot parse");
+            }
+            else
+            {
+                parsedAge = int.Parse(txtAge);
+                Console.WriteLine($"Parsed Age: {parsedAge}");
+            }
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Format Exception Caught");
+        }
+        catch (ArgumentNullException)
+        {
+            Console.WriteLine("ArgumentNull Exception Caught");
+        }
+        finally
+        {
+            Console.WriteLine("Finally block executed");
+        }
+    }
+}
+\end{lstlisting}
+
+\textbf{Output:}
+\begin{verbatim}
+txtAge is null
+selectedDate is default
+txtAge is null or empty, cannot parse
+Finally block executed
+\end{verbatim}
+
+\textbf{Explanation:}
+\begin{itemize}
+    \item \texttt{txtAge} is a static string field not initialized, so it defaults to \texttt{null}. First line prints "txtAge is null"
+    \item \texttt{selectedDate} is an uninitialized DateTime, so it has default value \texttt{DateTime.MinValue} (default(DateTime)). The check \texttt{selectedDate == default(DateTime)} is true, so prints "selectedDate is default"
+    \item \texttt{string.IsNullOrEmpty(txtAge)} is true (\texttt{txtAge} is null), so it prints "txtAge is null or empty, cannot parse" and skips \texttt{int.Parse}
+    \item No exception occurs (\texttt{int.Parse} not called), so catch blocks are skipped
+    \item \texttt{finally} always runs, printing "Finally block executed"
+    \item No parsing, no exceptions, just default field values and branch logic
+\end{itemize}
+
+\textbf{Question 2}
+
+\begin{lstlisting}[language=CSharp, caption={Multicast Delegate Exception Handling}]
+using System;
+
+delegate void Operation();
+
+class Program
+{
+    static void Main()
+    {
+        Operation ops = null;
+
+        ops += Step1;
+        ops += Step2;
+        ops += Step3;
+
+        try
+        {
+            ops();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Caught: " + ex.Message);
+        }
+
+        Console.WriteLine("End of Main");
+    }
+
+    static void Step1()
+    {
+        Console.WriteLine("Step 1");
+    }
+
+    static void Step2()
+    {
+        Console.WriteLine("Step 2");
+        throw new InvalidOperationException("Step 2 failed!");
+    }
+
+    static void Step3()
+    {
+        Console.WriteLine("Step 3");
+    }
+}
+\end{lstlisting}
+
+\textbf{Output:}
+\begin{verbatim}
+Step 1
+Step 2
+Caught: Step 2 failed!
+End of Main
+\end{verbatim}
+
+\textbf{Explanation:}
+\begin{itemize}
+    \item Delegate \texttt{ops} has invocation list: \texttt{Step1}, \texttt{Step2}, \texttt{Step3}
+    \item Calling \texttt{ops()} invokes handlers sequentially
+    \item \texttt{Step1} runs: prints "Step 1"
+    \item \texttt{Step2} runs next: prints "Step 2" then throws \texttt{InvalidOperationException("Step 2 failed!")}
+    \item Exception aborts further invocation; \texttt{Step3} is never called
+    \item Exception is caught by the \texttt{catch (Exception ex)}, printing "Caught: Step 2 failed!"
+    \item Execution continues after try/catch, printing "End of Main"
+    \item Multicast delegate stops at the first exception unless manually iterating and handling each invocation separately
+\end{itemize}
+
+\subsubsection{Level 2}
+
+\textbf{Question 1}
+
+\begin{lstlisting}[language=CSharp, caption={Method Overloading and Inheritance}]
+using System;
+
+namespace MethodOverloadingExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x = 5;
+            new Base().f(x);
+            new Derived().f(x);
+
+            Console.ReadKey();
+        }
+    }
+
+    class Base
+    {
+        public void f(int x)
+        {
+            Console.WriteLine("Base.f(int)");
+        }
+    }
+
+    class Derived : Base
+    {
+        public void f(double x)
+        {
+            Console.WriteLine("Derived.f(double)");
+        }
+    }
+}
+\end{lstlisting}
+
+\textbf{Output:}
+\begin{verbatim}
+Base.f(int)
+Derived.f(double)
+\end{verbatim}
+
+\textbf{Explanation:}
+\begin{itemize}
+    \item \texttt{new Base().f(x)} calls \texttt{Base.f(int)} because \texttt{x} is \texttt{int} → exact match to \texttt{Base.f(int)}
+    \item \texttt{new Derived().f(x)}: Overload resolution sees \texttt{Derived} adds \texttt{f(double)}. \texttt{Base.f(int)} is hidden (not overridden)
+    \item Both candidates (\texttt{int} from \texttt{Base} via inheritance and \texttt{double} in \texttt{Derived}) are considered
+    \item Because we're calling on a \texttt{Derived} instance, the overload set includes both methods
+    \item The best match for an \texttt{int} argument would normally be the exact \texttt{int} method, but since \texttt{Derived} declares a new method with different signature, it doesn't override
+    \item Overload resolution prefers the method in the most derived type when signatures differ, so \texttt{Derived.f(double)} is chosen via implicit conversion (\texttt{int} → \texttt{double})
+    \item \texttt{Console.ReadKey()} waits for a key press before terminating
+\end{itemize}
+
+\textbf{Question 2}
+
+\begin{lstlisting}[language=CSharp, caption={Dynamic Event Subscription During Iteration}]
+using System;
+
+class StepEventArgs : EventArgs
+{
+    public int Step { get; }
+    public StepEventArgs(int s) => Step = s;
+}
+
+class Workflow
+{
+    public event EventHandler<StepEventArgs> StepStarted;
+    public event EventHandler<StepEventArgs> StepCompleted;
+
+    public void Run()
+    {
+        for (int i = 1; i <= 3; i++)
+        {
+            StepStarted?.Invoke(this, new StepEventArgs(i));
+            Console.Write($"[{i}]");
+            StepCompleted?.Invoke(this, new StepEventArgs(i));
+        }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Workflow wf = new Workflow();
+        wf.StepStarted += (s, e) =>
+        {
+            Console.Write("<S" + e.Step + ">");
+            if (e.Step == 2)
+                ((Workflow)s).StepCompleted += (snd, ev)
+                    => Console.Write("(Dyn" + ev.Step + ")");
+        };
+        wf.StepCompleted += (s, e) => Console.Write("<C" + e.Step + ">");
+        wf.Run();
+    }
+}
+\end{lstlisting}
+
+\textbf{Output:}
+\begin{verbatim}
+<S1>[1]<C1><S2>[2]<C2>(Dyn2)<S3>[3]<C3>(Dyn3)
+\end{verbatim}
+
+\textbf{Explanation:}
+\begin{itemize}
+    \item Loop runs for i = 1 to 3
+    \item For each iteration:
+    \begin{itemize}
+        \item \texttt{StepStarted?.Invoke} fires current handlers
+        \item \texttt{Console.Write(\$"[{i}]")} writes [i]
+        \item \texttt{StepCompleted?.Invoke} fires current handlers
+    \end{itemize}
+    \item \textbf{i=1}: StepStarted prints $<S1>$. Body prints [1]. StepCompleted has only original handler → $<C1>$
+    \item \textbf{i=2}: StepStarted prints $<S2>$ and (because e.Step==2) adds dynamic StepCompleted handler. Body prints [2]. StepCompleted now has two handlers: original prints <C2>, then dynamic prints (Dyn2)
+    \item \textbf{i=3}: StepStarted prints $<S3>$. Body prints [3]. StepCompleted still has both handlers: original $<C3>$, dynamic (Dyn3)
+    \item The dynamic handler added during step 2 persists and affects all subsequent StepCompleted events
+    \item Combined output: $<S1>[1]<C1><S2>[2]<C2>(Dyn2)<S3>[3]<C3>(Dyn3)$
+\end{itemize}
+
+% \end{document}
+
+\subsection{Resources}
+
+\begin{itemize}
+    \item \textbf{Object.Equals Method} - Microsoft Official Documentation \\
+    \href{https://learn.microsoft.com/en-us/dotnet/api/system.object.equals?view=net-9.0}{https://learn.microsoft.com/en-us/dotnet/api/system.object.equals?view=net-9.0}
+    
+    \item \textbf{Lecture 13 Slides} - Advanced Event Handling and Delegates \\
+    \href{https://drive.google.com/file/d/1dRHswZTLDrC-51E9gA6i0ITD8h1aVv55/view}{https://drive.google.com/file/d/1dRHswZTLDrC-51E9gA6i0ITD8h1aVv55/view}
+    
+    \item \textbf{Lecture 12 Slides} - Introduction to Events and Delegates \\
+    \href{https://drive.google.com/file/d/1fxtYmmFypMlvmKJMKvQExHJAMdeLSnYw/view}{https://drive.google.com/file/d/1fxtYmmFypMlvmKJMKvQExHJAMdeLSnYw/view}
+    
+    \item \textbf{Introduction to delegates and events in C\#} - Microsoft Official Documentation \\
+    \href{https://learn.microsoft.com/en-us/dotnet/csharp/delegates-overview}{https://learn.microsoft.com/en-us/dotnet/csharp/delegates-overview}
+    
+    \item \textbf{How to combine delegates (Multicast Delegates)} - Microsoft Official Documentation \\
+    \href{https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates}{https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates}
+\end{itemize}
